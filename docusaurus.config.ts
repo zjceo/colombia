@@ -71,6 +71,27 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      'docusaurus-plugin-openapi-docs',
+      {
+        id: "api", // plugin id
+        docsPluginId: "classic", // configured for preset-classic
+        config: {
+          colombia: {
+            specPath: "apifacturador/colombia.yaml", // Path to OpenAPI spec
+            outputDir: "docs/api", // Output directory for generated docs
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          } satisfies import("docusaurus-plugin-openapi-docs").Options,
+        }
+      },
+    ]
+  ],
+
+  themes: ["docusaurus-theme-openapi-docs"],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
