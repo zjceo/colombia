@@ -1,50 +1,3 @@
-openapi: 3.0.0
-info:
-  title: FacturaLatam ApiDianV2.1 - Colombia
-  description: Servicios disponibles del proyecto APIDIAN de Facturalatam
-  version: 1.0.0
-servers:
-  - url: http://buho.fastura.uio.la/api
-    description: Servidor Principal
-paths:
-  /ubl2.1/config/{nit}/{dv}:
-    $ref: './01-ConfiguracionesBasicas/01a-configuracion-empresa.yaml#/paths/~1ubl2.1~1config~1{nit}~1{dv}'
-  /ubl2.1/config/certificate:
-    $ref: './01-ConfiguracionesBasicas/01a-configuracion-empresa.yaml#/paths/~1ubl2.1~1config~1certificate'
-  /ubl2.1/config/software:
-    $ref: './01-ConfiguracionesBasicas/01b-configurar-factura-electronica/01b-configurar-software.yaml#/paths/~1ubl2.1~1config~1software'
-  /ubl2.1/config/softwarepayroll:
-    $ref: './01-ConfiguracionesBasicas/01c-configurar-nominas/01c-configurar-software-nomina.yaml#/paths/~1ubl2.1~1config~1softwarepayroll'
-  /ubl2.1/config/softwaresupportdocument:
-    $ref: './01-ConfiguracionesBasicas/01d-configurar-documentos-soporte/01d-configurar-software-ds.yaml#/paths/~1ubl2.1~1config~1softwaresupportdocument'
-  /ubl2.1/config/softwareeqdocs:
-    $ref: './01-ConfiguracionesBasicas/01e-documentos-equivalentes/01e-configurar-software-eqdocs.yaml#/paths/~1ubl2.1~1config~1softwareeqdocs'
-  /ubl2.1/config/resolution:
-    $ref: './01-ConfiguracionesBasicas/config-resolution.yaml#/paths/~1ubl2.1~1config~1resolution'
-  /ubl2.1/invoice:
-    $ref: './02-PrimerosEnvios/02a-factura/invoice.yaml#/paths/~1ubl2.1~1invoice'
-  /ubl2.1/invoice/{testSetId}:
-    $ref: './02-PrimerosEnvios/02a-factura/invoice.yaml#/paths/~1ubl2.1~1invoice~1{testSetId}'
-  /ubl2.1/credit-note:
-    $ref: './02-PrimerosEnvios/02b-nota-credito/credit-note.yaml#/paths/~1ubl2.1~1credit-note'
-  /ubl2.1/debit-note:
-    $ref: './02-PrimerosEnvios/02c-nota-debito/debit-note.yaml#/paths/~1ubl2.1~1debit-note'
-  /ubl2.1/payroll/{testSetId}:
-    $ref: './02-PrimerosEnvios/02d-nomina/payroll.yaml#/paths/~1ubl2.1~1payroll~1{testSetId}'
-  /ubl2.1/payroll-adjust-note/{testSetId}:
-    $ref: './02-PrimerosEnvios/02d-nomina/payroll-adjust-note.yaml#/paths/~1ubl2.1~1payroll-adjust-note~1{testSetId}'
-  /ubl2.1/support-document:
-    $ref: './02-PrimerosEnvios/02e-documento-soporte/support-doc.yaml#/paths/~1ubl2.1~1support-document'
-  /ubl2.1/support-document-adjust-note:
-    $ref: './02-PrimerosEnvios/02e-documento-soporte/support-doc-adjust.yaml#/paths/~1ubl2.1~1support-document-adjust-note'
-  /ubl2.1/eqdoc:
-    $ref: './02-PrimerosEnvios/02f-documentos-equivalentes/eqdocs.yaml#/paths/~1ubl2.1~1eqdoc'
-  /ubl2.1/status/zip/{zipKey}:
-    $ref: './03-ConsultasDeEstado/03-consultas-estado/consultas.yaml#/paths/~1ubl2.1~1status~1zip~1{zipKey}'
-  /ubl2.1/status/document/{uuid}:
-    $ref: './03-ConsultasDeEstado/03-consultas-estado/consultas.yaml#/paths/~1ubl2.1~1status~1document~1{uuid}'
-  /ubl2.1/status/events-document/{uuid}:
-    $ref: './03-ConsultasDeEstado/03-consultas-estado/consultas.yaml#/paths/~1ubl2.1~1status~1events-document~1{uuid}'
   /ubl2.1/invoice?case=sendinvoice-testsetid-order-reference:
     $ref: './04-CasuisticasDeEnvios/04-casuisticas/casuisticas.yaml#/paths/~1ubl2.1~1invoice?case=sendinvoice-testsetid-order-reference'
   /ubl2.1/invoice?case=sendinvoice-testsetid-varias-tarifas-y-descuentos:
@@ -83,10 +36,3 @@ paths:
     $ref: './04-CasuisticasDeEnvios/04-casuisticas/casuisticas.yaml#/paths/~1ubl2.1~1invoice?case=sendinvoice-testsetid-dos-tarifas-impuestos-y-retenciones'
   /ubl2.1/invoice?case=sendinvoice-testsetid-impuesto-inc:
     $ref: './04-CasuisticasDeEnvios/04-casuisticas/casuisticas.yaml#/paths/~1ubl2.1~1invoice?case=sendinvoice-testsetid-impuesto-inc'
-  /ubl2.1/invoice?case=sendinvoice-testsetid-consumidor-final:
-    $ref: './05-ConsumidorFinal/05-consumidor-final/consumidor-final.yaml#/paths/~1ubl2.1~1invoice?case=sendinvoice-testsetid-consumidor-final'
-components:
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
