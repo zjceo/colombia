@@ -1,0 +1,201 @@
+components:
+  schemas:
+    EqDocGeneral:
+      type: object
+      required:
+        - number
+        - type_document_id
+        - date
+        - time
+        - resolution_number
+        - prefix
+        - notes
+        - sendmail
+        - sendmailtome
+        - customer
+        - payment_form
+        - legal_monetary_totals
+        - tax_totals
+        - invoice_lines
+        - buyer_benefits
+        - cash_information
+      properties:
+        number:
+          type: integer
+          example: 100
+        type_document_id:
+          type: integer
+          example: 20
+        date:
+          type: string
+          format: date
+          example: "2024-03-24"
+        time:
+          type: string
+          example: "06:00:00"
+        resolution_number:
+          type: string
+          example: "18760000001"
+        prefix:
+          type: string
+          example: "POS"
+        notes:
+          type: string
+          example: "ESTA ES UNA PRUEBA DE DOCUMENTO EQUIVALENTE POS"
+        sendmail:
+          type: boolean
+          example: true
+        sendmailtome:
+          type: boolean
+          example: true
+        customer:
+          type: object
+          properties:
+            identification_number:
+              type: integer
+              example: 121515151
+            dv:
+              type: integer
+              example: 5
+            name:
+              type: string
+              example: "CONSUMIDOR FINAL"
+            phone:
+              type: string
+              example: "3100000000"
+            address:
+              type: string
+              example: "CLL 4 NRO 33-90"
+            email:
+              type: string
+              example: "alexanderobandolondono@gmail.com"
+            merchant_registration:
+              type: string
+              example: "0000000-00"
+            type_document_identification_id:
+              type: integer
+              example: 13
+            type_organization_id:
+              type: integer
+              example: 2
+            municipality_id:
+              type: integer
+              example: 822
+            type_regime_id:
+              type: integer
+              example: 2
+        payment_form:
+           type: object
+           properties:
+             payment_form_id:
+                type: integer
+                example: 1
+             payment_method_id:
+                type: integer
+                example: 10
+             payment_due_date:
+                type: string
+                format: date
+                example: "2024-03-24"
+             duration_measure:
+                type: string
+                example: "0"
+        legal_monetary_totals:
+          type: object
+          properties:
+             line_extension_amount:
+                type: string
+                example: "15965.75"
+             tax_exclusive_amount:
+                type: string
+                example: "15965.75"
+             tax_inclusive_amount:
+                type: string
+                example: "18999.24"
+             allowance_total_amount:
+                type: string
+                example: "0.00"
+             charge_total_amount:
+                type: string
+                example: "0.00"
+             payable_amount:
+                type: string
+                example: "19000.00"
+        tax_totals:
+           type: array
+           items:
+              type: object
+              properties:
+                 tax_id:
+                    type: integer
+                    example: 1
+                 tax_amount:
+                    type: string
+                    example: "3033.49"
+                 percent:
+                    type: string
+                    example: "19.00"
+                 taxable_amount:
+                    type: string
+                    example: "15965.75"
+        invoice_lines:
+           type: array
+           items:
+              type: object
+              properties:
+                 unit_measure_id:
+                    type: integer
+                    example: 70
+                 invoiced_quantity:
+                    type: string
+                    example: "1"
+                 line_extension_amount:
+                    type: string
+                    example: "15965.75"
+                 free_of_charge_indicator:
+                    type: boolean
+                    example: false
+                 tax_totals:
+                    type: array
+                    items:
+                       type: object
+                       properties:
+                          tax_id:
+                             type: integer
+                             example: 1
+                          tax_amount:
+                             type: string
+                             example: "3033.49"
+                          taxable_amount:
+                             type: string
+                             example: "15965.75"
+                          percent:
+                             type: string
+                             example: "19.00"
+                 description:
+                    type: string
+                    example: "Hamburguesa"
+                 notes:
+                    type: string
+                    example: ""
+                 code:
+                    type: string
+                    example: "HAMBURGUESA"
+                 type_item_identification_id:
+                    type: integer
+                    example: 4
+                 price_amount:
+                    type: string
+                    example: "15965.75"
+                 base_quantity:
+                    type: string
+                    example: "1"
+        buyer_benefits:
+            type: object
+            description: Puntos acumulados, etc.
+            example: {}
+        cash_information:
+             type: object
+             description: Información de la caja
+             example: {}
+

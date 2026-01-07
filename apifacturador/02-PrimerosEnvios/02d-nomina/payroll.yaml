@@ -1,0 +1,52 @@
+openapi: 3.0.0
+info:
+  title: Nomina Electronica - Individual
+  version: 1.0.0
+servers:
+  - url: https://{url_base}/api
+    variables:
+      url_base:
+        default: buho.fastura.uio.la
+        description: Base URL of the API
+
+paths:
+  /ubl2.1/payroll/{testSetId}:
+    post:
+      summary: Enviar Nómina Individual
+      description: |
+        Envía una nómina electrónica individual.
+        
+        - Requiere un `{testSetId}` para pruebas de habilitación.
+        - Para envío en producción, se debe consultar si el `testSetId` es obligatorio o si existe otro endpoint sin él. Basado en la colección, parece ser `/ubl2.1/payroll/{testSetId}` para habilitación.
+        - **Nota**: Si se usa en producción, el `testSetId` podría no ser requerido o ser un valor específico.
+      tags:
+        - Nomina
+      parameters:
+        - in: path
+          name: testSetId
+          schema:
+            type: string
+          required: true
+          description: ID del Set de Pruebas.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './payroll-component.yaml#/components/schemas/PayrollGeneral'
+      responses:
+        '200':
+          description: Nómina enviada exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                   type: string
+                  ResponseDian:
+                    type: object
+                  zippayrollxml:
+                    type: string
+        '422':
+          description: Error de validación

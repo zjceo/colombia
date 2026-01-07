@@ -1,0 +1,42 @@
+openapi: 3.0.0
+info:
+  title: Documento Soporte Electrónico
+  version: 1.0.0
+servers:
+  - url: https://{url_base}/api
+    variables:
+      url_base:
+        default: buho.fastura.uio.la
+        description: Base URL of the API
+
+paths:
+  /ubl2.1/support-document:
+    post:
+      summary: Enviar Documento Soporte
+      description: |
+        Envía un documento soporte en adquisiciones con no obligados a facturar.
+        
+      tags:
+        - Documento Soporte
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './support-doc-component.yaml#/components/schemas/SupportDocGeneral'
+      responses:
+        '200':
+          description: Documento soporte enviado exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                   type: string
+                  ResponseDian:
+                    type: object
+                  zipinvoicexml:
+                    type: string
+        '422':
+          description: Error de validación

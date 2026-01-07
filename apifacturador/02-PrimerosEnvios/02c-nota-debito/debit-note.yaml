@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  title: Factura Electrónica - Nota Débito
+  version: 1.0.0
+servers:
+  - url: https://{url_base}/api
+    variables:
+      url_base:
+        default: buho.fastura.uio.la
+        description: Base URL of the API
+
+paths:
+  /ubl2.1/debit-note:
+    post:
+      summary: Enviar Nota Débito
+      description: |
+        Envía una nota débito electrónica asociada a una factura previa.
+        
+        - Requiere referenciar la factura original en `billing_reference`.
+        - Permite aumetar valores de una factura.
+      tags:
+        - Nota Debito
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './debit-note-component.yaml#/components/schemas/DebitNoteGeneral'
+      responses:
+        '200':
+          description: Nota débito procesada exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                  ResponseDian:
+                    type: object
+                  zipinvoicexml:
+                    type: string
+        '422':
+          description: Error de validación

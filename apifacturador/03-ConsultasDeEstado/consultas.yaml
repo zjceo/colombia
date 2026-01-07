@@ -1,0 +1,96 @@
+openapi: 3.0.0
+info:
+  title: Consultas de Estado
+  version: 1.0.0
+servers:
+  - url: https://{url_base}/api
+    variables:
+      url_base:
+        default: buho.fastura.uio.la
+        description: Base URL of the API
+
+paths:
+  /ubl2.1/status/zip/{zipKey}:
+    post:
+      summary: Consultar Estado por ZIP Key (Asíncrono)
+      description: |
+        Consulta el estado de un lote de documentos enviados asíncronamente (Factura o Nómina).
+        
+        - Se usa el `zipKey` retornado en la respuesta de la emisión asíncrona.
+        - En el body se especifica si es nómina (`is_payroll`) o documento equivalente (`is_eqdoc`).
+      tags:
+        - Consultas de Estado
+      parameters:
+        - in: path
+          name: zipKey
+          schema:
+            type: string
+          required: true
+          description: Clave del ZIP (ZIP Key) obtenida al enviar el documento.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './consultas-component.yaml#/components/schemas/StatusZipRequest'
+      responses:
+        '200':
+          description: Consulta exitosa
+          content:
+            application/json:
+              schema:
+                $ref: './consultas-component.yaml#/components/schemas/StatusResponse'
+
+  /ubl2.1/status/document/{uuid}:
+    post:
+      summary: Consultar Estado por UUID (Síncrono/Individual)
+      description: |
+        Consulta el estado de un documento individual usando su CUFE, CUDE o CUNE.
+        
+        - Requiere el UUID del documento en la URL.
+        - Permite reenviar correos (`sendmail`) si se configura en el body.
+      tags:
+        - Consultas de Estado
+      parameters:
+        - in: path
+          name: uuid
+          schema:
+            type: string
+          required: true
+          description: CUFE, CUDE o CUNE del documento.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: './consultas-component.yaml#/components/schemas/StatusDocumentRequest'
+      responses:
+        '200':
+          description: Consulta exitosa
+          content:
+            application/json:
+              schema:
+                $ref: './consultas-component.yaml#/components/schemas/StatusResponse'
+
+  /ubl2.1/status/events-document/{uuid}:
+    post:
+      summary: Consultar Eventos de un Documento
+      description: |
+        Consulta los eventos asociados a un documento (e.g. Radian) usando su UUID.
+      tags:
+        - Consultas de Estado
+      parameters:
+        - in: path
+          name: uuid
+          schema:
+            type: string
+          required: true
+          description: CUFE del documento.
+      responses:
+        '200':
+          description: Consulta de eventos exitosa
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Estructura de eventos (pendiente de definir en detalle)
