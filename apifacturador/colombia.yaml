@@ -1,0 +1,28 @@
+openapi: 3.0.0
+info:
+  title: FacturaLatam ApiDianV2.1 - Colombia
+  description: Servicios disponibles del proyecto APIDIAN de Facturalatam
+  version: 1.0.0
+servers:
+  - url: http://buho.fastura.uio.la/api
+    description: Servidor Principal
+paths:
+  /ubl2.1/config/{nit}/{dv}:
+    $ref: './01-ConfiguracionesBasicas/01a-configuracion-empresa.yaml#/paths/~1ubl2.1~1config~1{nit}~1{dv}'
+  /ubl2.1/config/certificate:
+    $ref: './01-ConfiguracionesBasicas/01a-configuracion-empresa.yaml#/paths/~1ubl2.1~1config~1certificate'
+  /ubl2.1/config/software:
+    $ref: './01-ConfiguracionesBasicas/01b-configurar-factura-electronica/01b-configurar-software.yaml#/paths/~1ubl2.1~1config~1software'
+  /ubl2.1/config/softwarepayroll:
+    $ref: './01-ConfiguracionesBasicas/01c-configurar-nominas/01c-configurar-software-nomina.yaml#/paths/~1ubl2.1~1config~1softwarepayroll'
+  /ubl2.1/config/softwaresupportdocument:
+    $ref: './01-ConfiguracionesBasicas/01d-configurar-documentos-soporte/01d-configurar-software-ds.yaml#/paths/~1ubl2.1~1config~1softwaresupportdocument'
+  /ubl2.1/config/softwareeqdocs:
+    $ref: './01-ConfiguracionesBasicas/01e-documentos-equivalentes/01e-configurar-software-eqdocs.yaml#/paths/~1ubl2.1~1config~1softwareeqdocs'
+  /ubl2.1/config/resolution:
+    $ref: './01-ConfiguracionesBasicas/config-resolution.yaml#/paths/~1ubl2.1~1config~1resolution'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

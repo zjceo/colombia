@@ -1,0 +1,70 @@
+openapi: 3.0.0
+info:
+  title: Configurar Resolución (Master)
+  version: 1.0.0
+servers:
+  - url: http://buho.fastura.uio.la/api
+    description: Servidor Principal
+paths:
+  /ubl2.1/config/resolution:
+    put:
+      summary: Configurar Resolución (Master)
+      description: |
+        Configurar Resolución - Endpoint único para múltiples tipos de documentos.
+        
+        Este endpoint se utiliza para configurar la resolución de facturación para:
+        - Factura Electrónica (01)
+        - Notas Crédito/Débito (04, 05)
+        - Nómina Electrónica (09) y sus Notas (10)
+        - Documento Soporte (11) y sus Notas (13)
+        - Documentos Equivalentes (POS, Transporte, etc.) y sus Notas (25, 26)
+        
+        Revise los ejemplos para ver el cuerpo de solicitud requerido para cada tipo.
+      tags:
+        - Configuración General
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: './01b-configurar-factura-electronica/resolution-factura-component.yaml#/components/schemas/ResolutionFactura'
+                - $ref: './01c-configurar-nominas/resolution-nomina-component.yaml#/components/schemas/ResolutionNomina'
+                - $ref: './01d-configurar-documentos-soporte/resolution-ds-component.yaml#/components/schemas/ResolutionDS'
+                - $ref: './01e-documentos-equivalentes/resolution-eqdocs-component.yaml#/components/schemas/ResolutionEqDocs'
+            examples:
+              Factura:
+                $ref: './01b-configurar-factura-electronica/resolution-factura-component.yaml#/components/examples/ResolutionFacturaExample'
+              Nomina:
+                $ref: './01c-configurar-nominas/resolution-nomina-component.yaml#/components/examples/ResolutionNominaExample'
+              NominaNota:
+                $ref: './01c-configurar-nominas/resolution-nomina-component.yaml#/components/examples/ResolutionNominaNotaExample'
+              DocumentoSoporte:
+                $ref: './01d-configurar-documentos-soporte/resolution-ds-component.yaml#/components/examples/ResolutionDSExample'
+              DocumentoSoporteNota:
+                $ref: './01d-configurar-documentos-soporte/resolution-ds-component.yaml#/components/examples/ResolutionDSNotaExample'
+              POS:
+                $ref: './01e-documentos-equivalentes/resolution-eqdocs-component.yaml#/components/examples/ResolutionPOSExample'
+              Transporte:
+                $ref: './01e-documentos-equivalentes/resolution-eqdocs-component.yaml#/components/examples/ResolutionTranspExample'
+              ServiciosPublicos:
+                $ref: './01e-documentos-equivalentes/resolution-eqdocs-component.yaml#/components/examples/ResolutionSSPExample'
+              Cine:
+                $ref: './01e-documentos-equivalentes/resolution-eqdocs-component.yaml#/components/examples/ResolutionCineExample'
+              EqDocNotaCredito:
+                $ref: './01e-documentos-equivalentes/resolution-eqdocs-component.yaml#/components/examples/ResolutionNCEqDocExample'
+              EqDocNotaDebito:
+                $ref: './01e-documentos-equivalentes/resolution-eqdocs-component.yaml#/components/examples/ResolutionNDEqDocExample'
+              Contingencia:
+                $ref: './resolution-adicionales-component.yaml#/components/examples/ResolutionContingencyExample'
+              Exportacion:
+                $ref: './resolution-adicionales-component.yaml#/components/examples/ResolutionExportExample'
+      responses:
+        '200':
+          description: Resolución configurada exitosamente
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

@@ -1,0 +1,77 @@
+openapi: 3.0.0
+info:
+  title: 02B - Configurar Notas
+  version: 1.0.0
+servers:
+  - url: http://buho.fastura.uio.la/api
+    description: Servidor Principal
+paths:
+  /ubl2.1/config/resolution:
+    put:
+      summary: Configurar Resolución (NC/ND)
+      description: |
+        CONFIGURAR RESOLUCION DE NOTAS CREDITO / DEBITO
+        
+        - Si se instalo un dominio se debe utilizar de la siguiente manera:
+        http://midominio.com/api/ubl2.1/config/resolution
+        
+        - Requiere un token de autorizacion.
+        - Los datos necesarios para llenar los campos JSON cuyo nombre finalice con "_id" se encuentran en las tablas parametricas de la base de datos de la API.
+        - La resolucion de notas credito/debito no requiere una resolucion autorizada por la DIAN, por lo tanto los datos from, to y prefix, son escogidos por nosotros mismos.
+      tags:
+        - Configuración Factura Electrónica
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type_document_id:
+                  type: integer
+                  description: "4 para Nota Crédito, 5 para Nota Débito"
+                  example: 4
+                from:
+                  type: integer
+                  example: 1
+                to:
+                  type: integer
+                  example: 99999999
+                prefix:
+                  type: string
+                  example: "NC"
+            examples:
+              NotaCredito:
+                summary: Configurar Resolución Nota Crédito
+                value:
+                  type_document_id: 4
+                  from: 1
+                  to: 99999999
+                  prefix: "NC"
+              NotaDebito:
+                summary: Configurar Resolución Nota Débito
+                value:
+                  type_document_id: 5
+                  from: 1
+                  to: 99999999
+                  prefix: "8"
+      responses:
+        '200':
+          description: Resolución creada/actualizada con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                  resolution:
+                    type: object
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

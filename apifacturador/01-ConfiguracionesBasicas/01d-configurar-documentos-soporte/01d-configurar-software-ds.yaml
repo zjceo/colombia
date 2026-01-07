@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  title: 01D - Configurar Documentos de Soporte
+  version: 1.0.0
+servers:
+  - url: http://buho.fastura.uio.la/api
+    description: Servidor Principal
+paths:
+  /ubl2.1/config/softwaresupportdocument:
+    put:
+      summary: Configurar Software Documento Soporte
+      description: |
+        CONFIGURAR SOFTWARE DOCUMENTO SOPORTE
+        
+        - Requiere un token de autorizacion.
+      tags:
+        - Configuración Documentos Soporte
+      security:
+        - bearerAuth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                idsupportdocument:
+                  type: string
+                  example: "82bf0c5e-0117-434d-9471-8a5ee58ae682"
+                pinsupportdocument:
+                  type: integer
+                  example: 12345
+      responses:
+        '200':
+          description: Software documento soporte configurado
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
