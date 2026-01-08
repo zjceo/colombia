@@ -1,0 +1,8 @@
+﻿{
+    "label":  "Regenerar PDFs",
+    "link":  {
+                 "type":  "generated-index",
+                 "description":  "Documentacion para Regenerar PDFs"
+             },
+    "position":  13
+}

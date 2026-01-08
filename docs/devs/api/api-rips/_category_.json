@@ -1,8 +1,8 @@
-{
-  "label": "API RIPS",
-  "position": 15,
-  "link": {
-    "type": "generated-index",
-    "description": "Servicios que conectan con apirips-docker (API externa)."
-  }
+﻿{
+    "label":  "API RIPS",
+    "link":  {
+                 "type":  "generated-index",
+                 "description":  "Documentacion para API RIPS"
+             },
+    "position":  15
 }
