@@ -85,6 +85,56 @@ paths:
     $ref: './04-CasuisticasDeEnvios/04-casuisticas/casuisticas.yaml#/paths/~1ubl2.1~1invoice?case=sendinvoice-testsetid-impuesto-inc'
   /ubl2.1/invoice?case=sendinvoice-testsetid-consumidor-final:
     $ref: './05-ConsumidorFinal/05-consumidor-final/consumidor-final.yaml#/paths/~1ubl2.1~1invoice?case=sendinvoice-testsetid-consumidor-final'
+  /api/information/89008003/1900-01-01/2023-09-15:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1information~189008003~11900-01-01~12023-09-15'
+  /api/total_documents/89008003/1900-01-01/2023-09-15:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1total_documents~189008003~11900-01-01~12023-09-15'
+  /information/89008003/page/0/page:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1information~189008003~1page~10~1page'
+  /documents:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1documents'
+  /api/ubl2.1/register-update-customer:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1ubl2.1~1register-update-customer'
+  /customer/31/31999910:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1customer~131~131999910'
+  /api/ubl2.1/certificate-end-date:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1ubl2.1~1certificate-end-date'
+  /ubl2.1/next-consecutive:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1ubl2.1~1next-consecutive'
+  /api/ubl2.1/xml/document/7735317bef9d6b648eeb0d0ad56ec5feb63911072947a3d06a894bf6dd66a3c912325660eeb27d7424d23af740432f66:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1ubl2.1~1xml~1document~17735317bef9d6b648eeb0d0ad56ec5feb63911072947a3d06a894bf6dd66a3c912325660eeb27d7424d23af740432f66'
+  /api/ubl2.1/emailconfig:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1ubl2.1~1emailconfig'
+  /api/ubl2.1/name-by-nit/89008003:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1ubl2.1~1name-by-nit~189008003'
+  /api/ubl2.1/SearchCompany/1124024319:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1ubl2.1~1SearchCompany~11124024319'
+  /api/ubl2.1/join-pdfs:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1ubl2.1~1join-pdfs'
+  /api/ubl2.1/download/89008003/Attachment-SETP990000399.xml/BASE64:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1ubl2.1~1download~189008003~1Attachment-SETP990000399.xml~1BASE64'
+  /api/ubl2.1/download/89008003/Attachment-SETP990000506.xml/BASE64:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1ubl2.1~1download~189008003~1Attachment-SETP990000506.xml~1BASE64'
+  /api/invoice/89008003/FES-SETP990000650.pdf:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1invoice~189008003~1FES-SETP990000650.pdf'
+  /api/receivedfile/89008003/ad090011631902722219520220419145805646.xml:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1receivedfile~189008003~1ad090011631902722219520220419145805646.xml'
+  /api/ubl2.1/invoice/current_number/1:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1ubl2.1~1invoice~1current_number~11'
+  /api/ubl2.1/delete/company/89008003/2:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1ubl2.1~1delete~1company~189008003~12'
+  /api/send-email-customer/NO:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1send-email-customer~1NO'
+  /api/ubl2.1/send-email:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1ubl2.1~1send-email'
+  /api/send-email-employee/NO:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1send-email-employee~1NO'
+  /api/ubl2.1/config/logo:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1ubl2.1~1config~1logo'
+  /api/ubl2.1/certificates-listing/89008003:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1ubl2.1~1certificates-listing~189008003'
+  /api/ubl2.1/config/generateddocuments:
+    $ref: './06-Utilidades/06-utilidades/utilities.yaml#/paths/~1api~1ubl2.1~1config~1generateddocuments'
 components:
   securitySchemes:
     bearerAuth:

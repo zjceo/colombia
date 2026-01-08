@@ -1,0 +1,76 @@
+---
+id: send-invoice-test-set-id-order-reference
+title: "SendInvoice-TestSetId Order Reference"
+description: "ENVIO DE FACTURA CON ORDER REFERENCE"
+sidebar_label: "SendInvoice-TestSetId Order Reference"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV21vGkkM/isjf17ILOQIrHS6o2R7QkohgiY6qY1Ww6wJU83ObOeFSxrx30/ehVDS6FSddPcpfNnF9tiPH3tseIISvXSqDsoayCCf3U7n7DJn78eTjzeLMZvMZ2y+uMwXbJG/zxf5bJJ/Np9Nh41rraRgWrBK+Uqw0spYoQlCKmvY14gMNbteTD/kC/aD1xLpoEfZGPMe6+xN58vWeNlto9wEpZVEhj4gwy9Y1doyGYUpLXP4NSp0gikjdVSOoaGYf3642vtfCxmiEww1yuCsafBaz6SoanpY59DX1pQKTUDPBLOuRFc4XKNDIzFhHlkkCN8E24iVClFoShJZLcix2SrhmIkVOuspao2lKm33s4EEgrj3kH2CifBR+aCkaExys1XWw10ClAD68M6Wj5A9gbQmoAn0KuqGXSrK2RdPlXkCLzdYCXoLjzVCBnb1BWWABPBBVLVGUplYrdBBNhpxznn/l0HSWBeH6hSqhCxNoBSBXPR4L+3wYSe9ILyqIhk/z/gwS3tAAL3VkVAUB8eQDi8GvPmkkEDtcK0eIINl/vEaEvBoykooDVlwEROQ0Qdb0cEnUCWaoNb7vJ49jjhPB4PzYT+BctuAM6IBMp3d5ovldD7Ll+xyfDu+YsvxkmJurCF9P+X94SgdjPqQgChLh95DBpOrK3bOZos56/c7I078tIhAaHwQpkRnV9RA2prSGvv7Pam70laQQIVOboQJhcN75YMT+3vRZsw7nPy9ZPQkLSL4wLp198Kob0dFmkAVjZKqFlqFx0Y27PX25hSzwtZwl8CLZmwpLBopZDDu9fkgHV1cvH83gQSU9xELKuuzRY/3eCflHZ7CLoFaPDZw19ZV5Or7703I3tGmwrCxZSPt86O43Ed4bpxR2zhlbHkqKhQ+uqY2nGIKre1fwkgs5Ea4e6Tr8ASl8tLGYy+2ukKZkji0DrK10B5/PF44FM1lgMt8ObnJZx/n7I98li/GV9QBFTmlWnWbKq2Ex+JZODzn/f6gm/Zhd5eAxnuhi8oaDMI9FsEGoT2xopXBAh8CGk8JvXKc7vVDgQ9SR6+2r0ZoTZqpdGqStl3U4jtm14QvXuLf5/y6shaPYqVfd71r4x+S+vTUwmlLTK/HQ7+MBoN+dzggj+gkttJRm8FpgFMCldlaJbEgvtoY0ahwaIAm2AV/NiuLr1GYoMIjuYfkp2heO8TCroufbo8Wx//STd+zffev6P4Hfk9rcYhxuqcn8w9TGo3ser5gy3xxO51M5zQcpS3xO/1hWqmA1WuT6pxGOBXyVRxN0iel293t6NOshtoaj82t6XFOj1OIyygler+Omtka95OUjrbTBTKorQ9NL4cNZHAWV7rXTc/2PfObFB5/pX2yF3QC+uAxqLLTTLjOcTLS3nFbdPtOdDTsNyHUPjs7e4pOF5TI7kzUChLYCqeI+gb5QdnCX4uoiYNV3NjuWnj69dCNyna1gJcVeCc8spvFFbNrFjbIxtdT2O2oUrSwF8fVnr9t57ft/Lad37bz23Z+287/+Xamqq5t8y9RBd0Ee/XvZwK0L1u4aZd3Oex2fwN8UEEE
+sidebar_class_name: "post api-method"
+info_path: api/04-casuisticas-envios/casuisticas-de-envios
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SendInvoice-TestSetId Order Reference"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/ubl2.1/invoice?case=sendinvoice-testsetid-order-reference"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+ENVIO DE FACTURA CON ORDER REFERENCE
+
+- Aplica la misma documentacion que el PRIMER ENVIO DE FACTURA de la seccion 02 - PRIMEROS ENVIOS.
+
+- Utilice este ejemplo cuando requiera incluir en el XML de la factura electronica los campos correspondientes a order_reference, se utiliza habitualmente para enviar numeros de pedido.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","example":{"number":990000356,"type_document_id":1,"date":"2021-08-17","time":"04:08:12","resolution_number":"18760000001","prefix":"SETP","sendmail":true,"customer":{"identification_number":900166483,"dv":1,"name":"INVERSIONES DAVAL SAS","phone":"3103891693","address":"CLL 4 NRO 33-90","email":"alexanderobandolondono@gmail.com","merchant_registration":"0000000-00","type_document_identification_id":6,"type_organization_id":1,"municipality_id":822,"type_regime_id":1},"order_reference":{"id_order":"A23061977FBC","issue_date_order":"2020-10-01"},"payment_form":{"payment_form_id":2,"payment_method_id":30,"payment_due_date":"2021-09-17","duration_measure":"30"},"allowance_charges":[{"discount_id":1,"charge_indicator":false,"allowance_charge_reason":"DESCUENTO GENERAL","amount":"0.00","base_amount":"840336.13"}],"legal_monetary_totals":{"line_extension_amount":"840336.13","tax_exclusive_amount":"840336.13","tax_inclusive_amount":"1000000.00","allowance_total_amount":"0.00","charge_total_amount":"0.00","payable_amount":"1000000.00"},"tax_totals":[{"tax_id":2,"tax_amount":"159663.86","percent":"19","taxable_amount":"840336.13"}],"invoice_lines":[{"unit_measure_id":70,"invoiced_quantity":"1","line_extension_amount":"840336.13","free_of_charge_indicator":false,"allowance_charges":[{"charge_indicator":false,"allowance_charge_reason":"DESCUENTO GENERAL","amount":"0.00","base_amount":"1000000.00"}],"tax_totals":[{"tax_id":2,"tax_amount":"159663.86","taxable_amount":"840336.13","percent":"19.00"}],"description":"COMISION POR SERVICIOS","code":"COMISION","type_item_identification_id":4,"price_amount":"840336.13","base_quantity":"1"}]}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

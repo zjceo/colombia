@@ -1,0 +1,91 @@
+---
+id: consultar-listado-de-certificados
+title: "Consultar Listado de Certificados"
+description: "## LISTADO DE CERTIFICADOS DIGITALES"
+sidebar_label: "Consultar Listado de Certificados"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVMFyGkkM/RWVckmo9oCzl+zcCGZTbFzYZfApdhkxI6CTnu5Od4/XhOJfvB+QU/7A/rEtzWDMZv0HmznAjFp6LT1Jb4MlxyJon7SzmOOrV3A6mkz7J2dwMoTB8GI6+mM06J+cTeBk9GE07Z8OJ1f2yg5jchHYlt5pmyJ4DpVObKFwNtYmUQDjIhQckl7ogkoXodRLnchwhMBLHVNorGzBEPTPRwrWBJEJSobkSopgKAJXPnCkCE7staUnC3D0XDx+F/RMUup0+nVim3RBhX78YfNOB+DKXvDXWnOQWEjuC1vBoTq5oL+1jvB61j8f3UzPPg7HszeZBA1j4p13ZHDzpNmypMoGzik6OIYjGDi70EsYuMqTXWcw0eLMdynQrX78oeTL11zyASlttYnmhh7uZ3XkEGcKCqq8e7g/SGNX0TmFx78rTmFP1OXFad7pyOkRzIr26htdSt3ChLTxxtbVnMPs4f6184V2lsybHMajqVRungn0FAgW2qTwQreyKwsgVEgaY5co7q+daLCuKdXePn4n4cTv81QQOLlgSXro4ktTEL2zem74+Y6jJ+72gOPR9BkpOuNeAGJoxqCt5gBr7CA8Nb1hNsKfk7Pxrn1zV66zK4sKEy0j5p/wMmmjSyo54rVCYaXixEHOrhUKFMf03pVrzDdYOCtDJq/kvdlR3v0cZX02GIsVVyRvae0Zc3Tzz1wkVMh3VHnDmG+28giwEBE5ivfbXk/+/r2MZx9RHCtOK1dijksWIE9phTl2yetuPTdvs+PunpfE8cjomLRddt/93uu96/V+Q4WRw21b0AbrYDDHVUo+5t3upg7mZk6Rt4KHCm8paJLmSDpPh21qC6pNwhzn9cplC4qpDpTV2mWGUP2U+nuKLLMKbgFpxbLfuN1urxUKUxfPnA6faVGo7cI13OkkpsPOKJQKWvDjrJf1cKvQu5gqaoi3VEnEYL9ppzomKhvVGByMzc+ZHnT0l/j9Er//j/i18pT4LnW9IW1lnxpt2OwU5hO2itBqDCp8SWVQ4V5nrhWuXEwSudmIbFwGs92K+WvNYd3K6ZO+yNdW4Yqp5NAI0xdetwssc3w0lfzE3dSS53+0VqRkL4wfhlNUON9JdOVKCQn0F6rmN0dU6JqFb2StsW3QkF3WtBTfFlKefwDXCiyP
+sidebar_class_name: "get api-method"
+info_path: api/06-utilidades/utilidades
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Consultar Listado de Certificados"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/ubl2.1/certificates-listing/89008003"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## LISTADO DE CERTIFICADOS DIGITALES
+
+Estos endpoints permiten consultar los certificados digitales registrados en la API, ya sea de todas las empresas o de una empresa específica.
+
+**Autenticación:**  
+Requiere un token de autorización (`API_TOKEN`).  
+Este token se obtiene en el Paso 1 - Config Company. Si se extravió, se puede consultar en la tabla `users`, campo `API_TOKEN`.
+
+**Parámetros en la URL:**
+
+- `company_identification_number` (opcional): NIT de la empresa para filtrar los certificados.
+    
+
+**Notas:**
+
+- Si no se envía el parámetro, retorna todos los certificados disponibles.
+    
+- Si se envía el NIT, retorna solo los certificados de esa empresa.
+    
+- No requiere campos JSON en el body.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","example":{}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,76 @@
+---
+id: send-invoice-test-set-id-allowance-a-credito
+title: "SendInvoice-TestSetId Allowance A Credito"
+description: "ENVIO DE FACTURA CON PAGO A CREDITO Y DESCUENTO"
+sidebar_label: "SendInvoice-TestSetId Allowance A Credito"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV21v20YM/isHfpaVs5U5toBhUxKtCJDYgZMMW18g0BJtX3G6U+8ljWv4vw8n2U7dtED3ZR+G6ItlkveQfMgjoQ1UZEsjGie0ghTyyZ9XU3aZsz+yi/uHWcYuphN2m72ZsoxdzPLLq/sp+5td5ncXD/nkfvpevVc9ljVSlMgkslrYGlmlS1+TclgKrdgnT4wku51d3eQz9sJBReGgpbI15gPW25lO7zrju7jzkltHjD5S3UjNhPTWGWSlrjWzxCqaE/NOSPEFTQDMbq9YgwYZqUeBhnmFbIGl8wbbiIQqpV8j84o1uNQMWWmoEk6zNcOKarTMkVoiC/x4Uk7H7xVE4HBpIX0HF2i9sE6UaEMKuXoU2sKHCAx98mTdua7WkG6g1MqRcuEVm5anwPTJRxvo3oAtV1RjeHPrhiAFPf9IpYMI6AnrRlJQKV/PyUA6HnPOeTLsR611see5EBWk/QgqdAFiwAf9Hh/1+mchXlEHGT9Nk2GaDCAEaLX0IYpiDwz90dmQt08fImgMLcQTpHCX399CBKW3TtfBcAOiIuXEYpfHAWE05nzEeRKBwtZhdp3/lU0u8xmbnmeTyym7nk4up5NpgF9pRZAmfZ6Mxv3hOIkAq8qQtZDC+WzGrq9uppNsxm7esiG7uGMJy+9ZCIxqFBJSQElPqCoyhZ6jqvTvK+2CKi51DRHUZMoVKlcYWorQJrvmDvn1OIeX9B3lFNhMdjbaLFGJL8+KQQS1V6IUDUrh1h31p+OdeXBYU2e4jaDBdetgoU0dyPv6/x5tL6vJrXTV4fFnceWpOKrruKtr5bu0iprQehP0CYdtBCil/oyqpKJcoVlS6NYNVMKW2j+3SqcrhKpC1tpAukBp6eXxwhC2vQqHS8/e5JN8ll1DBFgHUEhhyHncMjtHS8VBPOLDs3iQwPZDBJKWKItaK3Jo1oXTDqUNrEihqKAnR8qGhF4cDpfuqaCnUnorHr+D3hm0N/rYYHwI6zmt1m/xMvBdut+od8oG1ziXXyPz7ty2871P5t2mC6UjObweTvR/SQbxWShdQ6akTjbuYj/G/po0oR61KKkIHHX4Xgm3L3rr6IwfzKrik0flhFsHGIh+gtqFISr0ovjphuii+I/6Z1/AQMW/5vmHxB6XYI9/vAhvssnbbJKFxtAVHQnamy4c1d8bHKdhfIaKPQfER0l8esjtqELbD9vwtEO50cpSeyEGnIef44DufFmStQsvmW5oN9PC0W5wQAqNtq7tVbeCFE78XA7i/smuNX4r0dKvllS1E/QcWWfJiap3qFkPe7stCBFYMo9kdk1nwthdOdfY9ORk440sQjLbE2wERPCIRgSq2+j3yi6FBXoZWJj7lY4XaMMCjr3QsUT4lvNztMQeZtdML5hbUdjhsN2G2oR1OXterPnrbnzdja+78XU3vu7G//VuDMVb6PbrSLgw73/w2RVB2FRdcP2Yxxy2238Aa5Phvw==
+sidebar_class_name: "post api-method"
+info_path: api/04-casuisticas-envios/casuisticas-de-envios
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SendInvoice-TestSetId Allowance A Credito"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/ubl2.1/invoice?case=sendinvoice-testsetid-allowance-a-credito"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+ENVIO DE FACTURA CON PAGO A CREDITO Y DESCUENTO
+
+- Aplica la misma documentacion que el PRIMER ENVIO DE FACTURA de la seccion 02 - PRIMEROS ENVIOS.
+
+- Este ejemplo ilustra como se debe utilizar la API para enviar una factura que incluya un pago a credito y ademas tenga descuento.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","example":{"number":990000361,"type_document_id":1,"date":"2021-08-17","time":"04:36:32","resolution_number":"18760000001","prefix":"SETP","customer":{"identification_number":89008003,"name":"ALEXANDER OBANDO LONDONO","phone":3103891693,"address":"BRR LIMONAR MZ 6 CS 3 ET 1","email":"alexander_obando@hotmail.com","merchant_registration":"0000-00","type_document_identification_id":3,"type_organization_id":2,"municipality_id":149,"type_regime_id":2},"payment_form":{"payment_form_id":2,"payment_method_id":10,"payment_due_date":"2021-09-17","duration_measure":"30"},"allowance_charges":[{"discount_id":1,"charge_indicator":false,"allowance_charge_reason":"DESCUENTO GENERAL","amount":"600.00","base_amount":"8067.23"}],"legal_monetary_totals":{"line_extension_amount":"8067.23","tax_exclusive_amount":"8067.23","tax_inclusive_amount":"9600.00","allowance_total_amount":"600.00","charge_total_amount":"0.00","payable_amount":"9000.00"},"tax_totals":[{"tax_id":1,"tax_amount":"1532.77","percent":"19","taxable_amount":"8067.23"}],"invoice_lines":[{"unit_measure_id":70,"invoiced_quantity":"8","line_extension_amount":"8067.23","free_of_charge_indicator":false,"allowance_charges":[{"charge_indicator":false,"allowance_charge_reason":"DESCUENTO GENERAL","amount":"600.00","base_amount":"9600.00"}],"tax_totals":[{"tax_id":1,"tax_amount":"1532.77","taxable_amount":"8067.23","percent":"19.00"}],"description":"MANZANA","code":"MANZANA","type_item_identification_id":4,"price_amount":"1083.40","base_quantity":"8"}]}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

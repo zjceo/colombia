@@ -1,0 +1,76 @@
+---
+id: configurar-software-nomina
+title: "Configurar Software Nómina"
+description: "CONFIGURAR SOFTWARE NÓMINA"
+sidebar_label: "Configurar Software Nómina"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVMtS20AQ/JWtOa9fYCdBN4dAikMMZaByMD6MpbG9IO8u+wAclb4iX5Ezn8CPpUaysUwqqVSO8UHeWvWOerp7toCMfOqUDcpoSOD4fHR69vl6PByLy/PTq6/D8YkYvXz/cjYa3ugb3RJjuo+KHImoRTB3pEVGAmMwTn3DVBndZtRJLlJcWSNUZnHtTJ5LkRrnyFuj+UAuVMYnvZmHR3Qk7iMJ0sHRAkWO4tPZcLRfySr9u1JWMYt8V8w6Y5Xh+vrleaU0tm80SAi48JBM4NjouVpEh6l6edZiVGM8TCV4SqNTYQ3JpIAZoSM3jGEJyWRaTiU4uo/kw0eTrSEpIDU6kA68RGtzlSLL2Ln1rGUBPl3SCnkV1pYgATO7pTSABCZILijy/PZVpAbUB6f0AiTQE65szlsfPnQJ59lRa97vD1p96s5aeDgYtI4Ouu8OqTcYvMc+lBJ2SjXqKR1oQa5ZsHdw2B+U1Y87Yz19Teig2+W//WhcbtXdySrSrZKZ4bV4+fGkggH5r8psyKwoLE0GCdhYqYXsAHTiLD9o9zr1Rztbt7e9snnugZyvvIsuhwSWIdik05nFpWnP0YfosB2VaefYQatAvm2R3IPKjBMXTulUWcyhbITiklnXCjWj8doEf41pVDBINiDgjrjx8S48J1sP9sz/O4f3Da5NlKD03FRUVKjC0u0di5Z4TbrbpVwCi1Q33Gt3290qM8aHFVbeaKzIN46+Or+p8Va3xiD85xdI7XOgp9CxOSrN0lVJKzYhnUAd0noE5oon+G1QpxKWxgcGF8UMPV27vCx5+z6S46tnKuEBncIZWzmZlhKWhBm5Ktl3tK7tYcVbV0yJ4Xlkar8MWym3J4ZpSjb8ETttjN7F9RVImG1uupXJ+IjDR5DVMwGQYKoAVANR7RWQo15EXDC2Lsnhx/0x2YyF3C64qc0r1OsGwaKoEVcck7IEuemkig2U07IsfwI4PFUj
+sidebar_class_name: "put api-method"
+info_path: api/01-configuraciones-basicas/nomina/01-c-configurar-nominas
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Configurar Software Nómina"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/ubl2.1/config/softwarepayroll"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+CONFIGURAR SOFTWARE NÓMINA
+
+- Requiere un token de autorizacion.
+- El campo idpayroll, corresponde al id de software que entrega la DIAN.
+- El campo pinpayroll, corresponde al pin del software propio de nómina.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"idpayroll":{"type":"string","example":"880eafd9-f445-4e0b-a355-92063e1557a4"},"pinpayroll":{"type":"integer","example":12345}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Software de nómina configurado con éxito","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

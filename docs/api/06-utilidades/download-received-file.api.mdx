@@ -1,0 +1,98 @@
+---
+id: download-received-file
+title: "Download Received File"
+description: "**Descargar archivo recibido de la empresa**"
+sidebar_label: "Download Received File"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVVFy2zYQvcrOftkcRKIU27X4l9ROxm3qeBx7ptPIU63IlQSXBBgAtK1yeBf3DLmBc7HMipIs2dNO82/+EAQWb98+LB5rzNinTpdBW4MJRtER+5TclByQS2f6xoLjVI91ZiFjyAm4KB17iqKhGZpjHxjYZKXVJkDJrtCBIXuK4dcgHnZK64CvuShzq+D33z4oODt6p+CPk7NdIG9TTRJGUJl1MgVV0Ln+m0xmgXM4PbmAuQyMLcZOEuarVB2hFUWX5x+SKAIYmtH74wvoUqm7jlPWN5xNdM7dWmdsgp7olKT2plvLtKGCm5FAvIIo2g5JoujhXjJv6dAZGgDJIxtWEG3oM26PUtKGRjtLMZKH+xFl8SCOe72D171B3P+p3+/3Bvv9uN+P93qD3t7+Ybx/sHfQuSvy0e46s9T7pgrCNaVUf/tqlqWfSsYvlWbHQFsBS5XOyH37p+DgrAc2UlWrWyvAaLv+0cP9jg9Om+luAv+lw2glw/aOf5djq5Jz9mXFPtCaxycNG5v4TvvAChwH66RFHpdSW9i1sJBpx2kgEApMxe4Gw21E8xy0MlCw8XQthIGdk541MLGuoGDhl08fTztDgwoDTT0mn/FS+jOjjD1eKSzJUcGBnaxdKZRTYB/e2myOSY2pNXIYMqSyzJf6dq+93MEafTrjgmQU5iVjgnZ8zWlAhXxHRZkzJnUjjwD70hrPXqL7cSyv7Rv98VeUwILDzGaY4JQFqKQwwwSfX4vDQRwfxvHr7v/vRFTo2d20xdZYuRwTnIVQ+qTbrSuX/zkmz43kQoU35DSN85bxarGlPaEqD5jguJrZzoR8qBx1Km07OaF6UtZb8izNCnYCYcbw5uwEm6a5Uigqnj/qffwomUJtJnahqw4ytXlqCqWCFrzXiTsxNgpL60NBi0ORfsYEj+ytyS1lcL5UDd7pnJ/S2zjiF0t9sdQXS/0hS21NL/Bd6JY5aSM3ceEq9dK3PmPrJZvdhwpX3oUKf8C9rhTOrA+CWtdiRpcubxqZ/lKxm7cGvnIt+WoUzpgydgu7+4vnmODP7XV/dSHcJTyvpIZn7i4Gtbbi98cXqHC8/CkUNpMtjm6lMrrFBFGhXTjKwiwXczXmZKYVTSW2hZTnO4OPUjw=
+sidebar_class_name: "get api-method"
+info_path: api/06-utilidades/utilidades
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Download Received File"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/receivedfile/89008003/ad090011631902722219520220419145805646.xml"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+**Descargar archivo recibido de la empresa**
+
+Este endpoint permite descargar archivos recibidos (por ejemplo, XML, PDF, ZIP) asociados a una empresa, utilizando el NIT y el nombre del archivo.
+
+**URL:**  
+`GET /api/receivedfile/{identification}/{filename}`
+
+- **identification:** NIT de la empresa.
+    
+- **filename:** Nombre del archivo recibido a descargar (ejemplo: `ad090011631902722219520220419145805646.xml`).
+    
+
+**Autenticación:**  
+No requiere autenticación.
+
+**Parámetros en la URL:**
+
+- `identification` (string): NIT de la empresa.
+    
+- `filename` (string): Nombre del archivo recibido.
+    
+
+**Respuesta:**
+
+- Si el archivo existe, retorna el archivo como descarga directa (stream).
+    
+- Si el archivo no existe, retorna un mensaje de error en formato JSON.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","example":{}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"}}}
+>
+  
+</StatusCodes>
+
+
+      

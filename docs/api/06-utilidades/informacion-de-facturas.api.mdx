@@ -1,0 +1,120 @@
+---
+id: informacion-de-facturas
+title: "Información de Facturas"
+description: "## CONSULTA DE DOCUMENTOS POR NIT"
+sidebar_label: "Información de Facturas"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk1v4zYQ/SuDySUBFFvbXra67SbeImgSB/k4BJugGktjm6lEckkqjSH4x+xxDz311qv/WDGU7dhJit0cC0QHiV8zevOGw8cWS/aFUzYoozHDnR04GJ5eXB1ffoDDARwOD65OBqeXwws4G57D6dHljb7RAx8YWJfWKB3AsqtVYCiM9k0VyEFlPJSmaGrWwXggbwpFpbSg0eIEdlXJOqixKqhQi781lAxcW8ee9oA1lGrMjnVgD470RPwxjLmYkocZWJoo3Rn2BM/Ozg4MlnA8lMpbo9WoYi+T+3CwBhaMoHgCzxonmDKAGw0A0Cer+kqPjatJWOm3WoV5N9e9zzkYp+lldyVXMUT2losYYWl6K+tNMM8hwKyLsbNd/CXG34HVb0v2Jb8I77+Aaaho+aN8aZ7/OMKYj8d0/CC+fjslH+h1OINjqMivEr8GCzPIl/5eAXxj13wPtKUJ91t5d+1Xs2sXX+VnkHdOcth9l6ZPYS0X7a1D6HbyGbnF15qDM8v9m2sV8gxOF//U7CL1T6snODVqAjlFMlvRqpY2yMkjd3kGn2LilVaFokrgdsEbyK+vr6/3T072Dw9z2DW2UEZTtbfpI3K+9jFW+tUehI7tWFZUWXK0maOXHHQEnbO3DftAMnBM4FZ9ULqomhlnS958UxTsfZ7BkS5VQeCVkLM6qGDcMPCDCmabqZq972CesPZ0x7A+I+/NFqUU2ThWPlAZg9k89SausfHUk1wHZQ3sfqIiNI4SODWB4MAtvpUqmGX3cPFtFHtnw4stzgpTW9Izoc3UI8fPcowJBpp4zD7jVVCVKqlkj7cJCqc1B3Yyd5ug4y9C1EdTzjBrsTA6sA7SJGsrVXQ1cOdFClr0xZRrklaYWcYMzeiOi4AJ8gPVtmLM2rk84ljOXM9eVv+UpvLZFpbhbygLaw5TU2KGExZHlsIUM9wqwfe/pOn7NP25q8I0fjBBz+6+C6TFxlWY4TQE67N+v21c9fuIPM+lnDHBe6kEOf8FxmqygzSmpgqY4aiZmt6YvKSj1yjTqwiTJ5A/kme4Oj8GM4YwZfhwdoTz+fw2QWHo/JHLwSMdCUookTMVZGgzIwlKBJ3zd720l+I8QWt8qCkSrqkWi6OOjLUwLneNfwpwI4Fvuv2m22+6/abbb7r9f9PtTlkDP4S+rUhpkYQob+1SHD/jxj7HBFfyGNUzKmO6at4mODU+iE3biuZduWo+l+EvDbtZdwdYiaP05glOmUp2UVX/4BlmeNBpyv6lIJPlVSMIn10QRAfXav7r4BITHC3vFbUpxcTRn5jEd4aYoImyFTU5jrVYkZ40AjzDzqU8/wJopQ+O
+sidebar_class_name: "get api-method"
+info_path: api/06-utilidades/utilidades
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Información de Facturas"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/information/89008003/page/0/page"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## CONSULTA DE DOCUMENTOS POR NIT
+
+Este endpoint permite consultar los documentos asociados a un NIT (identificación de empresa) en diferentes rangos de fechas y paginación.
+
+### Endpoints disponibles
+
+- Consultar todos los documentos por NIT:  
+    /api/information/\{nit\}
+    
+    Retorna todos los documentos del NIT especificado.
+    
+- Consultar documentos por NIT y fecha específica:  
+    /api/information/\{nit\}/\{desde\}
+    
+    Retorna los documentos del NIT en la fecha `{desde}`.
+    
+- Consultar documentos por NIT y rango de fechas:  
+    /api/information/\{nit\}/\{desde\}/\{hasta\}
+    
+    Retorna los documentos del NIT entre las fechas `{desde}` y `{hasta}`.
+    
+- Consultar documentos por NIT y paginación:  
+    /api/information/\{nit\}/page/\{page\}/page
+    
+    Retorna los documentos del NIT en la página `{page}` (100 documentos por página).
+    
+
+### Parámetros
+
+- `nit`: Número de identificación tributaria de la empresa.
+    
+- `desde`: Fecha inicial en formato `YYYY-MM-DD` (opcional).
+    
+- `hasta`: Fecha final en formato `YYYY-MM-DD` (opcional).
+    
+- `page`: Número de página para paginación (opcional).
+    
+
+### Respuesta
+
+La respuesta incluye:
+
+- `success`: Indica si la consulta fue exitosa.
+    
+- `message`: Mensaje descriptivo.
+    
+- `data`: Listado de documentos agrupados por tipo (Factura, Nota Crédito, Nota Débito, POS).
+    
+- `company`: Nombre de la empresa.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","example":{}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"}}}
+>
+  
+</StatusCodes>
+
+
+      

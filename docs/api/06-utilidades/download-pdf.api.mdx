@@ -1,0 +1,93 @@
+---
+id: download-pdf
+title: "Download PDF"
+description: "**Descargar PDF de un documento electrónico**"
+sidebar_label: "Download PDF"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVM1u1DAQfhVrThC5mwACtblRuiAEgqrdnmjFzsazGxfHNrZTukR5GJ6BR+DF0CTdpUsrOHEjh8Sxx9988/NNB4piFbRP2lkoIcuOKFYYVhjE8dFLoUi0VihXtQ3Z5AQZqlL48d3qymXZuT2305hIkFXeaZuEp9DoREJtUcgIDFWtr9xfAcdDFNT4QBGlaJM2+itaxXbi3euZWPPCumYR2McWesJMsuzs5G2ZZUKc2/mr6Uzk6HWu7ZXTFeWdVmSTXuoKOdY+75bakMWG+jnf3hNZtmvCUOxTkTBbUpNzKwR7YPsNwmB5h9QQL95KxQO6pMYbV4r5y+np3ul0dnxwUBRF8expMfFqOX+4RedojjH8+NZQCi4KssxhjG9kO98lOy//yHW+ocp29zLdcX1C0bcUE27dnerblaRrHRNJESi5wBUzQ7CVa9w2XqF0oCqheBBTIGw4OJCQcBWh/ABnXFuFiiJcSPAYsKFEgc8uJAT6zP4PnVpD2UHlbCKbeInem5uY88vITdtBrGpqkFdp7QlKcItLqhJIoGtsvCEou54fBo7e2UiRrR8XBX92JfD+DbBhQ6l2CkpYEQN5TDWUsNNS+wdFsV8UT/J7qwkSIoWrMaQO2mCghDolH8s879pgPi4wUs+IIOEKg8aFGXltDkdyS2xNghIWbe0mS4ypDThptZsYBPkb+UOMxG0i3FKkmsTz49fQ9/2FBM7Vya+sTn8lRoK2SzdkTyfeul0bCRzBCP5oUkwK6CV4F1ODQ+q5p6CEI/fFGoeK2+B3UrfK93++/J8v/3q+jBMg0XXKvUFtuWEH8XU3Iv4Ao+RuKgcSNkIGCfdL+UJC7WLiu13HyjwLpu95+3NLYT3OrI2E+a+XUBMqCoP2P9EaSngxqmBvxgzZ3LTM9M5AY7Vup8+r6QwkLG7mYOMUXwn4BeTwLgEkuEFow+QY9jowaFctrth2hOTnJwA2rd4=
+sidebar_class_name: "get api-method"
+info_path: api/06-utilidades/utilidades
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Download PDF"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/invoice/89008003/FES-SETP990000650.pdf"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+**Descargar PDF de un documento electrónico**
+
+Este endpoint permite descargar el archivo PDF de un documento electrónico de una empresa, utilizando el NIT y el nombre del archivo.
+
+**URL:**  
+`GET /api/invoice/{identification}/{filename}`
+
+- **identification:** NIT de la empresa.
+    
+- **filename:** Nombre del archivo PDF a descargar (ejemplo: `FES-SETP990000650.pdf`).
+    
+
+**Parámetros en la URL:**
+
+- `identification`: NIT de la empresa.
+    
+- `filename`: Nombre del archivo PDF.
+    
+
+**Respuesta:**
+
+- Si el archivo existe, retorna el PDF como descarga directa (stream).
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","example":{}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"}}}
+>
+  
+</StatusCodes>
+
+
+      

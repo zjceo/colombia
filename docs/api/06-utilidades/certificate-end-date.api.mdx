@@ -1,0 +1,91 @@
+---
+id: certificate-end-date
+title: "Certificate End Date"
+description: "**FECHA DE VENCIMIENTO DEL CERTIFICADO DIGITAL**"
+sidebar_label: "Certificate End Date"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVEtyGzcQvUpXL1nQUPJydjRFx4wVSUVT3pgqszloirAxAIyPIprFuzhnyA3si6V6hvo5qUplm/IsyBng4XXjdffboebURBOy8Q5rHAxeTcavR3A6gXeT8/H0t+nkfH4Bp5MzGE9m8+mr6Xh0egGn01+m89HZYLBwCzdJmYGdDt64DIFjazJD410qNlMES7DmZkOgGW7ZNaY17LIHzRYajtmsTUPagzY3JpMFSr4xskBylNsQORFQyeyyIKmSqIPB1exMKEvy9WAAsHDLTc6hHg5bo31rnPFV49shBTMsK/uiOhk+RMt8xE4facq87MlG9/SN+f6nOxDO+HMxHBmKg+w/sZN4VLKP5ksPVOBXmZ3RHtgBW7ik5OEEjmDs3drcwNi3gdy2Erq3BvguR7o11Elme1IFobDm9CiZ7dgswYoSS0xN2ScFmVaWvn1dlsQxLRU01Ab/7etydDn9ML94MzlfHqS5pPj9j5Zz9Knui3QE5x7i/X3C4/4h0tXsrFo4AMnzObYLkuDXtxfnhzuuvN4+gCXcjFMonDI96JZ9dPSfK6/5acUbHyOn4J2WUwx00AtKNtZ8IX2v0rOKVAuHCjPdJKzf45VANWlOeK0wUKSWM0fZu1Yod+SUX3q9xXqHjXfSBPJKIVjpE+Pd8GOS0dhhajbckrzlbWCs0a8+cpNRId9RGyxjvdvLI8SSd+Ik6BfHx/L3fNAu3qAAW84br7HGUIQoUN5gjf/Ws6gwcbzt77HDEi3WKM2f6uFwV6L9II2zFxpUeEvR0Mr2ydxv9hmtqdiMNa7KxldrSrlEqorxlSVUP2T8UnpRZs6vIW8YRpdT3O/31wpFoNmjlJNHNRQat/adZCbL0tOCKJQb9OQn1XF1jHuFwafcUqe3o1ZOjB8FgInTcNoL8Cy5J7X7aWE/Lez/YWG9yWS+y8NgyTgZj27UdwefeI/9gPetgQr/0SuuFW58ygLf7aQaV9Hu97L8uXDc9k547xHytVe4YdIcO3P5xFsZwn68juaSlMBtkeT+ZpNiBw+ednk1R4Wrg7u2XsuRSL+j6n5rRIW+m+DOmrq1HVpyN4VuBNtTyvMXUbYFPA==
+sidebar_class_name: "put api-method"
+info_path: api/06-utilidades/utilidades
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Certificate End Date"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/api/ubl2.1/certificate-end-date"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+**FECHA DE VENCIMIENTO DEL CERTIFICADO DIGITAL**
+
+Este endpoint permite consultar la fecha de vencimiento del certificado digital asociado a la empresa autenticada.
+
+**URL de uso:**  
+`http://midominio.com/api/ubl2.1/certificate-end-date`
+
+**Autenticación:**  
+Requiere un token de autorización, obtenido en el Paso 1 - Config Company.  
+Si extraviaste el token, puedes consultarlo en la base de datos, tabla `users`, campo `API_TOKEN`.
+
+**Parámetros:**
+
+- No requiere parámetros en la URL.
+    
+- No requiere campos JSON en el body.
+    
+
+**Respuesta:**  
+Retorna la fecha de vencimiento del certificado digital de la empresa correspondiente al token utilizado en la autorización.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","example":{}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"}}}
+>
+  
+</StatusCodes>
+
+
+      

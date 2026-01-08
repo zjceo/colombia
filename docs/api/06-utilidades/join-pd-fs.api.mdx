@@ -1,0 +1,101 @@
+---
+id: join-pd-fs
+title: "JoinPDFs"
+description: "**Unir varios archivos PDF en uno solo**"
+sidebar_label: "JoinPDFs"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk1T20gQ/Stdfdp1DTJQ2WR3bhBIFUkKXAafwGWPpTYeMpoR80HwuvRj9rjn3HLlj6Vag8GQTapy2wM6yLKmX3fPez3dWmFFofS6idpZlNjrjaz2cKO8dgGULxf6xgUYHLwDspCsg+CM6/Uu7IU9DJGAbNU4bSM05GsdCdKP8BVB5cpUk40uABkqo7/7YnXpAq8ZBVQ3noIClSLZqEtVqRy1C7r2xs4KgAt7aCCFxJGgohmBtpUulQfDDh8jqZzSEsiAdfXME1RkHrx5CslEZSMVvKlebzT8KHs9DjAdnJyeQV81up9mZrfY6V85bbeaah6m2XZvnWmp777Ye9iQrpMmTxDdJ7K8N5Wi8/rvbMVbIgMLUhV52cXZS3HRGbAKEvZJefKw2hscTc5OPhwet/fhBsrf/VNT9C7AbzNXLeH96cnx7zLrsQXTLjUJe96rJQd2sytiDkpnMy0qZrY7blmVzE4Bb/lFNl+zWZqkvbywAJwk37dgGpcNTdbsTnQ1lXB00BEadeOeiFxk0BN442mub6cSBvxw5TrkTxE21TPyUwnHd19r8j9DsLWqacIqUTW5J+P4e8154090z3imeEihSRSieiD1VHNtuob8Wr8AdKujC0qAp+i8VSwoO01WV44FnqlAr1/Bkou3JhvUFWcAd/8y8CFg59yVyXs+N0DeO//E5wa0WywuLAqM6jKgPMdR1EZXqqKAY4GN8qqmSJ7XxgI9XfNG9l21RLnC0lmuVX5UTWN02RVb/yrwuV9hKBdUK35ihVEi10IZUSDdqroxxEvP2UWJg4N3YWvE2w5FU81RYF44z442SwXljsBcACjxDAVmbVHi6z+xFb+GePPLiD9+gHi1gfhrE/Fmm6+dXWzHLV/MaWicDRSYjd3tbf552kBPPiAb1hQXrkKJjQtMYqPiAiX+Zy9BgYH8TRZuhckblLiIsQmy318lbyZcTS1jUSC3VjUzOYX1Ys5jrpKJKHGWFq6YqxCTV0XSrjAKxbM891UgGA0/gptDXBDsDY6wbduxQK6I4WPtHL7I345bgdrOXXc8dGQ2Ng+fQBYv87pTbBfb2IpO+FrZNW8o8b3Tlvl6rsXG2XyZvy/z92X+/u/nb56QkW5jvzFKWz7vXdte3Tf6c8zNOpctCnxs9mOBC54J8hxXK05z5E3b8uvrRH6ZZ/e6yfO/VmCu1a6rfqIlSnybG8bWGWfC5iZxRt8Ndu7nD6OITxMKnN1/ENSuYoxXn1F0d4ko0HVNqRsu3bsVGmUvk7pk2+yTr28cXCqe
+sidebar_class_name: "post api-method"
+info_path: api/06-utilidades/utilidades
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"JoinPDFs"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/ubl2.1/join-pdfs"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+**Unir varios archivos PDF en uno solo**
+
+Este endpoint permite unir varios archivos PDF de documentos electrónicos de la empresa autenticada en un solo archivo PDF.  
+El usuario debe indicar los documentos a unir y el nombre del archivo resultante.
+
+**URL:**  
+`POST /api/ubl2.1/join-pdfs`
+
+**Autenticación:**  
+Requiere token de autorización en el header:  
+`Authorization: Bearer {API_TOKEN}`
+
+**Parámetros (body JSON):**
+
+- `pdfs`: Array de objetos con los datos de cada PDF a unir. Cada objeto debe incluir:
+    
+    - `type_document_id`: ID del tipo de documento.
+        
+    - `prefix`: Prefijo del documento.
+        
+    - `number`: Número del documento.
+        
+- `name_joined_pdfs`: Nombre del archivo PDF resultante.
+    
+
+**Respuesta:**
+
+- Si la operación es exitosa, retorna el PDF unido en base64 y un mensaje de éxito.
+    
+- Si ocurre un error, retorna el mensaje de error.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","example":{"name_joined_pdfs":"PDFs-Unidos.pdf","pdfs":[{"type_document_id":1,"prefix":"T","number":"68"},{"type_document_id":1,"prefix":"T","number":"67"},{"type_document_id":1,"prefix":"T","number":"65"},{"type_document_id":4,"prefix":"9","number":"70000012"}]}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"}}}
+>
+  
+</StatusCodes>
+
+
+      

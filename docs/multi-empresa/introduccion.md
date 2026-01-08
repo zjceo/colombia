@@ -1,191 +1,211 @@
 ---
-title: "Panel Administrador Multiempresa"
-description: "Guía completa para configurar y administrar empresas en el sistema de facturación electrónica para Colombia"
-icon: "building"
+title: Sistema de Facturación Electrónica Colombia
+description: "Sistema de Facturación Electrónica para Colombia: Solución completa multiempresa que cumple con los requisitos de la DIAN."
+sidebar_position: 0
 ---
+
+import DocsCard from '/src/components/global/DocsCard';
+import DocsCards from '/src/components/global/DocsCards';
+
+# Sistema de Facturación Electrónica Colombia 🇨🇴
+
+<head>
+  <title>Sistema de Facturación Electrónica Colombia - DIAN</title>
+  <meta
+    name="description"
+    content="Sistema de Facturación Electrónica para Colombia: Solución completa multiempresa que cumple con los requisitos de la DIAN."
+  />
+</head>
 
 ## Introducción
 
-Bienvenido al sistema de facturación electrónica para Colombia. En esta guía aprenderás cómo crear tu empresa, configurarla y explorar los módulos principales del panel administrador.
+El Sistema de Facturación Electrónica para Colombia es una plataforma completa diseñada específicamente para cumplir con los requerimientos fiscales de la DIAN. Nuestra solución multiempresa permite administrar múltiples compañías, gestionar planes de suscripción y configurar cada empresa de manera independiente desde un panel centralizado.
 
-## Dashboard
+Comienza ahora explorando las secciones principales del sistema o siguiendo nuestra guía de configuración inicial.
 
-El módulo Dashboard es el centro de control donde puedes:
+<DocsCards>
+  <DocsCard 
+    header="Panel Administrador"
+    href="panel-administrador"
+    icon="/img/icons/dashboard-icon.svg"
+  >
+    <p>Gestiona múltiples compañías desde un único panel centralizado. Crea empresas, visualiza el estado de todas tus cuentas y accede directamente a cada sistema.</p>
+  </DocsCard>
 
-- Crear nuevas empresas
-- Ver el listado de todas tus compañías
-- Acceder rápidamente a cada empresa con un solo clic
+<DocsCard
+header="Gestión de Planes"
+href="gestion-planes"
+icon="/img/icons/plans-icon.svg"
 
-<Card title="Vista General" icon="gauge">
-  Desde el Dashboard tendrás una vista consolidada de todas las empresas
-  administradas en el sistema.
-</Card>
+>
 
-## Módulo de Planes
+    <p>Crea y administra planes de suscripción personalizados con límites de usuarios y documentos. Configura planes mensuales o anuales según las necesidades de tus clientes.</p>
 
-Permite crear y gestionar diferentes planes de suscripción para tus clientes.
+  </DocsCard>
 
-### Crear un Nuevo Plan
+<DocsCard
+header="Configuración de Empresa"
+href="configuracion-empresa"
+icon="/img/icons/company-icon.svg"
 
-<Steps>
-  <Step title="Acceder al módulo">
-    Navega al módulo **Planes** desde el menú principal
-  </Step>
-  <Step title="Crear plan">Haz clic en el botón **Nuevo**</Step>
-  <Step title="Configurar detalles">
-    - **Nombre**: Identifica tu plan - **Precio**: Ejemplo: $18,000 COP -
-    **Límite de usuarios**: Ilimitado o número específico - **Límite de
-    documentos**: Ilimitado o cantidad definida - **Periodo**: Mensual o Anual
-  </Step>
-  <Step title="Guardar">Haz clic en **Guardar** para crear el plan</Step>
-</Steps>
+>
 
-<Info>
-  Los planes te permiten monetizar tu servicio y controlar el acceso de cada
-  cliente según el nivel contratado.
-</Info>
+    <p>Guía completa para crear y configurar empresas usando los datos del RUT. Aprende a configurar todos los parámetros fiscales y de acceso.</p>
 
-## Configuración del Sistema
+  </DocsCard>
 
-### Soporte al Cliente
+<DocsCard
+header="Control y Seguridad"
+href="control-seguridad"
+icon="/img/icons/security-icon.svg"
 
-Configura los canales de soporte que recibirán tus clientes para garantizar una atención eficiente.
+>
 
-### Módulo de Logs
+    <p>Monitorea actividades, consulta registros de auditoría y gestiona el acceso de tus clientes. Bloquea cuentas y mantén el control total del sistema.</p>
 
-El módulo **Locks** (Logs) te permite consultar:
+  </DocsCard>
+</DocsCards>
 
-- Detalle de alertas del sistema
-- Notificaciones enviadas
-- Actividades registradas por usuario
+## Descripción General
 
-<Warning>
-  Esta herramienta es esencial para mantener mayor control y seguridad del
-  sistema.
-</Warning>
+Este sistema se enfoca en proporcionar una solución integral de facturación electrónica multiempresa, permitiendo a los administradores gestionar múltiples clientes desde un único panel de control. La plataforma está diseñada para ser flexible, segura y 100% adaptable a las necesidades de cada negocio.
 
-## Crear una Nueva Compañía
+## Funcionalidades Principales
+
+### Panel Administrador Multiempresa
+
+- **Dashboard:** Visualiza y gestiona el listado completo de todas las compañías registradas en el sistema.
+- **Creación de Empresas:** Configura nuevas empresas con un solo proceso, ingresando todos los datos fiscales y de configuración necesarios.
+- **Gestión de Planes:** Crea y administra diferentes planes de suscripción con límites personalizables.
+- **Control de Acceso:** Ingresa directamente al sistema de cualquier cliente con un solo clic.
+- **Configuración Global:** Administra el soporte para clientes y consulta registros de actividad.
+
+### Módulo de Planes
+
+Crea planes de suscripción personalizados con las siguientes opciones:
+
+- **Nombre del Plan:** Identifica cada plan de forma única.
+- **Precio:** Define el costo del plan (en pesos colombianos).
+- **Límite de Usuarios:** Configura si el plan permite usuarios limitados o ilimitados.
+- **Límite de Documentos:** Establece cuántos documentos pueden emitirse por periodo.
+- **Periodo de Facturación:** Selecciona entre planes mensuales o anuales.
+- **Autorenovación:** Opción para renovar automáticamente las suscripciones.
+
+### Módulo de Configuración
+
+- **Soporte al Cliente:** Configura los canales y opciones de soporte que recibirán tus clientes.
+- **Módulo Locks (Registros):** Consulta el detalle de alertas, notificaciones y actividades registradas en el sistema para mayor control y seguridad.
+
+## Proceso de Creación de Empresa
 
 ### Requisitos Previos
 
-<Tip>
-  Antes de comenzar, asegúrate de tener a la mano tu **archivo RUT** (Registro
-  Único Tributario). Toda la información requerida se encuentra en este
-  documento.
-</Tip>
+Antes de crear una nueva compañía, es importante tener a la mano el **archivo RUT** de la empresa, ya que contiene toda la información fiscal necesaria.
 
-### Datos de la Empresa
+### Datos Requeridos
 
-<AccordionGroup>
-  <Accordion title="Información Tributaria">
-    - **Número de Identificación (NIT)**: Localizable en el RUT
-    - **DV (Dígito de Verificación)**: Se encuentra junto al NIT en el RUT
-    - **Razón Social**: Nombre legal de la empresa según el RUT
-    - **Tipo de Responsabilidad**: Ejemplo: Agente de retención IVA
-  </Accordion>
+#### Información Fiscal (extraída del RUT)
 
-{" "}
-<Accordion title="Configuración de Acceso">
+- **Número de Identificación (NIT)**
+- **DV (Dígito de Verificación)**
+- **Razón Social:** Nombre legal de la empresa
+- **Tipo de Responsabilidad:** Por ejemplo, Agente de Retención IVA
+- **Actividad Económica**
+- **Tipo de Organización**
+- **Régimen Tributario**
+- **Registro Mercantil**
 
-- **Subdominio** (opcional): Define la URL de acceso al sistema - **Correo de
-  Acceso**: Email del administrador principal - **Contraseña**: Debe ser segura
-- **Confirmar Contraseña**: Verifica la contraseña creada
-  </Accordion>
+#### Ubicación
 
-{" "}
-<Accordion title="Información Comercial">
+- **Departamento**
+- **Municipio**
+- **Dirección**
+- **Teléfono** (opcional)
 
-- **Plan**: Selecciona uno de los planes creados previamente - **Actividad
-  Económica**: Consulta el RUT - **Tasa IVA**: Según actividad económica -
-  **Tipo de Documento**: Definido en el RUT
-  </Accordion>
+#### Configuración del Sistema
 
-{" "}
-<Accordion title="Ubicación y Registro">
+- **Subdominio:** Define el subdominio personalizado para acceder al sistema (opcional)
+- **Correo de Acceso:** Email del administrador de la empresa
+- **Contraseña:** Contraseña segura para el acceso al sistema
+- **Plan Seleccionado:** Elige uno de los planes creados previamente
+- **Tasa ICA**
+- **Tipo de Documento**
+- **Módulos Activos:** Selecciona qué módulos tendrá disponibles el cliente
 
-- **Departamento**: Selecciona de la lista - **Municipio**: Según el
-  departamento - **Tipo de Organización**: Información disponible en el RUT -
-  **Régimen Tributario**: Común o Simplificado - **Registro Mercantil**:
-  Localizable en el RUT - **Dirección**: Dirección fiscal de la empresa -
-  **Teléfono** (opcional): Número de contacto
-  </Accordion>
+### Pasos para Crear una Empresa
 
-  <Accordion title="Módulos de Acceso">
-    Selecciona los módulos a los que tendrá acceso este cliente:
-    - Facturación
-    - Inventario
-    - Reportes
-    - Configuración
-    - Otros según disponibilidad
-  </Accordion>
-</AccordionGroup>
+1. Accede al módulo **Dashboard**
+2. Haz clic en **Nueva Compañía**
+3. Completa todos los campos con la información del archivo RUT
+4. Configura los datos de usuario (correo y contraseña de administrador)
+5. Selecciona el plan de suscripción
+6. Define los módulos disponibles para el cliente
+7. Haz clic en **Crear Empresa**
 
-### Finalizar Creación
+Una vez creada, la empresa aparecerá en el listado de compañías del Dashboard.
 
-Una vez completados todos los campos, haz clic en **Crear Empresa**. La nueva compañía aparecerá en tu listado de empresas.
-
-## Gestión de Empresas Creadas
+## Gestión de Empresas
 
 ### Acceso al Sistema del Cliente
 
-Puedes ingresar directamente al sistema de cualquier empresa con un solo clic desde el Dashboard. Se te solicitará:
-
-- Correo electrónico configurado
-- Contraseña asignada
+Con un solo clic desde el listado de compañías, puedes ingresar directamente al sistema de facturación del cliente utilizando las credenciales configuradas.
 
 ### Administración de Planes
 
-<CardGroup cols={2}>
-  <Card title="Limitar Recursos" icon="circle-exclamation">
-    Controla documentos y usuarios según el plan seleccionado
-  </Card>
-  <Card title="Autorenovación" icon="rotate">
-    Activa la renovación automática del plan
-  </Card>
-</CardGroup>
+- **Límite de Documentos:** Controla cuántos documentos puede emitir la empresa según el plan.
+- **Límite de Usuarios:** Restringe el número de usuarios que pueden acceder al sistema.
+- **Autorenovación:** Activa esta opción para que el plan se renueve automáticamente.
 
-### Bloqueo de Cuentas
+### Control de Acceso
 
-<Warning>
-  Si necesitas bloquear una cuenta por falta de pago u otros motivos, puedes
-  hacerlo desde las opciones de administración. El cliente no podrá ingresar a
-  su sistema hasta que se desbloquee.
-</Warning>
+- **Bloqueo de Cuenta:** Bloquea el acceso de un cliente por falta de pago u otros motivos. Una vez bloqueado, el cliente no podrá ingresar a su sistema.
 
-## Acciones Adicionales
+### Acciones Adicionales
 
-Desde el menú de opciones de cada empresa puedes:
+Desde el menú de acciones de cada compañía, puedes:
 
-<Steps>
-  <Step title="Editar Compañía">
-    Modifica la información de la empresa en cualquier momento
-  </Step>
-  <Step title="Cambiar Contraseña">
-    - Ingresa nueva contraseña - Confirma la nueva contraseña
-  </Step>
-  <Step title="Eliminar Cliente">
-    Elimina permanentemente una empresa del sistema
-  </Step>
-</Steps>
+- **Editar Compañía:** Modifica los datos de la empresa.
+- **Cambiar Contraseña:** Actualiza las credenciales de acceso del administrador.
+- **Eliminar Cliente:** Elimina permanentemente la empresa del sistema.
 
-## Beneficios del Sistema
+## Características del Sistema
 
-<CardGroup cols={3}>
-  <Card title="Rápido" icon="bolt">
-    Configura empresas en minutos
-  </Card>
-  <Card title="Seguro" icon="shield-check">
-    Control total con logs y permisos
-  </Card>
-  <Card title="Adaptable" icon="sliders">
-    100% personalizable a tus necesidades
-  </Card>
-</CardGroup>
+### Multiempresa
+
+- Gestiona múltiples compañías desde un único panel administrador
+- Configuración independiente para cada empresa
+- Acceso directo a cualquier sistema de cliente
+
+### Planes Flexibles
+
+- Crea planes personalizados según las necesidades de tus clientes
+- Límites configurables de usuarios y documentos
+- Opciones de facturación mensual o anual
+
+### Seguridad y Control
+
+- Sistema de registros (Locks) para auditoría
+- Control de acceso por empresa
+- Bloqueo de cuentas por falta de cumplimiento
+
+### Cumplimiento DIAN
+
+- Configuración completa de datos fiscales según el RUT
+- Soporte para diferentes tipos de responsabilidad tributaria
+- Gestión de actividades económicas y régimen tributario
+
+## Beneficios
+
+- **Rápido:** Crea y configura empresas en minutos
+- **Seguro:** Control total sobre accesos y actividades
+- **100% Adaptable:** Planes personalizables según necesidades
+- **Centralizado:** Administra todas tus empresas desde un solo lugar
+- **Escalable:** Crece sin límites con tu cartera de clientes
+
+## Empieza a Facturar Hoy Mismo
+
+Con nuestro Sistema de Facturación Electrónica para Colombia, podrás configurar empresas, administrar planes y supervisar todo desde un solo lugar. La solución perfecta para proveedores de servicios de facturación electrónica que gestionan múltiples clientes.
 
 ---
 
-<Note>
-  Con nuestro sistema de facturación electrónica, podrás configurar tu empresa,
-  administrar planes y supervisar todo desde un solo lugar. **Empieza a facturar
-  hoy mismo.**
-</Note>
+**Nota:** Este sistema está diseñado específicamente para cumplir con la normativa colombiana de facturación electrónica establecida por la DIAN.

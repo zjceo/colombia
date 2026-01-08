@@ -26,8 +26,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990000356,
                 "type_document_id": 1,
                 "date": "2021-08-17",
@@ -132,8 +131,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990060196,
                 "type_document_id": 1,
                 "date": "2025-01-20",
@@ -404,8 +402,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990000358,
                 "type_document_id": 1,
                 "resolution_number": "18760000001",
@@ -525,8 +522,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": "990060195",
                 "type_document_id": 1,
                 "date": "2025-01-15",
@@ -639,8 +635,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990000992,
                 "type_document_id": 1,
                 "date": "2024-06-07",
@@ -783,8 +778,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "billing_reference": {
                   "number": "990000360",
                   "uuid": "43408510e1fa4ce24159b4a339b0e223b31de9431df4d50af37d627a86669a520fe87f9938ace108f9ce91b6636aad90",
@@ -936,8 +930,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990000361,
                 "type_document_id": 1,
                 "date": "2021-08-17",
@@ -1036,8 +1029,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990000362,
                 "type_document_id": 1,
                 "date": "2021-08-17",
@@ -1163,8 +1155,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990000363,
                 "dv": 2,
                 "type_document_id": 1,
@@ -1272,8 +1263,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990001107,
                 "type_document_id": 1,
                 "date": "2024-06-25",
@@ -1373,8 +1363,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990001108,
                 "type_document_id": 1,
                 "date": "2024-06-25",
@@ -1465,8 +1454,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990000365,
                 "type_document_id": 1,
                 "resolution_number": "18760000001",
@@ -1581,8 +1569,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990000957,
                 "type_document_id": 1,
                 "resolution_number": "18760000001",
@@ -1697,8 +1684,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990001109,
                 "type_document_id": 1,
                 "date": "2024-06-28",
@@ -1830,8 +1816,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990000960,
                 "type_document_id": 1,
                 "resolution_number": "18760000001",
@@ -1952,8 +1937,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990000960,
                 "type_document_id": 1,
                 "resolution_number": "18760000001",
@@ -2112,8 +2096,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990000367,
                 "type_document_id": 1,
                 "date": "2021-08-17",
@@ -2254,8 +2237,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990000369,
                 "type_document_id": 1,
                 "date": "2021-08-17",
@@ -2398,8 +2380,7 @@ paths:
           application/json:
             schema:
               type: object
-              example:
-              {
+              example: {
                 "number": 990060197,
                 "customer": {
                   "address": "CLL 4 NRO 33-90",

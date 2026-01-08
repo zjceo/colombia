@@ -1,0 +1,98 @@
+---
+id: search-company-by-nit
+title: "SearchCompanyByNIT"
+description: "**Consulta de información de empresa por NIT**"
+sidebar_label: "SearchCompanyByNIT"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVEtu20gQvUqhVjNEWx9PNsOdbQiBkEAxHHkVG3GJLFntkN10d7XHCqHD5AzZzdYXGxQpS5YzuYG54KdZ9frVq+rXYsmxCLYR6x3mmGVn3sVUCUHJYN3Sh5oK+/TT6TfXTeBI0PgAs+k8y67clZtEYWBXNt46gYZDbYXBL4Qdh0OIxdOPaIsOOjnawRXbLV3pO+iYFB3+mD39W3PwGj4t2Yld2mKLNA92kYSCpT8HAFfu4x4FIkNgqux3AnawTOyEI/CjcHAUYQ2BxQdHUJL4CIWvPThfLwIbENt4A6UNXHQbGeAoVHpYAxViH2xJpfKpduwHqkGWXV58zLNMqdy8n8xhSI0dpkV1PBgPPzOFYnXm64bcetg6K5sbTTqCLHNWNO1FpfZVpbKr9Jd9AXQ/3f0kiWZtc7ZELvg+WQ4M4r9x1z9K4oP9vkVmB1zBiqnkkHfMT5KsugCdhhxOmQIHaE/Op1/nnz5MZj3vLDun8PSjZgk+5v0QHMHEKTmV4ZmY3o/gxlm5ybuGHvCHfcfCtpZ9PRccm6TK7+A/W2BXaC8DKe3ZdG52jTwYssAVP5AT/o1eHZbzUPk94h4qOajZRbrr0jkEr+zQoNBtxPwLXoqtdAo44rXBhgLVLBz037XBwPfK+9SXa8xbLLzTxugrNU1li07Z4V3Uw9ZiLFZck77JumHM0S/uuBA0yI9UNxVj3m70UuDYeBc5avTxaKSPw6P76QNqYM2y8iXmeMsK1JCsMMffz+N4fPxudPzur/HfaDByeOhraTGFCnNciTQxHw7bFKqvC4q8USg0+KAjuah6Qs8/e1ZLSpVgjou08oMlRUmBBsn6QUVoXrE+pcg6NeCXICuGk/Mpbjaba4Mq0sVezsleEYPa8E42K7r0sikGtYIefDwYDUa4Mdj4KDV1mjuqNeNAhNP1bDp/Te1F995s8c0W32zx/22xNy7hRxk2FVmnx62zjnbrPV+wN4y+7WgOjx4afOFA1wZXPoomta0aymWoNhtdvk8c1r3HPjuPfm0M9p3qLOsbrzHHs/7YHs2VmoZXSSn+YsBqMju3fD9RA1hsfbv2paYE+gdNd88RDfrOGTrD69ZarMjdJrrV2B5Sr/8ABOtDLA==
+sidebar_class_name: "get api-method"
+info_path: api/06-utilidades/utilidades
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SearchCompanyByNIT"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/ubl2.1/SearchCompany/1124024319"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+**Consulta de información de empresa por NIT**
+
+Este endpoint permite obtener información básica de una empresa consultando por su NIT (Número de Identificación Tributaria).  
+La consulta se realiza en fuentes externas y retorna datos como nombre, tipo, dirección, estado y actividad de la empresa.
+
+**URL:**  
+`GET /api/ubl2.1/SearchCompany/{nit}`
+
+- **nit:** Número de identificación tributaria de la empresa.
+    
+
+**Autenticación:**  
+Requiere token de autorización en el header:  
+`Authorization: Bearer {API_TOKEN}`
+
+**Parámetros:**
+
+- En la URL:
+    
+    - `nit`: NIT de la empresa a consultar.
+        
+
+**Respuesta:**
+
+- Si encuentra el NIT, retorna información relevante de la empresa.
+    
+- Si no lo encuentra, retorna un mensaje de error.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","example":{}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -8,6 +8,7 @@ servers:
 paths:
   /ubl2.1/config/resolution:
     put:
+      operationId: configurar-resolucion
       summary: Configurar Resolución (Master)
       description: |
         Configurar Resolución - Endpoint único para múltiples tipos de documentos.

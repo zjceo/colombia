@@ -1,0 +1,79 @@
+---
+id: configurar-resolucion-nc-nd
+title: "Configurar Resolución (NC/ND)"
+description: "CONFIGURAR RESOLUCION DE NOTAS CREDITO / DEBITO"
+sidebar_label: "Configurar Resolución (NC/ND)"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVcFO40gQ/ZVSnXYlkwBipN3cIGFWrEYJCuEEEaq0K0nP2F2e7jZDJvIHcZ5P4MdGZTtghoFdafc4XGLa1e73qt57vcWUg/G2iFYcDnA4Gb8/++tyejyF6enF5MPl8GwyhtEpjCez4wsYTk9HZ7MJ9GF0enI2m1y7a7cHFxYCg3UhUiZQOkglt86Krqa8YCijzexX8pAyZATBrkrLLjLk5NjT4NqtYywG/X5u2609I3mfCtsvF9lh76BvxC3tqu85SFYq1ubkKX8uLXvWQ6N8YqcnUBnF269krLieVn2QAClFCeDYcCBvJUBBniDL2JGHTAIYygsJ8PfFZAym3Ag4yReeYWkdZdYwGHFwjTc2vUYlxs6U7KInB+wgowCRFvqjH845emsotIQXVHeiBdGsHZ+fNeAIGlYKV985iRTAeE5tlH7KCxsVDPgnrs+27OimBIV4/fTo7HicNP8IRHJRaobN6UsveQJRYAOF56W9SyCIAw5GVjbVxogHJ0GilwC5DbmE3rXDBCOtAg6ucFjPovRk7MM3B+/JxNITnGZson/45qwhnCcY2JTexg0Orra4YPLsj8u4xsHVvJonqHQ4xBNJNzjYohEX2UV9pKLIrCGdcv9jUFluMZg156RPcVMwDlAWH9lETLDwUrCPlsPu7U0qpszZxRubdnZYF3nFHpMfJH/USGEskWDoH+617Qm866yOHu51CJgg31FeZIyDoypB7eRPv/9YdVAlGOXtmj/bv0qp6Dw65SF661bdahwPsaqqx5WatIIcNnqpe1XmOfmNunk3KQ/TVjA6sWdUMcFbykr+efeOdjQPGiY7tE9gG0RJDWJUi/XfY3hq7BsQ3v0zhD+0J3VbPIdCXGj6cri/rz/Px90FYTxTSn0VMGWNhdTlD/d3Dar/SZShNIZD6BQuRDImh1WCOYdAK3459YZNG3cvD6l2lHOOa0lxgEVZH03qMXw1OFGd6W/Zh9qYpc9wgG38Lsq19JYU1M+90kovIw3hF5a5YH9rU/Fw7q0ztqAMq47jL7QvDfWu7x8Z6GkKoy7TbtRFtYq0tdOnZDjd6f4/aDNB65aNCW2sPbR/eAJ70BGmijGoCtmHhuFBb7+3r3sLCTGnuv+OarSvCPq38bA/Hv3+Y686yfbrcv11ub5+uTbWiHwX+0VGts6G2pzb1tJX2IyryaWl1XuhY+t5gmsJUeu2W+3Jpc+qSpc/l6xJfDXXmPWWFmqCq3mV4JopZV/nwCduw1q1ujdTNI+p/DL8qmS349gYLuKbtfNORp1fzjDBRXvp55LqFk9flAt9wQFiglJbp46Pem2LGblVWYckNp/UqKDnodKGSLJ7UFLtK3KbDsDttqmYqaSrCpOWSS1xrOZVVX0H9BbaJA==
+sidebar_class_name: "put api-method"
+info_path: api/01-configuraciones-basicas/notas-fe/02-b-configurar-notas
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Configurar Resolución (NC/ND)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/ubl2.1/config/resolution"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+CONFIGURAR RESOLUCION DE NOTAS CREDITO / DEBITO
+
+- Si se instalo un dominio se debe utilizar de la siguiente manera:
+http://midominio.com/api/ubl2.1/config/resolution
+
+- Requiere un token de autorizacion.
+- Los datos necesarios para llenar los campos JSON cuyo nombre finalice con "_id" se encuentran en las tablas parametricas de la base de datos de la API.
+- La resolucion de notas credito/debito no requiere una resolucion autorizada por la DIAN, por lo tanto los datos from, to y prefix, son escogidos por nosotros mismos.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"type_document_id":{"type":"integer","description":"4 para Nota Crédito, 5 para Nota Débito","example":4},"from":{"type":"integer","example":1},"to":{"type":"integer","example":99999999},"prefix":{"type":"string","example":"NC"}}},"examples":{"NotaCredito":{"summary":"Configurar Resolución Nota Crédito","value":{"type_document_id":4,"from":1,"to":99999999,"prefix":"NC"}},"NotaDebito":{"summary":"Configurar Resolución Nota Débito","value":{"type_document_id":5,"from":1,"to":99999999,"prefix":"8"}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Resolución creada/actualizada con éxito","content":{"application/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"message":{"type":"string"},"resolution":{"type":"object"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
