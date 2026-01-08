@@ -3,7 +3,7 @@ info:
   title: Utilidades
   version: 1.0.0
 servers:
-  - url: https://{url_base}/api
+  - url: https://{url_base}
     variables:
       url_base:
         default: buho.fastura.uio.la

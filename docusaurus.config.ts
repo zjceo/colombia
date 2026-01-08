@@ -276,8 +276,8 @@ const config: Config = {
           ],
         },
         {
-          title: 'More',
-          items: [
+          //title: 'More',
+          //items: [
             //{
             //  label: 'Blog',
             //  to: '/blog',
@@ -286,7 +286,7 @@ const config: Config = {
             //  label: 'GitHub',
             //  href: 'https://github.com/facebook/docusaurus',
             //},
-          ],
+          //],
         },
       ],
       //copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,

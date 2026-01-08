@@ -1,5 +1,5 @@
 ---
-title: Sistema de Facturación Electrónica Colombia
+title: Introducción
 description: "Sistema de Facturación Electrónica para Colombia: Solución completa multiempresa que cumple con los requisitos de la DIAN."
 sidebar_position: 0
 ---

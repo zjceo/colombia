@@ -1,7 +1,7 @@
 ---
-title: Panel del Cliente - Sistema de Facturación Colombia
+title: Introducción
 description: "Guía completa del sistema de facturación electrónica para empresas colombianas. Aprende a gestionar ventas, inventario, reportes y más."
-sidebar_position: 1
+sidebar_position: 0
 ---
 
 import DocsCard from '/src/components/global/DocsCard';

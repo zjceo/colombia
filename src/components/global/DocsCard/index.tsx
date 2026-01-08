@@ -20,7 +20,7 @@ function DocsCard(props: Props): JSX.Element {
   const isStatic = typeof props.href === 'undefined';
   const isOutbound = typeof props.href !== 'undefined' ? /^http/.test(props.href) : false;
   const header = props.header === 'undefined' ? null : <header className="Card-header">{props.header}</header>;
-  const hoverIcon = props.hoverIcon || props.icon;
+  const hoverIcon = props.hoverIcon;
 
   const content = (
     <>
@@ -32,14 +32,18 @@ function DocsCard(props: Props): JSX.Element {
               typeof props.icon === 'string' ? (
                 <img src={useBaseUrl(props.icon)} className="Card-icon Card-icon-default" />
               ) : (
-                <div className="Card-icon Card-icon-default">{props.icon}</div>
+                <div className="Card-icon Card-icon-default" style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+                  {props.icon}
+                </div>
               )
             )}
             {hoverIcon && (
               typeof hoverIcon === 'string' ? (
                 <img src={useBaseUrl(hoverIcon)} className="Card-icon Card-icon-hover" />
               ) : (
-                 <div className="Card-icon Card-icon-hover">{hoverIcon}</div>
+                 <div className="Card-icon Card-icon-hover" style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+                   {hoverIcon}
+                 </div>
               )
             )}
           </div>
