@@ -1,0 +1,71 @@
+---
+id: registrar-producto
+title: "Registrar Producto"
+description: "Registrar Producto"
+sidebar_label: "Registrar Producto"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVdtuGzcQ/RVinlpgo4sf901tkiJFgAi20z44gjAixxITLskMSSWCoI8q8gn+sWC4lnWx3ALdl+WSh5zDmXNmt5BxmaC9gykHU3QOCWYNMH0tlPJvwWyg3YIOPpPPMsQYndWYbfDDzyl4mUt6RR3KKG8iQQth8Zl0hv4cy2QkgMeOoAGbqZsLbm6NfPpM7NH1XwkdzYu3eR7ZahIqkUMkzpaSBKiHHAKlzNYvYddAIh28mb+4bihptlF4X1w/ofUM0AB9xy46mRqNK/6I90U+Zzc5YHzpFsSCiYX1CtN/4lBnuz5eWoTgCL2s6dBF9JbSKRGht5Td9ZFCpBh86pN4NRrL6yQlT/VXmglNgOb/V/20ZJd5NS+Vcs/4lN01LW3KjKz2PKGBjvIqGGghhlTjYl5BC0OpZRqiqYoiXhOLwrdQ2EELq5xjaofDbWE3X2Ci3RCjHZaFuxqM4TzwDfHamsDK0GNobR9+eDVUNxmXvTbWyBYXrr/u/tQ+w/dYXJaKlVUY3GPKhXFQbBg4fBbq4/V7JTuVIacm03fql2S9ihxy0MEF5a06YvqrpGpWhV/Y5k294YKQiSdF8nA3O16+kWr1DI9BT+mXrEi6KkwIVxA0j4O3gTuUi/z59y1IeUQF14cu8WZvj71FD845ceZh+vTuT9OnPhSznXnt6OBzi41esNToYKHMhc5NM6p2vg81GzZXk79FLaV6jxk7NYn2tUX/19VgrF6pqghtQ1KT6fTZRf7gEoOIJT3BjE308A+akFRERkVO6eBT6QSXDCmHCqu/eml1Dz/W1g0++Xdeu7IhhUV8uF9v1JJSrkhDygRdOvI5pEZpZ8lnSo2Ipm/maiOx7u2ycL978MmLYolTz3c8GA1GtRmFlDv0RxW86LnLfTTT9zyMDm3tSdVn20c73tWSJmhADDlrYCVmbe9guxWxf2S328n010IsIp4d/FQ13MCK0BBXfX+hDbTwe9+YXt1KcIG7IiSeNalds98x0Zpi/lfs7KifTD/c3Ir0H39/XTCyh/Gb/NLwG7QADYSahOqoOrcFh35ZcCnY/kx5fgLvbJYi
+sidebar_class_name: "post api-method"
+info_path: devs/api/servicios-app/facturalatam-apidianv-2-1-servicios-app
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Registrar Producto"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/items/add"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Registrar Producto
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","required":["name","item_type_id","internal_id","sale_unit_price"],"properties":{"name":{"type":"string"},"second_name":{"type":"string"},"description":{"type":"string"},"item_type_id":{"type":"string","example":"01"},"internal_id":{"type":"string"},"sale_unit_price":{"type":"number"},"purchase_unit_price":{"type":"number"},"active":{"type":"boolean"},"companies_id":{"type":"integer"}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Producto creado","content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"integer"},"name":{"type":"string"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

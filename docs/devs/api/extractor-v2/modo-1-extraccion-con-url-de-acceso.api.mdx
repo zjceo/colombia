@@ -1,0 +1,73 @@
+---
+id: modo-1-extraccion-con-url-de-acceso
+title: "MODO 1 | Extracción con URL de acceso"
+description: "Realiza la extracción utilizando una URL con token de autenticación (AuthToken)."
+sidebar_label: "MODO 1 | Extracción con URL de acceso"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVt1OKzcQfpXRXAFaNoGqarVSW1F+VCQKKIHeQC4Ge5IYdj0+tjeHNN2n6iOcFzvybgIJ5Jwjtb1objbr+bFn5vs+7wI1B+WNi0YsFjhgKs2fBCUBP0dPSplPf1uoo0nLVgvUluB2cAFKLER5YguagerINhpFnfvOUR2nN8m4m9/bIYNnJZVhqwkceQK2UbyVAFqsZrACgSEatgxcgmIfzdgo0gLGhkglacnvLWbo+UPNIf4qeo7Fon01njUW0decoRKbDpJM5FxpFKW6eo8hFbfAoKZcUfoX546xQHl4ZBUxQ+fFpV05tFbjZM0rRG/sBDNkW1dY3OGAFZsZa8xwmLYbZah5THUZ2xYujU2GY1ZTOuGgeVu6sfiKUoimyCn9M1WuTC6H/cPv9/s/7vcPXrL8RiHSv8lS+3Jb+Ob802S/Ok+QdvoPFBh2jleDiry7sfM0RheKXk9RpFImsj9zY861IZtPZJYr6d0G9r2XtL+4p5/yPMemyTCa2OY4bfEXxQ+6mWPTJLPn4MSGblCH/X56bNZwugZcfjZRAuF/Bo1SJmtO5D3NMUMTuQrvu9u8be+AJyZEL6nHjoIE4EdWdSQtAZz4hP6gPDn2bTBtjPxLu33hqDfGyYmoukps23q4y7ri7jBnpGLtt+CryfD49ux0q+Es4TJFH3vukLLV7UYilUBwTRPyax62rh66Oi+M5fM3RX2j2Kbp4LAFLR0+cOlQcZyKxgKdhLZHFKdYYI+c6XWtxgwD+xn7gMXdouNJi+Ci1ytFUTmVEIvv+v3+O7oM2c+MFg8XyQ9eDoFN9iYRr0yzw1zkG9muveh6ieCd00euXCm72IwyTHAdvGrg6YpxK81al6Z18VnXgk1B2bS8nvkf0TdDY8cd1pZzOfgB9l/7An8cYoap1V3FB3k/f9+HV3fNoFcIDumtJDg5P7rM7+29/Rn29i4lUrG3B8MaNAdXGp7UDBwgcLpodAJ3Cc7LnFUUOLo+T+Ewhwlb9lSmzAxKvGdgm+jnavZRIA0oXTlN1gKnohbblqpU1O9XJ1dwAH/ButSkC3Eln0pxkLd1LV416H9/zy7JFvk59lxJxq7dIB2D7pCcSdTpODTKMNEkrS8W6Xa49WXTpOUPNfs5FnejDGfkDT0kXNyNmgynTJp9S7onnmOBx11/9m/mLStnVNatFLzV68SuLuJIKXbxq76jNQ24vhreYIYPy8+HSlpuePqYPi3oIxaIGUo7r1Zz2rUFlmQnNU2Sb5cz/T4Do2osNg==
+sidebar_class_name: "post api-method"
+info_path: devs/api/extractor-v2/17-extractor-v-2
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"MODO 1 | Extracción con URL de acceso"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/scrape"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Realiza la extracción utilizando una URL con token de autenticación (AuthToken).
+Se recomienda para entornos donde no se tiene el certificado instalado.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"tipo":{"type":"string","enum":["Received","Sent"],"default":"Received"},"fechaDesde":{"type":"string","format":"date","example":"2025-08-01"},"fechaHasta":{"type":"string","format":"date","example":"2025-08-01"},"url":{"type":"string","description":"URL de autenticación (AuthToken) o URL base (Certificate)","example":"https://catalogo-vpfe.dian.gov.co/User/AuthToken?pk=..."}},"title":"ExtractorRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Extracción exitosa","content":{"application/json":{"schema":{"type":"object","properties":{"log":{"type":"array","items":{"type":"string"},"description":"Registro de pasos ejecutados por el scraper"},"data":{"type":"array","items":{"type":"object","properties":{"TipoDocumento":{"type":"string"},"Numero de Factura":{"type":"string"},"CUFE":{"type":"string"},"Fecha de Creación":{"type":"string"},"Total a Pagar":{"type":"number"},"LineItems":{"type":"array","items":{"type":"object"}}}}}},"title":"ExtractorResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

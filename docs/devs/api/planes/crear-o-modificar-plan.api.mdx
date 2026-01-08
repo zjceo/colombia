@@ -1,0 +1,74 @@
+---
+id: crear-o-modificar-plan
+title: "Crear o Modificar Plan"
+description: "Endpoint para crear un nuevo plan (si se envía todos los datos) o modificar uno existente."
+sidebar_label: "Crear o Modificar Plan"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVs1uGzcQfhViTrWx1Y8BXxboQYmFwECqCk58sgVjtBxJTHc5NMlVrC70SD3lEfxixXAl689NUt+6F4lcznwz33wz3AYizgPkdzAu0VKASQaaQuGNi4Yt5DC02rGxUTn0qApP6FVtla1pycqVaNUvwahAiuzy+W9UkTUHVXJQGiOHM8WqYm1mpkiGrOjJhEg2Uufe3tvz8xFHzM/P1bBUtMUKxi9JRbSRd7iFef5mVcHVZo+0SVudewsZeHqsKcR3rFeQN2lpPGnIo68pg4KtgMordK40BUp+3S9BkmwgFAuqUP7FlSPIgadfqIiQgfPsyEdDQd4avXcmRG/sHI4Zu75SmsoNNynSLQEpXGGkZe/66ii5DmRAT1i5UtxfwDoDixX9GHLE1dTTC+yBm/HHwUhdDdX45nb4bqCS18e4etBchAdjl2yKfQRjI83Jn0C8RxuNRq00qRkWsfYYlCNfGdkO+5D9y30IhyvPZfkfITQXdUU2io5I2edvlbH4gscHeAdwHrVB+3a01v5fkPq9fSgd3g4T2LGP9J2MHHnD+icQxukgC8ASS6PpL0VWVRToMPZ1BiFi/JliD0PE5HEr4776TQ2KaJZ8duyTp4H8ElvLHwn1j/ZwYdhSeF2vo+vRh9vRANbpkcYOjm1o+++i15OfIwIkRGkizXvTRqdREzmgUE7w5hmwiaOiuJB6gKvTXMC4gBy6m/glLfIySRuofQk5LGJ0Ie92m9qXD1MMtO6iM916Wl50+ifEfCK/NJq9VHHsWddFO+666lPEeUvlEr3BadkysfXa0jHDuoyQw7RecGeGQdqzUxvulHgCdXvzUYllon8wvpYBbpXzHLngkpU1ai/SM8l/koGwdLObscNtvdqZCBewnVWnA+e1edO/fG1EXL7SyP3eUctd7nqj/yLp/pEQdzLKwNgZp7KamBT2gUJM5ArX7bWXgVSvtex3ep2e2DkOsWpnySa19+n6Y/X7y402bst/wHCzU9r/5vrcSD7SUxRJGysEJCE3G6nfQZL6JIMFhyjrphEZ3fpyvZbtx5r8CvK7yU6pslpnsCDU5FNv/Ekr4bHl59fPgirHy1rQT7pynW0tBkVBLn737GSvR8e3nyGD6eZjoGItJh6/yocCfoUcIANO5UrNlPYaKNHOa5zL2dalPP8AsuAsng==
+sidebar_class_name: "put api-method"
+info_path: devs/api/planes/gestion-de-planes
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Crear o Modificar Plan"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/plan"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Endpoint para crear un nuevo plan (si se envía todos los datos) o modificar uno existente.
+
+**Nota:** El endpoint sirve tanto para creación como para edición.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string","description":"ID del plan (para modificación) o nuevo ID para creación.","example":"2"},"name":{"type":"string","description":"Nombre del plan","example":"PLAN DE PRUEBA 2"},"qty_docs_invoice":{"type":"integer","description":"Cantidad de facturas permitidas","example":15},"qty_docs_payroll":{"type":"integer","description":"Cantidad de documentos de nómina permitidos","example":5},"qty_docs_radian":{"type":"integer","description":"Cantidad de documentos radian permitidos","example":10},"qty_docs_ds":{"type":"integer","description":"Cantidad de documentos soporte permitidos","example":5},"period":{"type":"integer","description":"Periodo de validez en meses","example":1},"state":{"type":"integer","description":"Estado del plan (1 = Activo)","example":1},"observation":{"type":"string","description":"Observaciones del plan","example":"NINGUNA"}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Plan creado o modificado exitosamente","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

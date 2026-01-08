@@ -80,252 +80,252 @@ const config: Config = {
         config: {
           configuraciones_empresa: {
             specPath: "apifacturador/01-ConfiguracionesBasicas/01a-configuracion-empresa.yaml",
-            outputDir: "docs/devs/api/01-configuraciones-basicas/empresa",
+            outputDir: "docs/devs/api/configuraciones-basicas/empresa",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           configuraciones_software_fe: {
             specPath: "apifacturador/01-ConfiguracionesBasicas/01b-configurar-factura-electronica/01b-configurar-software.yaml",
-            outputDir: "docs/devs/api/01-configuraciones-basicas/software-fe",
+            outputDir: "docs/devs/api/configuraciones-basicas/software-fe",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           configuraciones_notas_fe: {
              specPath: "apifacturador/01-ConfiguracionesBasicas/01b-configurar-factura-electronica/02b-configurar-notas.yaml",
-             outputDir: "docs/devs/api/01-configuraciones-basicas/notas-fe",
+             outputDir: "docs/devs/api/configuraciones-basicas/notas-fe",
              sidebarOptions: {
                groupPathsBy: "tag",
              },
            },
           configuraciones_nomina: {
             specPath: "apifacturador/01-ConfiguracionesBasicas/01c-configurar-nominas/01c-configurar-software-nomina.yaml",
-            outputDir: "docs/devs/api/01-configuraciones-basicas/nomina",
+            outputDir: "docs/devs/api/configuraciones-basicas/nomina",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           configuraciones_ds: {
             specPath: "apifacturador/01-ConfiguracionesBasicas/01d-configurar-documentos-soporte/01d-configurar-software-ds.yaml",
-            outputDir: "docs/devs/api/01-configuraciones-basicas/documentos-soporte",
+            outputDir: "docs/devs/api/configuraciones-basicas/documentos-soporte",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           configuraciones_eqdocs: {
             specPath: "apifacturador/01-ConfiguracionesBasicas/01e-documentos-equivalentes/01e-configurar-software-eqdocs.yaml",
-            outputDir: "docs/devs/api/01-configuraciones-basicas/documentos-equivalentes",
+            outputDir: "docs/devs/api/configuraciones-basicas/documentos-equivalentes",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           configuraciones_resolution: {
             specPath: "apifacturador/01-ConfiguracionesBasicas/config-resolution.yaml",
-            outputDir: "docs/devs/api/01-configuraciones-basicas/resolucion",
+            outputDir: "docs/devs/api/configuraciones-basicas/resolucion",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           primeros_envios_factura: {
             specPath: "apifacturador/02-PrimerosEnvios/02a-factura/invoice.yaml",
-            outputDir: "docs/devs/api/02-primeros-envios/factura",
+            outputDir: "docs/devs/api/primeros-envios/factura",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           primeros_envios_nota_credito: {
             specPath: "apifacturador/02-PrimerosEnvios/02b-nota-credito/credit-note.yaml",
-            outputDir: "docs/devs/api/02-primeros-envios/nota-credito",
+            outputDir: "docs/devs/api/primeros-envios/nota-credito",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           primeros_envios_nota_debito: {
             specPath: "apifacturador/02-PrimerosEnvios/02c-nota-debito/debit-note.yaml",
-            outputDir: "docs/devs/api/02-primeros-envios/nota-debito",
+            outputDir: "docs/devs/api/primeros-envios/nota-debito",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           primeros_envios_nomina: {
             specPath: "apifacturador/02-PrimerosEnvios/02d-nomina/payroll.yaml",
-            outputDir: "docs/devs/api/02-primeros-envios/nomina",
+            outputDir: "docs/devs/api/primeros-envios/nomina",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           primeros_envios_nomina_ajuste: {
              specPath: "apifacturador/02-PrimerosEnvios/02d-nomina/payroll-adjust-note.yaml",
-             outputDir: "docs/devs/api/02-primeros-envios/nomina-ajuste",
+             outputDir: "docs/devs/api/primeros-envios/nomina-ajuste",
              sidebarOptions: {
                groupPathsBy: "tag",
              },
            },
           primeros_envios_documento_soporte: {
             specPath: "apifacturador/02-PrimerosEnvios/02e-documento-soporte/support-doc.yaml",
-            outputDir: "docs/devs/api/02-primeros-envios/documento-soporte",
+            outputDir: "docs/devs/api/primeros-envios/documento-soporte",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           primeros_envios_documento_soporte_ajuste: {
              specPath: "apifacturador/02-PrimerosEnvios/02e-documento-soporte/support-doc-adjust.yaml",
-             outputDir: "docs/devs/api/02-primeros-envios/documento-soporte-ajuste",
+             outputDir: "docs/devs/api/primeros-envios/documento-soporte-ajuste",
              sidebarOptions: {
                groupPathsBy: "tag",
              },
            },
           primeros_envios_documentos_equivalentes: {
             specPath: "apifacturador/02-PrimerosEnvios/02f-documentos-equivalentes/eqdocs.yaml",
-            outputDir: "docs/devs/api/02-primeros-envios/documentos-equivalentes",
+            outputDir: "docs/devs/api/primeros-envios/documentos-equivalentes",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           consultas_estado: {
             specPath: "apifacturador/03-ConsultasDeEstado/consultas.yaml",
-            outputDir: "docs/devs/api/03-consultas-estado",
+            outputDir: "docs/devs/api/consultas-estado",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           casuisticas_envios: {
             specPath: "apifacturador/04-CasuisticasDeEnvios/04-casuisticas/casuisticas.yaml",
-            outputDir: "docs/devs/api/04-casuisticas-envios",
+            outputDir: "docs/devs/api/casuisticas-envios",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           consumidor_final: {
             specPath: "apifacturador/05-ConsumidorFinal/05-consumidor-final/consumidor-final.yaml",
-            outputDir: "docs/devs/api/05-consumidor-final",
+            outputDir: "docs/devs/api/consumidor-final",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           utilidades: {
             specPath: "apifacturador/06-Utilidades/06-utilidades/utilities.yaml",
-            outputDir: "docs/devs/api/06-utilidades",
+            outputDir: "docs/devs/api/utilidades",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           pruebas: {
             specPath: "apifacturador/07-Pruebas/pruebas.yaml",
-            outputDir: "docs/devs/api/07-pruebas",
+            outputDir: "docs/devs/api/pruebas",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           produccion: {
             specPath: "apifacturador/08-PasoAProduccion/produccion.yaml",
-            outputDir: "docs/devs/api/08-paso-a-produccion",
+            outputDir: "docs/devs/api/paso-a-produccion",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           sector_salud: {
             specPath: "apifacturador/09-OtrosTiposDeFacturas/salud.yaml",
-            outputDir: "docs/devs/api/09-otros-tipos-de-facturas/salud",
+            outputDir: "docs/devs/api/otros-tipos-de-facturas/salud",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           sector_excenta: {
             specPath: "apifacturador/09-OtrosTiposDeFacturas/excenta.yaml",
-            outputDir: "docs/devs/api/09-otros-tipos-de-facturas/excenta",
+            outputDir: "docs/devs/api/otros-tipos-de-facturas/excenta",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           sector_mandato: {
             specPath: "apifacturador/09-OtrosTiposDeFacturas/mandato.yaml",
-            outputDir: "docs/devs/api/09-otros-tipos-de-facturas/mandato",
+            outputDir: "docs/devs/api/otros-tipos-de-facturas/mandato",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           sector_aiu: {
             specPath: "apifacturador/09-OtrosTiposDeFacturas/aiu.yaml",
-            outputDir: "docs/devs/api/09-otros-tipos-de-facturas/aiu",
+            outputDir: "docs/devs/api/otros-tipos-de-facturas/aiu",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           sector_contingencia: {
             specPath: "apifacturador/09-OtrosTiposDeFacturas/contingencia.yaml",
-            outputDir: "docs/devs/api/09-otros-tipos-de-facturas/contingencia",
+            outputDir: "docs/devs/api/otros-tipos-de-facturas/contingencia",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           sector_exportacion: {
             specPath: "apifacturador/09-OtrosTiposDeFacturas/exportacion.yaml",
-            outputDir: "docs/devs/api/09-otros-tipos-de-facturas/exportacion",
+            outputDir: "docs/devs/api/otros-tipos-de-facturas/exportacion",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           sector_transporte: {
             specPath: "apifacturador/09-OtrosTiposDeFacturas/transporte.yaml",
-            outputDir: "docs/devs/api/09-otros-tipos-de-facturas/transporte",
+            outputDir: "docs/devs/api/otros-tipos-de-facturas/transporte",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           generador_eventos: {
             specPath: "apifacturador/10-GeneradorDeEventos/eventos.yaml",
-            outputDir: "docs/devs/api/10-generador-de-eventos",
+            outputDir: "docs/devs/api/generador-de-eventos",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           batch_sends: {
             specPath: "apifacturador/11-BatchSends/batch_sends.yaml",
-            outputDir: "docs/devs/api/11-batch-sends",
+            outputDir: "docs/devs/api/batch-sends",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           planes: {
             specPath: "apifacturador/12-Planes/planes.yaml",
-            outputDir: "docs/devs/api/12-planes",
+            outputDir: "docs/devs/api/planes",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           regenerar_pdfs: {
             specPath: "apifacturador/13-RegenerarPDFs/regenerar_pdfs.yaml",
-            outputDir: "docs/devs/api/13-regenerar-pdfs",
+            outputDir: "docs/devs/api/regenerar-pdfs",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           servicios_app: {
             specPath: "apifacturador/14-ServiciosAPP/servicios_app.yaml",
-            outputDir: "docs/devs/api/14-servicios-app",
+            outputDir: "docs/devs/api/servicios-app",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           api_rips: {
             specPath: "apifacturador/15-ApiRips/api-rips.yaml",
-            outputDir: "docs/devs/api/15-api-rips",
+            outputDir: "docs/devs/api/api-rips",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           whatsapp: {
             specPath: "apifacturador/16-WhatsApp/whatsapp.yaml",
-            outputDir: "docs/devs/api/16-whatsapp",
+            outputDir: "docs/devs/api/whatsapp",
             sidebarOptions: {
               groupPathsBy: "tag",
             },
           },
           extractor_v2: {
             specPath: "apifacturador/17-ExtractorV2/extractor-v2.yaml",
-            outputDir: "docs/devs/api/17-extractor-v2",
+            outputDir: "docs/devs/api/extractor-v2",
             sidebarOptions: {
               groupPathsBy: "tag",
             },

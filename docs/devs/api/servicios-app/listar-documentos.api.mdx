@@ -1,0 +1,72 @@
+---
+id: listar-documentos
+title: "Listar Documentos"
+description: "Permite listar los documentos y filtrar por fecha (date='all', 'current_month', 'last_month', 'last_ninety') o búsqueda (search). Soporta paginación."
+sidebar_label: "Listar Documentos"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVU1vG0cM/SsDXmwD25Xto4AeDLgOUhiFUCftwRECapaSxp2dmXA4RgRBP6bHHovcctUfK7irL1upa+RUXSTt8uPxkY9cguAsw/AerqMtLQWJGcYVNJQtuyQuBhjCiLh1Qsa7LMjGx2yanblZmKnzwsgmRTZTsnM0pw0K/XiC3p9U5sQWZgrysY1B5vrAY37+L7hAsjg5M9FM1l/zp0INmtNMyHZ+Vpu7mCILmoQzF9C69ZdQfwhQQULGloRYq1hCwJZgCJoeKnCK/lMhXkAF2c6pRRguQRZJjbKwCzOogEJplQP0Hip4ghYq2IPd/umxwnj1nKgbJSKahnoaYFXtEPWVvBbTUeR367+4daGLfcBPWH9tiWNlEtPUPcTKWO8oCFWGxNZnhwgSzv6bExeEZsTHAH7pM2n+tP5TmwCrcQVMOcWQKWuMy/Nz/XrqeKtDo24HI8NkSyLGBg19dhIz6gtFZ2MQCqJhMCXvLGqYwUPWWMtjvHHyQFZ0DjgmYnE9klyspZwPDCcxesLQFYbyihDPrJAZlTEn1OZveT+t+poEvSfTkN8Xbk6za5N3U2exiWew2n0qaEnmsYEhzKjDgjKHIQy2vlmbRfy4nfPCHoYwF0l5OBgsC/uPE8y0GmBygzLxl/XFEaY74kfXRNZmjDg2xXY6MgNzJyorlcIjssOJ7ynYRu2bOsXiRZks81hPMUthrIuLtcejVO9/vTXq2dV/NXqrlQeTOEq00UcTnDlA2jEx1gJtYSeLrsIJIRNfFeXhfnz4+k6HoEd4aLRribKyne2u9Z0RVJsfN5Fb1EJ+/v0dKPUuTGPn7sSr/Q1are0WBVtzldy1w/DbZX1hfjAdhdbFbK5Go6Oq33BJnULyzqxxmdZ/YxOz0U1lyBsbQy6t2uWGjEeD3Zz3vWjXXx6drz+Et8H6siCDRfWwfV+ZGWXpLJ8oaqf7rKtAW9tvZhvD1M0KH25MnaEe70V9Xp+rIlLM0mKnsM2yuO1X/cFVeFbsci/V//V92MyE0GcZJI+u2wCdepYbkd3DXmTjCuYxiz5cLnWA37NfrfRxvzF1MBuXVSENDKfoM73Ay/Nz8C9o/qDF/mQ9oi9q0m3u16f63vvwIqTdzfpOUN+4GS/m21yofbbxfiF1S6CCOWFD3PWh97mylpIceB2dDY2y265vflLN/wMVxih7
+sidebar_class_name: "get api-method"
+info_path: devs/api/servicios-app/facturalatam-apidianv-2-1-servicios-app
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Listar Documentos"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/documents"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Permite listar los documentos y filtrar por fecha (date='all', 'current_month', 'last_month', 'last_ninety') o búsqueda (search). Soporta paginación.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"date","in":"query","schema":{"type":"string","enum":["all","current_month","last_month","last_ninety"]},"description":"Filtro de fecha"},{"name":"search","in":"query","schema":{"type":"string"},"description":"Término de búsqueda (número, prefijo, cliente, etc.)"},{"name":"page","in":"query","schema":{"type":"integer"},"description":"Número de página"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Lista de documentos recuperada exitosamente","content":{"application/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"object","properties":{"data":{"type":"array","items":{"type":"object","description":"Detalle del documento (simplificado)"}}}}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

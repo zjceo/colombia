@@ -1,0 +1,75 @@
+---
+id: send-invoice-test-set-id-consumidor-final
+title: "SendInvoice-TestSetId Consumidor Final"
+description: "ENVIO DE FACTURA A CONSUMIDOR FINAL (Cuantías Menores)."
+sidebar_label: "SendInvoice-TestSetId Consumidor Final"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVttu20YQ/ZXFPLUAJZGSkdgEilZRZECAbRlSnJfYYFbLobTBcpfeiyNV0Cf1qZ+QHyuGpCLLFxR9LcwXUXM/Z3ZnuIUcnbCy8tJoSGF89XkyZR/H7Hw4+nQzG7IhG02v5jeXk4/TGTufXA0v2C+jwLX/8Rd37BK1seh+7d7qW91hw0pJwZnirJSu5Cw3IpSoPRfyx9+a3QdkqNj1bHI5nrFnqXIkT4eisY77rNPaTueN9bxLWebIguMU6Wv/0fOVCVMaJnPUXhZStEkrbmtbYbQLpcyNZYXUXDHDxE8cZYOje6shAs+XDtIvMDp4nJMH3EVg8T6g8x9MvoF0C8Joj9rTK69q8MRj75sjMrfgxApLTm9+UyGkYBbfUHiIANe8rBSSSodygRbSs7O4eaLaOtuTl8kc0iSCnHsK0Y/7SSc+7STvqVRZkiw+SePTNOkDFeiMClRFtg8Myen7d03oBCKoLBZyDSnMx5+uIQKHOi+5VJB6GzACEZw3JTlu4UDmUcTHtEeQP0B6EoHmdS1PjwtlXBlNqkESD07PkndnA4iA57lF58jj4oKdsKvZlA0GnbOY2GnqAa5wzXWO1iy4zo0yOjfa/LEkdVeYEiIo0YoV1z6zuJTOW94e5JbLTkzxnvJ5BIroHbQ2xi65ln8eFP0IyqClkBVX0m9q2SmBrs0pZ4mN4S6Cim/qBIWxJbH3+P++i3tZiX5l8kYaH8R5wOylRuehQZaVyF2wddNhF4HCJVdZaTR6bjeZN54rR7mV1Jjh2qN25MZLE+icQhLH3YYTvs5wLVRw8gFf0Uv9up4rZb5zLbBJerBo9WLF7fI1ZcU3fKGeh901efcwvmybMhrq6PVZILQCG0FT88th7yKQ+sFIgRkR04QOWvo9n3WO9/FPszy7p+Eg/YaiQPTvfBYWMTNF1uKWOqcDZiykBVcO/yuw16AcQd5jO57ho+nlZD6ZXrHr6YzNx7PPk9FkOqeWmBwf6fcXQ3osX7oUJzQriLLnNSy4w2OGdnc7euoBVBntsD6F/Timn+P65kEIdK4IipkK2xtLrs2dgBQq43x9SvwKUuiFhep3k17bmt8Fd/gbTa1W0PHovEMv885hyHfqIV+PN/uAtu24pamy8r5yaa+3DVZlhGTX45WECB64lUR6Xfpe2dRf8KCIgUVYmW7BnQ+Wd4M0XcXhKf8fuEN2M7tgpmB+hWx4PYHdjvpEe2F22CDjtyXwtgTelsDbEvgfLQEirzD1J6/0qs709DM6AhrITZlJN+7GsNv9Aw9pIbo=
+sidebar_class_name: "post api-method"
+info_path: devs/api/consumidor-final/consumidor-final
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SendInvoice-TestSetId Consumidor Final"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/ubl2.1/invoice?case=sendinvoice-testsetid-consumidor-final"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+ENVIO DE FACTURA A CONSUMIDOR FINAL (Cuantías Menores).
+
+- Aplica la misma documentación que el PRIMER ENVIO DE FACTURA de la sección 02 - PRIMEROS ENVIOS.
+- Se usa el `222222222222` como identificación para el consumidor final o cuantías menores.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","example":{"number":990000000,"type_document_id":1,"date":"2021-08-17","time":"04:08:12","resolution_number":"18760000001","prefix":"SETP","sendmail":true,"customer":{"identification_number":222222222222,"dv":4,"name":"CONSUMIDOR FINAL","phone":"3103891693","address":"CLL 4 NRO 33-90","email":"alexanderobandolondono@gmail.com","merchant_registration":"0000000-00","type_document_identification_id":3,"type_organization_id":2,"municipality_id":822,"type_regime_id":2},"payment_form":{"payment_form_id":1,"payment_method_id":10,"payment_due_date":"2021-08-17","duration_measure":"0"},"legal_monetary_totals":{"line_extension_amount":"100.00","tax_exclusive_amount":"100.00","tax_inclusive_amount":"100.00","allowance_total_amount":"0.00","charge_total_amount":"0.00","payable_amount":"100.00"},"tax_totals":[{"tax_id":1,"tax_amount":"0.00","percent":"0","taxable_amount":"100.00"}],"invoice_lines":[{"unit_measure_id":70,"invoiced_quantity":"1","line_extension_amount":"100.00","free_of_charge_indicator":false,"tax_totals":[{"tax_id":1,"tax_amount":"0.00","taxable_amount":"100.00","percent":"0.00"}],"description":"COMISION POR SERVICIOS","code":"COMISION","type_item_identification_id":4,"price_amount":"100.00","base_quantity":"1"}]}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: consultar-usuarios-por-plan
+title: "Consultar Usuarios por Plan"
+description: "Obtiene la lista de usuarios (compañías) que tienen asignado un plan específico."
+sidebar_label: "Consultar Usuarios por Plan"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1U8Fu2zAM/RWBpxYw7LRH34ptKAoUWNGupyIYaIuJ1cmSKlFFA8Of1MOwT8iPDVTSrU12nS+2aJF8fO9xAsZ1gvYBbiw6SrCsQFPqowlsvIMWvnZsyJGyqKxJjEqTyiljND6pk96PAbc/t6+YTtVTJlUuO4XJrB1qr7JTwaJTlAL129eV6X0NFQSMOBJTlN4TGOkUkAeowOFI0ILRUEHqBxoR2gl4EySaOBq3hrmCSE/ZRNLQcsx0iPrqs9JkS2uogF5wDFbyz2BeSm4K3iVKUvl8sZDXx/zro1Ej9TlQRI2KXgz7hCM5Jqig947JsRTBEKzpUYo0j0kqTccz+O6ReoZZngpG4sFraGFNXIjhAVpoBHnzlClucqKYuk0JTEbPQgvF5zfqcrTQwsAcUts0U472e4eJ5gaDaXJnz+szOGTnjuKz0T7KgDfR69z3ZvvLqUbdMa6F4AqeMRrs7I6jt6o7olaYLUMLXR58vcLEOWKdja8tHrW6v71WklnkuLi5UifJOBWiZ99765Uz6h3SU2FlWYFxK18YM1xku6TEBaEA3hm1AqFg1+SsXtQLMUXwiUcstO9t9Mm7lC1jVPdvSgYfS5FDrNNfJf+T6/cGYHphEdg4wVwEnPbCP8DesofSQwWt0bKeg08sF6dJeL2Pdp4lXBKgfVj+la74Q5sk3xraFdp0uCjvZz653a/Uqfq4Pv+EvQ+i2xSz2CwnqOAHbXbbOy/nCgZCTbEA2f246HsK/C7laGVE/z9LcfnlG8zzb3innjM=
+sidebar_class_name: "get api-method"
+info_path: devs/api/planes/gestion-de-planes
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Consultar Usuarios por Plan"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/plan/queryusersbyplan/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Obtiene la lista de usuarios (compañías) que tienen asignado un plan específico.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"type":"string"},"required":true,"description":"ID del plan","example":"1"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Lista de usuarios recuperada exitosamente","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

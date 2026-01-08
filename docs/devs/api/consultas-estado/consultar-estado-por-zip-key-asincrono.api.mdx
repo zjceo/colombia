@@ -1,0 +1,75 @@
+---
+id: consultar-estado-por-zip-key-asincrono
+title: "Consultar Estado por ZIP Key (Asíncrono)"
+description: "Consulta el estado de un lote de documentos enviados asíncronamente (Factura o Nómina)."
+sidebar_label: "Consultar Estado por ZIP Key (Asíncrono)"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVc1uGzcQfhViThLASHYOBbo3JXEBI0VsyMkljmCNdkcSXS5Jk1zVm8U+UA495RH8YsVwV17Vio2g6LE+yBI5v99837CBgkLulYvKGsjgrTWh0hEFaUEhYmFFQaIyQttI/LWweVWSiTYIMjuFhQ0Cw8NfJvfWIN+QGP2Geaw8Cis+PHwvlcHx5Iv5Yl6JKxJVSMGXX5V7T/VSeIrWG05ERmgUnoKrODVn0yioVEE9fDcHWSYc6sxwmJUtahFIUHCUq7XKUQQlKAjTJRajpQo3DmtvtV6OhR0aEHRXqR3qrmQ2o7vC5kuuFSRE3ATIrh8RCVzPWYIEFhIceiwpkmejBhSD5zBuQQLDABl0DYKEkG+pRMgaiLXjmxC9MhtoJXiuwVMBWfQVyafD0Lhj0LX4fH4pRvzxnuqxsKtIRhUoUHdD8AzFY2MTaBddaArxjS1qTv00U25NJBP5Cp3TKkdOOr0NnLk5rtmubimPIMF568hHRSHZkSlKVPrAcmWtJmQI6R5LpwmyNepArXy0jpYR+hmPYXg/bZ+m+LI1Q9C2EqKK/BOuIsYqfFZu3oEGbdum6QRnTeg6fX1ywv+ek8u9ijYg/GfAlhQCbuiYNQdtDOk3ZMhjgSK3Rjx842KYXvO+gXcKzY9S/rOZi9UtRStyy9FvbYo1qPHqYnbZS/Ld+ewDh8cYMd9SsWfey8WyR84Nskoj3RRYhxtN60M3ZSJtyB/6nf7y6/Go9o2lQbUSSopbW7AEbUhYshIzmFYr/XpyOg3JafpVuWnTybJlXZLf7fVbeQ0ZbGN0IZtOm8rrmxUGaqfoFEjYoVe40t1o9pcdHdZY6cg0q7Z2ssbAi29SKTvReITwGwwkPs1/F3Yt4pbE7PKcO1hIYHrMB8We7bs/VFji+FMR9YeHOhmOeikkuktQZm0T1j2UP9psEhiSrtrTycnkhKfGoJYdg/rdtnf1vZ9w1ot+P4nRbL+p7fgpBM2gj//fmuGt6dgf6T5OnUZlGPVEyaan8jV0VGbaJjKD5AcGJGT9O7OQsGXyZ9fQNEzPT163LR/fVeRryK4XA48T5wsV+HvxyJhnJzWa96/HWPzrN+mZLvtDNHWSma7SqpDwB9XDG9ouWglbwoJ8qry7fNvV9+ojhxicj7ZuK/ceszwnF1+0XRwsk8uLq48gYdU/oaUt2MfjnyDTZyrUJrzSYkhnDWg0myrtbuhi8t/fFf9OhA==
+sidebar_class_name: "post api-method"
+info_path: devs/api/consultas-estado/consultas-de-estado
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Consultar Estado por ZIP Key (Asíncrono)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/ubl2.1/status/zip/{zipKey}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Consulta el estado de un lote de documentos enviados asíncronamente (Factura o Nómina).
+
+- Se usa el `zipKey` retornado en la respuesta de la emisión asíncrona.
+- En el body se especifica si es nómina (`is_payroll`) o documento equivalente (`is_eqdoc`).
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"zipKey","schema":{"type":"string"},"required":true,"description":"Clave del ZIP (ZIP Key) obtenida al enviar el documento."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"sendmail":{"type":"boolean","example":false},"sendmailtome":{"type":"boolean","example":false},"is_payroll":{"type":"boolean","example":false},"is_eqdoc":{"type":"boolean","example":true}},"title":"StatusZipRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Consulta exitosa","content":{"application/json":{"schema":{"type":"object","properties":{"message":{"type":"string","example":"Consulta generada con éxito"},"ResponseDian":{"type":"object","description":"Objeto complejo con respuesta SOAP de la DIAN"},"attacheddocument":{"type":"string","example":""},"certificate_days_left":{"type":"integer","example":169}},"title":"StatusResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

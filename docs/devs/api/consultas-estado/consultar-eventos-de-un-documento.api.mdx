@@ -1,0 +1,72 @@
+---
+id: consultar-eventos-de-un-documento
+title: "Consultar Eventos de un Documento"
+description: "Consulta los eventos asociados a un documento (e.g. Radian) usando su UUID."
+sidebar_label: "Consultar Eventos de un Documento"
+hide_title: true
+hide_table_of_contents: true
+api: eJytk8Fu2zAMhl9F4KkFNDvt0bdt7YACA1Z0yykLBsZianWK5IpU0cDwuw90kjZL19t8sU2Z9M/vJwdwxG32vfgUoYHPKXIJgiYkNvREURIb5NR6dPpkSjQutWWjJ+aMqvvK3KHzGM9NYYwuGS5mPr+5qn5GsCB4z9AsXuqycWSuWdAlWFroMeOGhLJ+NIBXCT1KBxYibggaKMU7sMBtRxuEZgDZ9hpnyT7ew2gh02PxmRw0kgvZ04bmX66No/CquoJxqVncp8jEWvNyNtPbOygcvZCgZy+JESy0KQpF0TTs++Bb1LT6gTV3eKs3rR6oFTiVd82SSysl//Wbs56i8xSFNOpo7aPPhqJxJBgCncOol4UNSZecQkusxSd2DdRlFS6ri5oFpXA9leUPBwL1oFBHpUr56cC+5AANdCI9N3U9lBx+rZBprLH3YOEJs8dV2PE6HO6grbEEgQZWpUvVGlm7qYpPVcA3/X5CJjO/+2rS2khH5uPtjfaytODjOk28vAQ6wn88MRZU7q7SRTWrZuq/tr7Bifp+Zg6p2VzvgTrSwb06jMCprOHVzv+/ATv/hZ6l7gP6qJon2MPergXs7FJDJsPAwollYKGZNmFpoVOrmwUMg1owz2EcNfxYKG+hWSxfvZp8dZ712UGzxsCn+3Hc+dndfpPOzb+25p1W9kGM22lKQtE3sPCbtof1HZejhY7QUZ4k7Y4+ti31cpT0Zo90LF4m/Pbb9x8wjn8A3hacOg==
+sidebar_class_name: "post api-method"
+info_path: devs/api/consultas-estado/consultas-de-estado
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Consultar Eventos de un Documento"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/ubl2.1/status/events-document/{uuid}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Consulta los eventos asociados a un documento (e.g. Radian) usando su UUID.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"uuid","schema":{"type":"string"},"required":true,"description":"CUFE del documento."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Consulta de eventos exitosa","content":{"application/json":{"schema":{"type":"object","description":"Estructura de eventos (pendiente de definir en detalle)"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

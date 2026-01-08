@@ -1,0 +1,71 @@
+---
+id: enviar-mensaje
+title: "Enviar Mensaje"
+description: "Envia un mensaje de texto simple a un número específico."
+sidebar_label: "Enviar Mensaje"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVMty20YQ/JWp0cWugvhybEe42Y58SMWJylLKB5IVDoERuTKwu9oHZRYKn+STb7nqx1KzAB+iUrnkQoKY4W5P93Q3WLIvnLJBGY05XuqNIogaatae7hhKhsDfggGvalsxpKJ+/LtmZ4C95eLx+60qzAAz9FxEp8IW82mD75kcu3cxrDGfztt5ho7vI/vw3pRbzJv0UzkuMQ8ucoaF0YF1kBJZW6mCBNPwzguwBn2x5prkKWwtY45mecdFwAytM5ZdUOylqmO9ZHfU54NTeoUZ8jeSETDH8eTVT6/fvP35ArOT+X+PaTCq4D4y3EfFjoGFFAdc7VjBNsOavacV//dFnw4sWhd5Sdi2GQYVUvWadfmpO+Zzxw22rTQ49tZo3w00GY3k6ynO3cEJWmnSsTWHtSkxR2t84oWEexw+rCl4sva8MPpWrYaedXm+gy+quQ07n0SLrsIcmya66q8leW7bZwxds9uo0ji4ckoXylKFIu5O+2uRqQN+vAF7ktYhWLk0tWGOy9SEWf/w0biaAub465ebNJTI//mwOJc7ag9CP1Fzr8q/UZ+h0rcmgekVGL+Bc/gi/LyzAkuI6MYcD0aD0bPhL3VpjdLBgyVHUBF0nEZHhXr8oWEL0RsouQKhVRVKfuxvGMz0TJ+dncGHJ/+a6Ss5zSwDa3bgIyxEgJ1uC9jCSiqUasF8ZQ2FqaNWwgvLtu5ukNumH6kI0dFvFKievxDGfT4cPtCg5uHr8cVkNJ5cTN6+ermHc6k3j98T0l9MEWvWwfgelNigMh7KfaHHUhoPNnJJWkbdLaKHkn3J4hXdWelo/ANZpckEdeGYHERNcNtBhheLqz+ub2AYl9VkMB4qvTGq4MVLoJXjVUwHF1RbA4sZyiLvWZphDhIkC2BQeuWEGNawKKIPpma3SJj64Or97RmqE5cPZloWRSxUUwoeTWlRL7sQ6NfqdDOaQ3z9vwztbSL9Q1uRSmiSLZve0FM8MXTy8JGl5xmuJQHyKTaNuPhPV7WtvL6P7CSd5xluyClaigmm8zbDNVMpZpo2+JW3mOOHbpzzG8Ej7VUUXM+SWby/Dx7RTqzcJ3xtSvmPowfM0meOmKFJlKWESO8arEivYufa7kwxPj3NjZOcSEj7EuntEcKm6TpuxCYpv7qBkm2wnbdt+w85YG8t
+sidebar_class_name: "post api-method"
+info_path: devs/api/whatsapp/16-whatsapp
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Enviar Mensaje"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/whatsapp-config/send-message"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Envia un mensaje de texto simple a un número específico.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"number":{"type":"string","example":"123456789","description":"Numero al que quiere enviar el mensaje"},"message":{"type":"string","example":"Mensaje de prueba"}},"title":"SendMessageRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Mensaje enviado"}}}
+>
+  
+</StatusCodes>
+
+
+      

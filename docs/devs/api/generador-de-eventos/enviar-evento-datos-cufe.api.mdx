@@ -1,0 +1,72 @@
+---
+id: enviar-evento-datos-cufe
+title: "Enviar Evento (Datos CUFE)"
+description: "Endpoint para registrar un evento referenciando el CUFE del documento. Esta opción es más sencilla ya que la API se encarga de construir y firmar el XML del evento."
+sidebar_label: "Enviar Evento (Datos CUFE)"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVk1vGzcQ/SvEnBJgo2/rYwEflFgtBLiJodhAUNcQZsmRxJRLrkmuE0XQoT+lv6G3Xv3HitmVYstO7KCHAt2LtLvD4cyb995yAxGXAdJLmNyQjS7AVQKKgvS6iNpZSGFiVeG0jaJAj8LTUofo0YvSCqrWCE8L8mSlRqucICPeXPw0EYqMUE6WOcc0xCREFK6Q+vYvKyiI/PbPIAKvMgbFGsV1ScKgGJ9NRSBBVqJfolAkpLMh+lJ7sRYL7XP0vMeHX06rLeoaGr9ZSMDTdUkhvnZqDemmutWeFKTRl5SAdDaSjfwKi8Joidxi82PgPjcQ5Ipy5H9xXRCk4LKPJCMkUHhXkI+aAr+tdpxrdS8yRK/tEh5CNz25V6J40T4eyzIQ9zQjqTOXiM7xjCTtUFEkXmuyFBLRPR5LKiJWLxLR4zCDuWvOSK7wi3sJCdBnzAvD27dhm8Ae6/l+HPR8K7Jc0PNtPB6nQCNkiYYnZUhgcFKj+NrqQXE46PZHndFQSjzqtZA6fVpk7V4Lh1mnKxeDwaA/PBp0Rr3FcNAedkcd1e11B/3R0aA36vT6KlOtfqfT64/6vV5/mB1l3fYoG6p+X5LqZUOE7XabgA6hJD8v0Mf1831rRTbqxY4Bc1vmGfnngXh7+3dO3vGg7jJ8nd11qckKynWk70AxHLX4qsa10D7EucX8BwZw5nVOXliXZ54OMp5Nzqbn7zifwR9ONy7IGK3cg0yzya+cyPklWv2lRkYRI5rvVPN02pMqFiuCNG//8IQHG7x59/Z8/Hp6Oj0Zn/A+H102jzqaHyEg+uVhteOLD9PT6Xgm6qynE2ZBdbELhMLZUE+602rxzwNL2/tW7WVsWp91dKGqnQH+l06xKyCnuHIKUihcqLiHcQUpNANZ9aqixSuFkdEJ5G/Is/9uoPQGUljFWIS02dyU3swzDLRtYqGbZWY6jfYjYN6Tv9HKeabfmXeqlDUbm+J9xGUN5Q16jZmp4dhnrTFZYGkipJCVK9dYYIilx0apXcPgo60uZqeCV1ZGwCb9ImgrCu+ik844YbW4V+lLxuIqAUZsdufKk/0A77soVH19071qf/oPLOSxgXzHIu40fCjhvRIPhLgT1ROaOlTFgSi+yfEEtF24inm7qJ/JElO44sD+I54A06oeXLvRarS4Q2ZjjhWBd+VN7I1Gv1slXpxgdKH6eL98OP7NnST+TweCnTwjfY7NwqC2jEMltM1OlZfwUJVXCaxYt+klbDbM+Atvtlt+fF2SX0N6eXUnKr7bJrAiVMyOyw38Tmsea43Wq3MugMNNWRH5oZlsk/2KseQP/pOxV/es5ezd+3NIINsddXKneI3HT3wMwk+QAtOuml4l/OrZBgzaZYlLjq1z8vUPqs5mlQ==
+sidebar_class_name: "post api-method"
+info_path: devs/api/generador-de-eventos/generador-de-eventos
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Enviar Evento (Datos CUFE)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/send-event-data"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Endpoint para registrar un evento referenciando el CUFE del documento. Esta opción es más sencilla ya que la API se encarga de construir y firmar el XML del evento.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"event_id":{"type":"string","description":"ID del evento (1=Acuse de Recibo, 2=Recepción de Bienes, 3=Aceptación, 4=Reclamo/Rechazo)","example":"1"},"document_reference":{"type":"object","properties":{"cufe":{"type":"string","description":"CUFE del documento al cual se le asocia el evento","example":"a7369298cca540ae26efb140a8b23cf7776857294f8718392d3437695749246dbd062246964468b5b319b8d66ced4b8a"}}},"issuer_party":{"type":"object","properties":{"identification_number":{"type":"string","description":"Número de identificación de quien emite el evento","example":"89000001"},"first_name":{"type":"string","description":"Primer nombre","example":"PEPITO"},"last_name":{"type":"string","description":"Apellido","example":"PEREZ"},"organization_department":{"type":"string","description":"Departamento/Área","example":"CONTABILIDAD"},"job_title":{"type":"string","description":"Cargo","example":"AUXILIAR CONTABLE"}}}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Evento registrado exitosamente","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

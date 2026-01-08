@@ -1,0 +1,90 @@
+---
+id: send-email-employee
+title: "SendEmailEmployee"
+description: "## ENVIAR CORREO AL EMPLEADO (NÓMINA)"
+sidebar_label: "SendEmailEmployee"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVM1u40YMfhWCe0kM2Va2KLDVzZv64G5iG07SSxLYtETHkx3NzM5PGq+Rp+gT9Bly69UvVlDy5m+BnnopsDpoRjMk9fEj+W2x4lB65aKyBgt89w6G499HgxkcT2az4QQGJzA8nZ4MB79O4GC8+/N0NB4cXpkrMwyRgU3lrDIRHPtaNQd3ijywhsqWqWYTLVB1m2StGDSB2T3WyhCQhtJ6zxZYcxn97tGoUow0cO00U2XB840K0cuWjTgvKbDEqSja0BMYnc4gRTZRlVSq3aMpOh2AKzPjL0mxZ0gGov3MRrwoRevV19YQDhaD6Wh+Pvk0HC8Oe+LUpNRaBwa7jIqNpCTpTClYOIIuHFuzUjdwbGtHZtODMyXGfB893andYyZfLnHFUFoTko5CRwM+0lITLFJgHxYZlFQ7Cy9A7PP5aKtNQ4PnL4lDhIPfzibjw6LTkfsuLMr213NVmVQv2S8KGI/O9/Ry7TwHWVWwnnpXBkBy68LCeV6p+0UBU9ncvinIS8vnuLu/a/a2L6lwmaK6+xevUEc3d+Sp5igpwoF1pbKG9GEBU/K7v2qO3gY4Oz2fSscEuVNfqWpq+RSHa1J6XpZzrUJ8HeVEhUjQcCutE4TZ0jolODDDSDcBi0u8iEqriioOeJ3hMyQsLq8z3PMqPGOxxdIaaSDZknNalSSz0L8NMhBbDOWaa5Jd3DjGAu3ylsuIGfI9SaO2MV6XBAv88Euef8jznzDDlngscDzCDJ8sjvI8f/8zPsgjqIITloPEe5/nsryezcknFMOa49pWWKCzQWA4imsssE9O9QObqtvw15Uhshvm/niCGQb2dy0BW0xeY4HrGF0o+v1t8nouc/WAGd6RV7TULYhvFy2SFSUdscBlWtveikJMnnpJ2Z4mzN4g/ShjejE7AbuCuGYYTEeS5nWGwursmf/hf0RhhsqsbFMkFSXeyxbIUFJvkR318l4u9kJeTU2FDdXiccamGgp1wz1zb9N60So/dPKHTv6fdbJVssj3se80KSMT0cjCdi8nl0hONbrxnaBghuOJ6Opa9Ke4xO1W2u3C64cHOf6S2G9apf0mJ/L1kOGaqZKxvdziZ95ggcftPHXPBY+Y6yS4vpNhUY4n2ZtOzs4xw+VevmtbiY+nPzBr3gVihraZ2UbGmrMtajI3iW7Eto0pzz8i3RyF
+sidebar_class_name: "post api-method"
+info_path: devs/api/utilidades/utilidades
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SendEmailEmployee"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/send-email-employee/NO"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## ENVIAR CORREO AL EMPLEADO (NÓMINA)
+
+Este endpoint permite enviar el documento adjunto de la nómina al correo electrónico del empleado registrado en la base de datos.
+
+**Autenticación:**  
+Requiere un token de autorización (`API_TOKEN`).  
+Este token se obtiene en el Paso 1 - Config Company. Si se extravió, se puede consultar en la tabla `users`, campo `API_TOKEN`.
+
+**Body del request (JSON):**
+
+- `company_idnumber`: NIT de la empresa emisora.
+    
+- `prefix`: Prefijo de la nómina.
+    
+- `number`: Número/consecutivo de la nómina.
+    
+- `smtp_parameters` (opcional): Parámetros SMTP personalizados.
+    
+- `email_cc_list` (opcional): Lista de correos en copia.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","example":{"company_idnumber":"89008003","prefix":"NI","number":"100025"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"}}}
+>
+  
+</StatusCodes>
+
+
+      

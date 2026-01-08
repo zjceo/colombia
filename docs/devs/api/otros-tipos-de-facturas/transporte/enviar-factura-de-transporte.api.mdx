@@ -1,0 +1,76 @@
+---
+id: enviar-factura-de-transporte
+title: "Enviar Factura de Transporte"
+description: "Endpoint para enviar facturas de transporte."
+sidebar_label: "Enviar Factura de Transporte"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWG1v2zgS/ivEfLoDFEd2Xq1P6yTqIUBqB7a7OGwaCBNqYrNHkSpJpcka/u+LoWzHbtyiu8Addg+rL7Go4fCZeR4OOVlAwJmH7A7eoQyNQy9KElOHxtfWBYL7BEry0qk6KGsgg9yUtVUmiBodCjJPCp143JocNpM7H81HM6i1kig0ikr5CkVpZVORCSiVNeJzQ4K0uB1fv8/HIh/+fD0SV7l4N7icfhgP2J1G4UlG47QnDlamo0lrPIlr5D6QoE9U1doKpRsfHAppKys8iZIeSDRBafUrOnY3uL3eAd8YXAewiz9ha9mgFspI3byQKDFYL8jXJNWjkpYD1mI8vLoU/xjTTPngrBjG0FCzsyvyNcp5NBSX6Gb4T0FGaPRCK0NtxvRm/c5HAwk4+tyQDxe2fIFsEV+VoxKy4BpKQFoTyAT+hHXMLlNz+MkzPwvwck4V8q/wUhNkYB8+kQyQAJalChHarbM1uaDIt06XCdAzVrXmgQVs8c8Om6pC9wLZWiNfSeSNQlZElLQ/rUJaIyRWtfUxdR1I4Al1ExczTfVADrJ+v3uSpsfdXgLlE2S9JEZTrNVTqBKybgIlMkbopb2jg2560DuBBIKqeCw9zY6Ps+OTmFBvdcPwirV/6J6fnabx6UICtaNH9QwZTPLpLSRgbOBUwOR6KEYXk3z88+DyejTMJ5CAbHywFTtZgCrJBJYC7ng/76fpeZoebcAbjJgGN/m/B8OrfCxGF4Ph1UjcjIZXo+GIEcytYZOjbnp03u+e9o9axhx5BnIxHoub6/ej4WAs3v8iTsXlRByJfCoYPVWoNGSAmp7RlOQK+4CmtD/NbeBPHWkrSKAiJ+doQuFaqeKKME7CQZrC2xzvBMcpP13ZWDdDo359/dBLoGqMkqpGrcJLy89xf2XOC1bUGi4TqPElLvBoXcVZ3H5fM7seqyjMbdmOpq/DZUPFPvLLpg2rqAh946IQYJkAam2/oJFUyDm6GZN7t4BSeWmbVzm13wplSg7aOsgeUXt6O71whHG/wVU+ufyQD6cj8a98mI8HN0xbxU556U5M6wN6KjaD3bP0uJd2O6fnsLxPQNMMdVFZQwHdSxFsQB13IReIgp4DGc8B7ZufQMDngp6lbrx62r9GaxMr2Fc251H+LcTXACOA4usQVmHv/1jjCz7o/a6X7frrsO4WLZw23/zzjTNyktqBFvtXrntbrr/trH9y1j/vHPV2HHb7+zye7NChzJNVkgrOfotX+YLL1Lr88u9CWuPVzEQpbkpK/yRN0z4D5E2pTCBnUO+3HefvN8UnFr9tM8igrU2QQGNUWIt5xxVHfXZ6lsDnBk3gPbfrobemdsdDnJVuwiyL9WxODyTfFN3pllYeHVFhH4sf3i1tHv8nm+sVJ5P5+5T3RhnbQW/Jcu1999i7HX/ILwZiOh4MJ7ej8TTnXWNL2nzqrgusClTtK67HfA6x9vYCiHHusMX634hzlcu/yf5zkN37y5B9snVS/N+RvXUMfKfu754Rf5Dxo9/P+DaCPYzfL+MT76+1Nb69nPfSlP/sonu396JdOyvJY8nNkHMkA/LZQPCHe4gVnvZOBhnU1od4/oc5ZHDYPOhep3u4UuDBBgkk4Mk9kWvJahxfVuch1NnhobYS9dz6cIi1KhWaXtrrHtbNg1aSh960FxNyT6q0TtzwzMgUwx6/Nk1528pAtljydni0MRAVeOhbfW4CDK9dodtJO/HiwuFVGDOyusDnbcv4Q43Q4jXLf3fN//2ueaXUQM/hsNaoDDMYpbZYCfQOWoHCpkhuSfQ+AVYhWy0WvBk/OL1c8vDnhrj7vbvnm5pTXET4bZnAnLDk29zdAv5DvGkvW8IPpoxl09W+3WJczNsZAympDt+1vd/acLejyZSLxepfA1VbgBx+4S4Xv0AGkICNAozFIo4tQKOZNThj29YnP78BxOD7Gw==
+sidebar_class_name: "post api-method"
+info_path: devs/api/otros-tipos-de-facturas/transporte/facturas-de-transporte
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Enviar Factura de Transporte"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/ubl2.1/invoice-transport"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Endpoint para enviar facturas de transporte.
+
+Aplica la misma documentacion que el PRIMER ENVIO DE FACTURA de la seccion 02 - PRIMEROS ENVIOS.
+
+Este ejemplo ilustra como se debe utilizar la API para enviar una factura de transporte, la cual incluye datos especificos del RNDC (Registro Nacional de Despachos de Carga) en las lineas de la factura.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","additionalProperties":true},"examples":{"Transporte":{"summary":"Factura de Transporte","description":"Ejemplo de factura de transporte con campos RNDC.","value":{"number":991500412,"dv":2,"type_document_id":1,"date":"2023-10-25","time":"06:44:45","resolution_number":"18760000001","prefix":"SETP","notes":"SIN OBSERVACIONES","customer":{"identification_number":89008003,"dv":2,"name":"ALEXANDER OBANDO LONDONO","phone":"3103891693","address":"BRR LIMONAR MZ 6 CS 3 ET 1","email":"alexander_obando@hotmail.com","merchant_registration":"0000-00","type_document_identification_id":6,"type_organization_id":2,"municipality_id":149,"type_regime_id":2},"payment_form":{"payment_form_id":1,"payment_method_id":10,"payment_due_date":"2023-10-25","duration_measure":"0"},"allowance_charges":[{"discount_id":1,"charge_indicator":false,"allowance_charge_reason":"DESCUENTO GENERAL","amount":"0.00","base_amount":"1704201.68"}],"legal_monetary_totals":{"line_extension_amount":"1704201.68","tax_exclusive_amount":"1704201.68","tax_inclusive_amount":"1800000.00","allowance_total_amount":"0.00","charge_total_amount":"0.00","payable_amount":"1800000.00"},"tax_totals":[{"tax_id":1,"tax_amount":"0.00","percent":"0","taxable_amount":"1200000.00"},{"tax_id":1,"tax_amount":"95798.32","percent":"19","taxable_amount":"504201.68"}],"invoice_lines":[{"is_RNDC":true,"RNDC_consignment_number":"95000912001","internal_consignment_number":"REM000001","value_consignment":"600000","unit_measure_consignment_id":767,"quantity_consignment":"200.00","unit_measure_id":70,"invoiced_quantity":"1","line_extension_amount":"600000.00","free_of_charge_indicator":false,"allowance_charges":[{"charge_indicator":false,"allowance_charge_reason":"DESCUENTO GENERAL","amount":"0.00","base_amount":"600000.00"}],"tax_totals":[{"tax_id":1,"tax_amount":"0.00","taxable_amount":"600000.00","percent":"0.00"}],"description":"PRUEBA TRANSPORTE","code":"PRUEBA1","type_item_identification_id":4,"price_amount":"600000.00","base_quantity":"1"},{"is_RNDC":false,"unit_measure_id":70,"invoiced_quantity":"1","line_extension_amount":"600000.00","free_of_charge_indicator":false,"allowance_charges":[{"charge_indicator":false,"allowance_charge_reason":"DESCUENTO GENERAL","amount":"0.00","base_amount":"600000.00"}],"tax_totals":[{"tax_id":1,"tax_amount":"0.00","taxable_amount":"600000.00","percent":"0.00"}],"description":"PRUEBA TRANSPORTE","code":"PRUEBA2","type_item_identification_id":4,"price_amount":"600000.00","base_quantity":"1"},{"is_RNDC":false,"unit_measure_id":70,"invoiced_quantity":"1","line_extension_amount":"504201.68","free_of_charge_indicator":false,"allowance_charges":[{"charge_indicator":false,"allowance_charge_reason":"DESCUENTO GENERAL","amount":"0.00","base_amount":"600000.00"}],"tax_totals":[{"tax_id":1,"tax_amount":"95798.32","taxable_amount":"504201.68","percent":"19.00"}],"description":"PRUEBA TRANSPORTE","code":"PRUEBA3","type_item_identification_id":4,"price_amount":"504201.68","base_quantity":"1"}]}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Factura de transporte procesada correctamente","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

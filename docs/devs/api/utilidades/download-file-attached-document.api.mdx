@@ -1,0 +1,106 @@
+---
+id: download-file-attached-document
+title: "Download File Attached Document"
+description: "**Descarga de archivos de documentos electrónicos**"
+sidebar_label: "Download File Attached Document"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVclu5DYQ/ZVCnWyBbmmWGGPlELTjnoExW8MLEGRsuNlSdTc9FCmTlMeOoI/JB+Q0t1z9Y0FJ6m3GE+SYg3VQsynyseq9Yr0ac/KZU2VQ1mCKUXREPpNuLiEnkC5bqFvreZzbrCrIBOuBNGXBPXw1KrM+ii7MhRn5QEAmL60yAUpyhQoEeY/l1kjS20zJnEc/hOTjKiOBitKRlwIyW1gYH732An57/86Dhd+Px34AcGFOCcqKcgI7DWTIAenlYZArR1mQfASBBTIws66QwcJUetp/OeDIo+j85F0aRQw2eTM6g1iWKq6m+vngWZzbL0Zbmce1yskENVOZZKaauJ4pTU1ch/uSrhz50hpPvzQThtyDKNpez/gfHv4uyFlObv0xUw9fDU/pVbqDCwPA0TAMn9JutsXUMaHr7OQGvTt0TUWpbQqTYQgyW3DOe6ejs/HBQZIkyYuDg8FdoSe7W+BbscOOLTNljdS7fOCpAs+K3j78JZnTW6mtg8nh8HS0/3IiNmn2BI6CdayY6an9GXwLYLkOBI+Wwf5IoFVkLMmwCsxQz0+vzgndVIocQbCfqSVNVsE69UfPIhnGXpDMyaWtnMMqLNoFrQZwSNKRg3o4Pr46+/h29KGTK4rG0j38WVBw1qddPe/ByLAmXBvLwPi9B5NtZScpHP8HNbcQWNQJ7PjglJnvpo+I+9iuLbUmm3KxWOQ3xFnJsaZ6pcwWNCd/Qr6syAe5Sp3hNnbeKc8aPgLqrVaZCjK3sLPStxcVlrdss+ZOFZjvESsDBRkvr5kDIOesG1wYFBjk3GP6Cc+D0iqXOXm8FFhKJwsK5PjbpUBHNxz/oc3vMa0xs4aLh4eyLHWvU3ztucHV6LMFFZJHTCimaKfXlAUUSHeyKDVhWjf8MHBHtufVz5OEf7bb5ce3yAsLCgubY4pzYqBShgWm+GgjeXWQJK+S5EX86D39Kdnnexp3SqJAT+62S7TGymlMcRFC6dM4riunr5jhBgXeSqfkVHeRLj904c5kpQOmOK0WdjCTPlRODiplB1qi+CadQ+mJSx7sDMKCYDg+xqZpLgUyeydrnkdrqgQqM7Mtnyrw1KZaAjn6DvzZIBkk2AgsrQ+FbMUwsuAdRz078Fppgo4ZyuGo94dv49zQ+MmwngzrybCeDOv/YlidpQS6C3GppTLc79q+Xfeu8AllqVBgd1+5s/U3FgUuvQEF/ps7oMDeHy4FLqwPjFrXHPy5003D0zcVufvOHpfewP8agV25tYbyme4xxV+7Xrp3xrHzcl1xDt95J9vAyujejM5Q4LS33MLmvMXJLyjad4oo0LbturWkdq5GLc28knNe20Hy8w9G3kWQ
+sidebar_class_name: "get api-method"
+info_path: devs/api/utilidades/utilidades
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Download File Attached Document"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/ubl2.1/download/89008003/Attachment-SETP990000506.xml/BASE64"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+**Descarga de archivos de documentos electrónicos**
+
+Este endpoint permite descargar archivos asociados a documentos electrónicos de una empresa, como PDFs, XMLs o ZIPs.  
+Se puede obtener el archivo directamente o en formato base64.
+
+**URL:**  
+`GET /api/ubl2.1/download/{identification}/{file}/{type_response?}`
+
+- **identification:** Número de identificación de la empresa.
+    
+- **file:** Nombre del archivo a descargar (ejemplo: `Attachment-SETP990000399.xml`).
+    
+- **type_response (opcional):** Si se envía el valor `BASE64`, el archivo se retorna en base64; si se omite, se descarga el archivo directamente.
+    
+
+**Autenticación:**  
+Requiere token de autorización en el header:  
+`Authorization: Bearer {API_TOKEN}`
+
+**Parámetros:**
+
+- En la URL:
+    
+    - `identification`: Identificación de la empresa.
+        
+    - `file` (string): Nombre del archivo.
+        
+    - `type_response` (opcional): Si es `BASE64`, retorna el archivo en base64.
+        
+
+**Respuesta:**
+
+- Si el archivo existe, retorna el archivo solicitado (descarga directa o base64).
+    
+- Si no existe, retorna un mensaje de error.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","example":{}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"}}}
+>
+  
+</StatusCodes>
+
+
+      

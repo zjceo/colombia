@@ -1,0 +1,9 @@
+{
+  "label": "Configuraciones Basicas",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "slug": "configuraciones-basicas",
+    "description": "Documentacion de la API"
+  }
+}

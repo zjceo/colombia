@@ -1,8 +1,0 @@
-{
-  "label": "Consultas de Estado",
-  "position": 3,
-  "link": {
-    "type": "generated-index",
-    "description": "Endpoints para consultar el estado de documentos y eventos."
-  }
-}
