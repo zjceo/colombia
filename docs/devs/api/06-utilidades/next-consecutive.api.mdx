@@ -1,0 +1,94 @@
+---
+id: next-consecutive
+title: "Next Consecutive"
+description: "**OBTENER EL PRÓXIMO CONSECUTIVO DE DOCUMENTO**"
+sidebar_label: "Next Consecutive"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVL1yGkkQfpWujiRqtEgON9MPAWcZKARXrpJUYthtxMizM+P54eAonuKeQOEFFzlzyotd9S5Y4qwLnGuDZZnpn6+/7v7WWFIovHJRWYM5tlr9i1Gn1xlC5xoGw+1fn7uf+nDZ7910Lsej7u99uOrAVf9y/KnTG/VbrTtzZzohEpApnVUmgiNfqUhQWBOSjtJDkbbPGgL57TOQBue335aqsmC23yvytrakIkW1sFCq4KxRU03gpJeQDETlLJQEpS1SRSZaWIHzNFNPFig4Krb/zFRhBQR63H43oCV4ClanQm2/GZBFVAvJAbQEqpynIDOG3WqNh9d8noLNWy2AOzOZx+jydrtSpa2UUTYrbNWWTrXTVH/IztqGlvHkBS9NmkDnKZKJqpB1yl2wIX1NijzVNdgvZDiXTNF69WdjCEfng+7DqP+x0zveQRpIv32uKHob8obdE+hZ8PtY7uUeqK51PLzO7gwApzyBK5oS3yyU9KBtgKAekyITKUAhK9e4kYapLVdw9NtNv3ec7935fQKTuHL0sGf7QZWTHLpXUJJ+oxVHznqgJ6qctgJmsojJSwHGRgmF3/5dqmgFUCyy4x3Kg1R1H5eTHAa7hjZtetW/Ay9maEjBJQpR/qA5Wm/kL0/Wm+W8TJYypSpkaUN2Z1BglI8B81scR6VVKUsKeC+QA1UUyfPdvUBuE4V4YcsV5mssrOG54E/pnFaF5C1rPwVetTWGYk6V5C9mHHO00ycqIgqkpaycpv3V62ZgfiawoQ1zvOmMBrjhh5NzgYECu304PeWfw+Xuf0Q2rCjObYk5Ohs4m5Nxjjn+34yjwEB+0RS5xuQ15siLEvJ2e528fpjKQBteExS4kF7JqW5Q7C8bKDOZdMQcp2lus5kMPCpZUjbTEsV/oF7IQDzaYGcQ5wTngy7XeS+Q2Ru+8Nz5NaoEKjOztbWK7Pa6owK5ygbAWXaanbI9k1TJumFGVuzRo2WEywOCDsC/avy7nr7r6buevqWnjeJFWsa201IZXrVaWtY7PbrFZkZQ4E+KdC9wztqV3+J6zQIz9nqz4eOvifyqEeO9EvG/jcA5yZJ8LWFfaIU5XjZLejJiKGyuE0P6SalZdH5I5qB/M0KB053CV7ZkHy//QFG/c0SBthaCWgHrszVqaR6TfGTbJiY//wI8hVX6
+sidebar_class_name: "post api-method"
+info_path: devs/api/06-utilidades/utilidades
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Next Consecutive"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/ubl2.1/next-consecutive"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+**OBTENER EL PRÓXIMO CONSECUTIVO DE DOCUMENTO**
+
+Este endpoint permite consultar cuál será el próximo número consecutivo disponible para un tipo de documento y prefijo específico, según la resolución activa de la empresa.
+
+**URL de uso:**  
+`http://midominio.com/api/ubl2.1/next-consecutive`
+
+**Autenticación:**  
+Requiere un token de autorización (API_TOKEN).
+
+**Parámetros:**
+
+- No requiere parámetros en la URL.
+    
+- Debes enviar los siguientes campos en el body (JSON):
+    
+    - `type_document_id`: ID del tipo de documento (por ejemplo, factura, nota crédito, etc.).
+        
+    - `prefix`: Prefijo de la resolución.
+        
+
+**Respuesta:**  
+Retorna el próximo número consecutivo disponible para el tipo de documento y prefijo indicados.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","example":{"type_document_id":1,"prefix":"SETP"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"}}}
+>
+  
+</StatusCodes>
+
+
+      

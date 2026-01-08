@@ -6,6 +6,7 @@ sidebar_position: 1
 
 import DocsCard from '/src/components/global/DocsCard';
 import DocsCards from '/src/components/global/DocsCards';
+import { LayoutDashboard, Store, Package, FileText, ShoppingCart, Landmark } from 'lucide-react';
 
 # Panel del Cliente - Sistema de Facturación Colombia 🇨🇴
 
@@ -27,7 +28,7 @@ Explora las funcionalidades principales del sistema y comienza a optimizar la ge
   <DocsCard 
     header="Dashboard y Ventas"
     href="dashboard-ventas"
-    icon="/img/icons/sales-icon.svg"
+    icon={<LayoutDashboard size={32} />}
   >
     <p>Visualiza el resumen de tus ventas, genera facturas electrónicas, boletas y notas. Gestiona comprobantes con integración directa a DIAN.</p>
   </DocsCard>
@@ -35,7 +36,7 @@ Explora las funcionalidades principales del sistema y comienza a optimizar la ge
 <DocsCard
 header="Punto de Venta (POS)"
 href="punto-venta"
-icon="/img/icons/pos-icon.svg"
+icon={<Store size={32} />}
 
 >
 
@@ -46,7 +47,7 @@ icon="/img/icons/pos-icon.svg"
 <DocsCard
 header="Inventario y Productos"
 href="inventario"
-icon="/img/icons/inventory-icon.svg"
+icon={<Package size={32} />}
 
 >
 
@@ -57,7 +58,7 @@ icon="/img/icons/inventory-icon.svg"
 <DocsCard
 header="Reportes y Contabilidad"
 href="reportes-contabilidad"
-icon="/img/icons/reports-icon.svg"
+icon={<FileText size={32} />}
 
 >
 
@@ -68,7 +69,7 @@ icon="/img/icons/reports-icon.svg"
 <DocsCard
 header="Tienda Virtual"
 href="tienda-virtual"
-icon="/img/icons/store-icon.svg"
+icon={<ShoppingCart size={32} />}
 
 >
 
@@ -79,7 +80,7 @@ icon="/img/icons/store-icon.svg"
 <DocsCard
 header="Finanzas y Nómina"
 href="finanzas-nomina"
-icon="/img/icons/finance-icon.svg"
+icon={<Landmark size={32} />}
 
 >
 

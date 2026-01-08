@@ -6,6 +6,7 @@ sidebar_position: 0
 
 import DocsCard from '/src/components/global/DocsCard';
 import DocsCards from '/src/components/global/DocsCards';
+import { LayoutDashboard, NotebookPen, Building2, ShieldCheck } from 'lucide-react';
 
 # Sistema de Facturación Electrónica Colombia 🇨🇴
 
@@ -27,7 +28,7 @@ Comienza ahora explorando las secciones principales del sistema o siguiendo nues
   <DocsCard 
     header="Panel Administrador"
     href="panel-administrador"
-    icon="/img/icons/dashboard-icon.svg"
+    icon={<LayoutDashboard size={32} />}
   >
     <p>Gestiona múltiples compañías desde un único panel centralizado. Crea empresas, visualiza el estado de todas tus cuentas y accede directamente a cada sistema.</p>
   </DocsCard>
@@ -35,7 +36,7 @@ Comienza ahora explorando las secciones principales del sistema o siguiendo nues
 <DocsCard
 header="Gestión de Planes"
 href="gestion-planes"
-icon="/img/icons/plans-icon.svg"
+icon={<NotebookPen size={32} />}
 
 >
 
@@ -46,7 +47,7 @@ icon="/img/icons/plans-icon.svg"
 <DocsCard
 header="Configuración de Empresa"
 href="configuracion-empresa"
-icon="/img/icons/company-icon.svg"
+icon={<Building2 size={32} />}
 
 >
 
@@ -57,7 +58,7 @@ icon="/img/icons/company-icon.svg"
 <DocsCard
 header="Control y Seguridad"
 href="control-seguridad"
-icon="/img/icons/security-icon.svg"
+icon={<ShieldCheck size={32} />}
 
 >
 

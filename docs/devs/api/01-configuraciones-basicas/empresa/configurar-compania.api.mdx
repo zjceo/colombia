@@ -1,0 +1,80 @@
+---
+id: configurar-compania
+title: "Configurar Compañía"
+description: "CONFIGURAR COMPAÑIA"
+sidebar_label: "Configurar Compañía"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV91u2zYUfhWCVxug2LLTrqmu6ibZEKyzAycFBiSBcUQe20wpUuGPG9fQQ+wxdtGLoY/gFxtI2anjv2RdL3YxwbBliuf/8PuOZpSjZUaUTmhFM3rc6/589sv7fqdPjnu/nXfmf5x1rtW1OiAXglgkQlkHUhOvCNeFUEKHVY45Eu+EFJ/AEI5EArFi5AUqh6QAhQayazV2rsyazUIsRBtMF00oRdPnst1oNZlWQzFqHr1O06M0PWy2a8tdTQzeeYEGCXinjfgETGjVCA9PFXnff0ektsRLJwptCdeWlGCgQGe0JVYr0j27JFPCxUg4HfyboBFDwaKahb9YlAYtNILNE5x4lBMMYTr9ARUJH0kM2lIriwmxggw9klJbkcsozwxuUZcQtA6XSizxCggDjgoIyCEoX6ARDBb6GRSlJp3zs8Fl79fTbuNa0YQ6GFmaXdHjmB1vgIn5F0VOawP0JqGLYNGEfTMqQiFLcGOaUAUF0owq4WhCLRtjATSbUTctw7J1RqgRrRIaE2yQ08wZj8laV4T0PQqLVslWO3zyb8yczD9vFmj+RdHqphZF695qPg2qmVYOlQu3UJZSMAhKmrc2aJpt+qDzW2QhCaXRJRon0C6fDrhmvkDlBoKjctFuUDYQfEWBUA5HaGhC8R6KUiLNDqukVqDNCJT49Dyp9lLK4EgU+Pz9UkAupHDTJ0VaL6qE5t4KhdYO6tqsV2NlO+28O/290z057ZPe2073pEfe9bonvW4vlKxAw8agXHTXOgN1sfapS+vrIE2jAq8EEyU8y/OjdlolFDg3aO1+K8f9Dmm3OqTb75FW66D9Mhgrx1rhE1VrpYdHr1s/vQ7lwwKE3G8HJN6D4mgGOgfF9ZuxdkEqoFeMD4QcjLV1+9XYwpWN0YZgqc0Tgi+PXj3s9hbN0+XMgX3wpc0hR/nqzRabYO1Hbfh+LYxZPrw1/o7z6T2zt6PhaHQn7ybOuQdNqJiZlk93hJOWVvEKB7kG0VjedpqGn8c4sIC2CKkcmsCch0AtHAjTisz/vBdO0+R7YYD1jD3utlxriaDq9rcWRlsSHpptZx7DkQ2Qv/UJ00UJarrp2DJDL9LDzaR0gpOBCWtFgn/HDDDNtx2aKqHWgfP/ODXLQAp0Y80DS4TjkdRkkdE1vp8p4armjE+qQB5oJksi80bSjC6mhtyPdWMI1nkDDS90Q0KYHeg6iVygmQiuDTk3QkXcifRhkXkj3PQipKSOOkcwaDo++PQQQrC25LAYb9xEQzQhq/2vLHS67O5nsMjhLqJob3JBeyvct15sIPpu2N6J2qvQvAWZj9rpCvhuQdgHgP0Kog8Yuh8oH+HkOhg+wsIIeBt4txPUNjBtL3Btwa0anBIq1FDHYgpXs1irQw7IytRVz3bLCSihoU9rDa1G2ohcF/q8gHj2Fm4/yBtyHM79/K/5Z1hv2pVx5v8J/D84gdfQ4PDeNUsJIqJfBKfZAtKuaJ3AGpKHIrBfVg/dGZ+EGb1u/Cs6m+Vg8b2RVRWW7zyaKc2ubhI6ASMgD613NaNc2HDPaTYEadcn5dV++aG/mKl/JJtj+g7fF4uBhIJd6cM/mtAPOF28LIT5/pt82DnDf5MrfEKrmyqhYwSOJmamfnBc2z64DOJfBTdIMMRRSwT+LN3evTcrjHXeu7ikCc0XrxtFZEhq4CNN4nd0UsdcRDKJazMqQY18JEVa6wzX3yqVT/Y=
+sidebar_class_name: "post api-method"
+info_path: devs/api/01-configuraciones-basicas/empresa/01-a-configuracion-de-empresa
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Configurar Compañía"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/ubl2.1/config/{nit}/{dv}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+CONFIGURAR COMPAÑIA
+
+- Si se instalo un dominio se debe utilizar de la siguiente manera:
+http://midominio.com/api/ubl2.1/config/89008003/2
+
+- No requiere autorizacion.
+- En URL los ultimos dos parametros son NIT y digito de verificacion de la empresa.
+
+Devuelve un token en el response, si fue posible la creacion de la empresa, este token es una cadena alfanumerica en el campo API_TOKEN.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"nit","schema":{"type":"string"},"required":true,"description":"NIT de la empresa"},{"in":"path","name":"dv","schema":{"type":"string"},"required":true,"description":"Dígito de verificación"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"type_document_identification_id":{"type":"integer","example":3},"type_organization_id":{"type":"integer","example":2},"type_regime_id":{"type":"integer","example":2},"type_liability_id":{"type":"integer","example":14},"business_name":{"type":"string","example":"ALEXANDER OBANDO LONDONO"},"merchant_registration":{"type":"string","example":"0000000-00"},"municipality_id":{"type":"integer","example":820},"address":{"type":"string","example":"CRA 21A NRO 11-25"},"phone":{"type":"integer","example":3103891693},"email":{"type":"string","example":"alexander_obando@hotmail.com"},"mail_host":{"type":"string","example":"smtp.gmail.com"},"mail_port":{"type":"string","example":"587"},"mail_username":{"type":"string","example":"backupsbabel7@gmail.com"},"mail_password":{"type":"string","example":"ccsdfjruqddyxcsjgfggqlqvttt"},"mail_encryption":{"type":"string","example":"tls"}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Empresa creada/actualizada con éxito","content":{"application/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"message":{"type":"string"},"password":{"type":"string"},"token":{"type":"string"},"company":{"type":"object"}}}}}},"403":{"description":"Acceso restringido","content":{"application/json":{"schema":{"type":"object","properties":{"code":{"type":"integer"},"status":{"type":"boolean"},"message":{"type":"string"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

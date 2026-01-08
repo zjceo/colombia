@@ -1,0 +1,94 @@
+---
+id: current-number
+title: "Current Number"
+description: "## CONSULTAR EL ÚLTIMO NÚMERO DE DOCUMENTO"
+sidebar_label: "Current Number"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVM1u4zYQfpXB5JDEUORkj7osso66CDaxg8Q5rQOLlsY2sxTJ8MdNKuhF9tYH6GlvvfrFipHyu22BoufoIInkzPD75udrsCJfOmmDNBoz3NmB0WR8dX02Pb6E/Ay238+mp+cTGG+/n+eXEzjJ4WQyuj7Px9PJTM907gMB6coaqQNYcrUMBKXRPqogHJACL1dRkg4EevtnTc50x1TGIDcGKumt0XKhCKxwAqKGIK2BiqAyZaxJBwPkLZXbP5ay7A6UAKqtIy9SxrCzswP5IwReF0Ux05/zKQyFlcO4UB/So6HUGyNLGpbROdJhrmO9IDdswoOldthYR0t5/7EdNnKljaO5DyLQ/AnCXFYfW44NXfCZHgwuhNv+XlNwxmeDAe8dQMHRigxOT6Ai9Q9E9jbkIIiFEr3t8wW+ANJMbCE8dT4iGL+fzjQAQBe7h1jAnrGlNFqo/QwueO/2KSmOvFGxlNsfGvbolmqrTAa7v+RXuwnsjke7CVAo0zdR/43u23uuJJCHIrhIRQKdj+Dakg+iMh3ZF5JdHUuhyqj6DnhV7+erOYXHMZAOshQd5Gww4INLuouSHHWdYL6RZnIiBuPkb+KRW3F8cTqfTr7k42I/ZaeuDXtrT2AWQZLmvuTbL4Q3cAQHMDJ6KVcwMrUV+iFlUp6A7oMTG7n9kfDKRqre9G9XlMeKRU/OFwmUorYGXoFIZxoTDGLlMfuK10EqWYmKPN4kyNmoKZDjs5sEHd1F8uGTqR4wa7A0mpPAv8JaJUvBkzi89TyODfpyTbXgP24XzNAsbqkMmCDdi9oqwqxp+eHAPEmePFt/ODzkz9vhnnxBNqwprE2FGa6IA1kR1pjhfxiWI0zQk9v0XBqMTmGG6xCsz4bDJjo15/ZtORQmuBFOioXqAT0d9qiWIqqAGS7i2qRL4UN0Io3SpEpg8hPqTzwR15dnYJYQ1gTHF6fYtu1Ngpyky5d05i8ZSVDqpenSJgNvvS5KgsygD36UHqaH2CZojQ+16HKuRc0eo548jDvyP8N6Vbl30XwXzXfR/L+i2ctaoPswtEpIzcPYCUvzqExfsZeTvieRR7vrSkzwbV9igkesuGvjA7s1DffFtVNty9t3kdxDr8FPysSrNsE1iYpcJ2nf6IFHvx/tgymDY3MVGeTfBJpF6FlNP+dTTHDxqOu1qdjFiV8x6d4ZYoKmU49OELu9BpXQqyhWbNuH5OcvZcFcng==
+sidebar_class_name: "get api-method"
+info_path: devs/api/06-utilidades/utilidades
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Current Number"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/api/ubl2.1/invoice/current_number/1"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+## CONSULTAR EL ÚLTIMO NÚMERO DE DOCUMENTO
+
+Este endpoint permite consultar el siguiente número consecutivo disponible para un tipo de documento específico de la empresa.
+
+### Endpoint
+
+```
+GET /api/ubl2.1/invoice/current_number/{type}/{prefix?}/{ignore_state_document_id?}
+
+ ```
+
+**Parámetros:**
+
+- `type`: ID del tipo de documento (ver tabla `type_documents` en la base de datos).
+    
+- `prefix` (opcional): Prefijo de la resolución (ejemplo: 'FES', 'NC', etc.).
+    
+- `ignore_state_document_id` (opcional): Si es `true`, ignora el estado del documento para calcular el consecutivo.
+    
+
+**Autenticación:**  
+Requiere un token de autorización (`API_TOKEN`).  
+Este token se obtiene en el Paso 1 - Config Company. Si se extravió, se puede consultar en la tabla `users`, campo `API_TOKEN`.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","example":{}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"}}}
+>
+  
+</StatusCodes>
+
+
+      

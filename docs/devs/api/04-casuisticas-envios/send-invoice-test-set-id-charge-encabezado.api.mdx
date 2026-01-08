@@ -1,0 +1,76 @@
+---
+id: send-invoice-test-set-id-charge-encabezado
+title: "SendInvoice-TestSetId Charge Encabezado"
+description: "ENVIO DE FACTURA CON CARGOS"
+sidebar_label: "SendInvoice-TestSetId Charge Encabezado"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV21vGkcQ/iur+XzgAzs2nFS1GNMIyQELkqhqEp2GvQE22ts97wsxsfjv1dyBCbFbVf3UD0ZIHDuzM/M88+yO7hEK8tKpKihrIIPR5ON4Km5G4vfB8P2H2UAMpxMxHMzeTuefzWfTEoNKK4lCoyiVL1EUVsaSTECprBH3kQRpcTcbvxvNxLNgBfFGT7J2TruitXedzhvnebvJMvKBBH2lstJWKB19cCikLa3wJApakIhBafUdHQcc3I1FhQ4FmY1CJ6JBsUQZosO6ImWkjlsU0QiJbmVFZZ2QEfV9VOREaYPa2ESQ4doPWf1hH53u26C2jpFIa7xamQb4Ao1Ep7D92UACAVcesk8wRB+VD0qi5x0js1HWw5cEHN1H8uHaFlvIHkFaE8gEfsSqJpjbcfbVc08ewcs1lchPYVsRZGAXX0kGSIAesKw0scnEckEOsn4/TdNOJ+0ltXd+aFCuCsg6CRQYOEQ37V600stW9w3Xq8pmLePvBXCB3urIVeSHwNDpXV2m9acDCVSOluoBMpiP3t9BAjL6YEt2fARVkAlqucfxFKHXT9Nemp4nYLBOOLgd/TGY3IxmYno9mNxMxe10cjOdTDn82hp2Oe+k571+57J/DglgUTjyHjK4ns3E6JaVeTO4Fe/+FBdiOBdXYvRecHFUotKQAWp6QFOQy+0CTWF/W9vApra0JSRQkpNrNCF3tFKssf0pYIytNIXnFJ7gYkbP9z7WrdCo70dDN4EyGiVVhVqFbUP/RX/vzglLahx3CVS4rRMsrSuZwB//Hxp3WCsprG3RrKbH5SJS/lJvi9jAyktCHx3bU9glgFrbb2gk5XKNbkUs2EcolJc2HtXS2HJlCgZtHWTBRXq+O3eEtVqhvizE3XTGV8d8/HYyGI6nE3E9mAwHs/GAu1hyBsjgKk3Tdk3zAj3lT+vntcjYsvuSgKYV6ry0hgK6bR5sQO2ZJK0M5fQQyHjG97S9+6bbSdN276I+iQ85PUgdvdrQ37vUJ/3U5VjEj2jr7EenvX3PwU/GI7wKt7jQJ8EPxl1TwAHVp8emnoZ9fnzac3HV6/fbnUuOR07W9wV0+g2C0/BHeEygMhurJOXMV5MiGhUOeqhzXaVPbkV+H9EEFbYcHpJ/RfPSEeV2mT+XyxK1p/+C8R9AnRJw0MnpIBtO343nLDxW4nw0+zgejqdz7pUt6Af74YyrQOVL5/uCbzpm70Vh1Lo94Wv3Zcef+gatrPFUS7WbpvxzWuI8SkneL6MWtqL95cNbmxMOGVTWh1o+YQ0ZnMWF7rY7Z/tG/SrR0y+eTLFfaAXywVNQRavpQ4uMxAV9x8JCAp7chtxeAI5vx3UIlc/Ozh6j0zlD2Z1hpSCBDY+yhW5qPxgbAEuMmllYxLVtL9HzkG1HZdsa4eceXKMn8WF2K+xShDXxnIbdjnvFk212nIGj1zH2OsZex9jrGHsdY/+fMcZULm391qGCrpO9+DqTAI+VptxOO22nsNv9Bfj0r3Y=
+sidebar_class_name: "post api-method"
+info_path: devs/api/04-casuisticas-envios/casuisticas-de-envios
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"SendInvoice-TestSetId Charge Encabezado"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/ubl2.1/invoice?case=sendinvoice-testsetid-charge-encabezado"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+ENVIO DE FACTURA CON CARGOS
+
+- Aplica la misma documentacion que el PRIMER ENVIO DE FACTURA de la seccion 02 - PRIMEROS ENVIOS.
+
+- Este ejemplo ilustra como se debe utilizar la API para enviar una factura que incluya un cargo por cualquier motivo, en el ejemplo se incluye un cargo por valor de consignacion bancaria.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","example":{"number":990001108,"type_document_id":1,"date":"2024-06-25","time":"20:20:24","resolution_number":"18760000001","prefix":"SETP","customer":{"identification_number":89008003,"name":"ALEXANDER OBANDO LONDONO","phone":"3103891693","address":"BRR EL CARDAL MZ 4 CS 7 ET 1","email":"alexander_obando@hotmail.com","merchant_registration":"0000-00","type_document_identification_id":3,"type_organization_id":2,"municipality_id":149,"type_regime_id":2},"payment_form":{"payment_form_id":1,"payment_method_id":10,"payment_due_date":"2024-06-25","duration_measure":"0"},"allowance_charges":[{"discount_id":1,"charge_indicator":true,"allowance_charge_reason":"CARGO POR CONSIGNACION BANCARIA","amount":"7000.00","base_amount":"300000.00"}],"legal_monetary_totals":{"line_extension_amount":"252100.84","tax_exclusive_amount":"252100.84","tax_inclusive_amount":"300000.00","allowance_total_amount":"0.00","charge_total_amount":"7000.00","payable_amount":"307000.00"},"tax_totals":[{"tax_id":1,"tax_amount":"47899.16","percent":"19","taxable_amount":"252100.84"}],"invoice_lines":[{"unit_measure_id":70,"invoiced_quantity":"1","line_extension_amount":"252100.84","free_of_charge_indicator":false,"tax_totals":[{"tax_id":1,"tax_amount":"47899.16","taxable_amount":"252100.84","percent":"19.00"}],"description":"COMISION POR SERVICIOS","code":"COMISION","type_item_identification_id":4,"price_amount":"300000.00","base_quantity":"1"}]}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful operation"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   href?: string;
   header?: string;
-  icon?: string;
+  icon?: string | React.ReactNode;
   hoverIcon?: string;
   iconset?: string;
   ionicon?: string;
@@ -28,8 +28,20 @@ function DocsCard(props: Props): JSX.Element {
       <div className="Card-container">
         {(props.icon || hoverIcon) && (
           <div className="Card-icon-row">
-            {props.icon && <img src={useBaseUrl(props.icon)} className="Card-icon Card-icon-default" />}
-            {hoverIcon && <img src={useBaseUrl(hoverIcon)} className="Card-icon Card-icon-hover" />}
+            {props.icon && (
+              typeof props.icon === 'string' ? (
+                <img src={useBaseUrl(props.icon)} className="Card-icon Card-icon-default" />
+              ) : (
+                <div className="Card-icon Card-icon-default">{props.icon}</div>
+              )
+            )}
+            {hoverIcon && (
+              typeof hoverIcon === 'string' ? (
+                <img src={useBaseUrl(hoverIcon)} className="Card-icon Card-icon-hover" />
+              ) : (
+                 <div className="Card-icon Card-icon-hover">{hoverIcon}</div>
+              )
+            )}
           </div>
         )}
         {props.ionicon && <ion-icon name={props.ionicon} className="Card-ionicon"></ion-icon>}

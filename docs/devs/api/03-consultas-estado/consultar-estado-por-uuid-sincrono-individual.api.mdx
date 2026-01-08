@@ -1,0 +1,75 @@
+---
+id: consultar-estado-por-uuid-sincrono-individual
+title: "Consultar Estado por UUID (Síncrono/Individual)"
+description: "Consulta el estado de un documento individual usando su CUFE, CUDE o CUNE."
+sidebar_label: "Consultar Estado por UUID (Síncrono/Individual)"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVs1O40gQfpVWnQbJJIGVRiIaIfETNEizAyLkBFGmYlfiZtvdpn9YIssPNId9inmxVbWdEBIIc9jT5pBE5arqrq/q+8oVZORSK0svjYY+nBntgvIoSAlyHjMjMhJBi8ykoSDtjZA6k08yC6hEcKgzI1wQZ6OLQSLORucDYcTZ6Pugc6/v9b64occgyRLnG40uz0VGai0XaaFQjG6+ddj5mmwhPQlLpJ8kWpEaa8k48emHI50VKNWPPeGkcCRSo2dyHixyDlJiarJF515DAh7nDvp3q1IcVzCItcA4gRItFuTJslMFkqsu0eeQgMaCoA8hyAwScGlOBUK/Ar8o2e68lXoOdQKWq7KUQd/bQMkmhptYvC66A/W4SUHOn5pswUdsZkyN9qQ9P8KyVDJFTt59cHxCtX03M32g1EMCpTUlWS/JRb8WtjXPqTGKkIGiZyxKRc2RdbJy9oZh+I0A6SYlLqxRH+SfoXKtPz1mJv09b/SY5pQtcZtwdyalpZl83m7KWjxcDIb7w8Ht9dFRr9frHX7+Y597lvtCTXLCjOzu8C/5wfHX6Ce+3v757Us3PzheJZgG7412H2TwOFV0fNr4tlka2yrRzBj/4U2amIvoupGmTsBLH92GHn1w5y1ON81gQV3XcVJdabRrpuGw1+Of9xj/LL1xCP/Z8BXkHM5pd42r4+ekyWKGzGzx6ydfhsG6aQs4l6jfOvJ1MVfTB/JGpIazP5iYiyFgRFAMr06uWQwUivPLk+8Qh+z1lO2+LEekXOCMMaFJhgs3UTRbD5Pa05zsetzB56Ptfi0Li42qEyjI5yZjMTIuYsma1IdumKrDzkHXxaDu8p7dilWqZpki+7QUs2AV9CH3vnT9brcKVk2m6KjuYikhgSe0kscndmf5sJmIGQblmY8hN50ZOh8sdoI0HYVbIJ+iI9ZsYWbC5yROri+5iHECPCE3L8I2WAKwLkSNvr3Wmsa2LidRBNYVozXsFIW3mL9B/LfZvUnunQzeIPBOliYg9czE6Wib/9ZWSoA72IB70Ol1ehzIY1A0M9/upWWobeNEaWyzVD8Nf/2jU2u06V6utvPeZuOqF2L/L/Z8wzdPz75bKpSaUYsMqFry3EFDHmZJpA8jsiR6Av246McJ5My4/h1UFRNiZFVds/kxkF1A/278wpzIskw6/p+thvJdlD/dtGt9bxu4zZeCdwpqjagXkcAqRB1K4C9aLF9V6jEvlXbA76r20Vlzi/1bTvASuiXodbKMOElTKv1O3/GaTl1fDW8hgWn7BlOYjGMs/g1J/I7XNBGVKDjRVoFCPQ9xLUCTkz//AuGznDY=
+sidebar_class_name: "post api-method"
+info_path: devs/api/03-consultas-estado/consultas-de-estado
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Consultar Estado por UUID (Síncrono/Individual)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/ubl2.1/status/document/{uuid}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Consulta el estado de un documento individual usando su CUFE, CUDE o CUNE.
+
+- Requiere el UUID del documento en la URL.
+- Permite reenviar correos (`sendmail`) si se configura en el body.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"uuid","schema":{"type":"string"},"required":true,"description":"CUFE, CUDE o CUNE del documento."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"sendmail":{"type":"boolean","example":true},"sendmailtome":{"type":"boolean","example":true},"is_payroll":{"type":"boolean","example":false},"is_eqdoc":{"type":"boolean","example":false},"atacheddocument_name_prefix":{"type":"string","example":"FES-SETP990000263-"},"html_header":{"type":"string","example":"<h1>Header HTML</h1>"},"html_buttons":{"type":"string","example":"<table>Buttons HTML</table>"},"html_footer":{"type":"string","example":"<table>Footer HTML</table>"}},"title":"StatusDocumentRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Consulta exitosa","content":{"application/json":{"schema":{"type":"object","properties":{"message":{"type":"string","example":"Consulta generada con éxito"},"ResponseDian":{"type":"object","description":"Objeto complejo con respuesta SOAP de la DIAN"},"attacheddocument":{"type":"string","example":""},"certificate_days_left":{"type":"integer","example":169}},"title":"StatusResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

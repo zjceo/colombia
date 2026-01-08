@@ -1,0 +1,76 @@
+---
+id: configurar-software
+title: "Configurar Software"
+description: "CONFIGURAR SOFTWARE"
+sidebar_label: "Configurar Software"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVE1T2zAQ/SuaPSufJCX1LVDocAEmhOkh5LCRN4nAkYQsAanHP6hnfgJ/rLN2AqZ0Op3e6oOtkZ9Wb997UgEp5cprF7Q1kMDxxfnp2dfryXgiri5Op9/Gk5Mbc2NaYkL3UZMnEY0I9o6MSElgDNbr76i0NW1GnWRC4cZZoVMplPWecmcNIzOhU16S22V4RE/iPpIgEzytUGQovpyNz9+XcNp8qOE075u9VXHeOm3bNwYkBFzlkMzg2JqlXkWPSr88G3GKKkSP4iQjFfzLs9EKYS4hJxW9DltIZgUsCD35cQxrSGbzci7B032kPBzZdAtJAcqaQCbwEJ3LtEJWrHObs2wF5GpNG+RR2DqCBOzillQACcyQfNCU81+dNjB58NqsQAI94cZlPDXqL5ZdNaRWt9c7bA0OBmnr8+Cw1xrhkGg4Qvo06kMpwWnTKKRNoBX5ZqVe/2AwLKuHe2EJ85pCv9vlz3vfr/aCqr14qeWxePnxpIMF+a8C7BhsKKxtCgm4WImCLDR04iLrt3udetPO3lVgc/wD+bzyJvoMEliH4JJOZxHXtr3EnC1tR23bGXbQaZC/NkT+QafWi0uvjdIOMygbpl8x3VqPpvWv7Hk3plHBINmBgFvhjidv4TjZK16b+3cO7gysTZKgzdJWm+tQpaDbOxIt8Zpj//sMS2CJ6nZ77W67WwXD5mGDlSUGK+qNMldvAr9TqxHv//sGqM0L9BQ6LkNtWJEqPsUucjOoI1cHeqn59L3Gbi5hbfPAqKJYYE7XPitLnr6P5PmimEt4QK9xwTbN5qWENWFKvsrpHW1ruVnJ1pS5MDyLzOnDmSnlfsVYKXLhj9h54wRdXk9BwmJ3L21syks8PoKs3gmABFsZW8W7misgQ7OKuGJsXZKjjO9Dvwu53A+4qd0vNNsGwaKoEVOOQVmC3HVSxQLKeVmWPwGRwyjr
+sidebar_class_name: "put api-method"
+info_path: devs/api/01-configuraciones-basicas/software-fe/01-b-configurar-factura-electronica
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Configurar Software"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/ubl2.1/config/software"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+CONFIGURAR SOFTWARE
+
+- Requiere un token de autorizacion.
+- El campo id, corresponde al id de software que entrega la DIAN.
+- El campo pin, corresponde al pin del software propio.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"id":{"type":"string","example":"82bf0c5e-0117-434d-9471-8a5ee58ae682"},"pin":{"type":"integer","example":12345}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Software configurado con éxito","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
