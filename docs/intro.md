@@ -25,14 +25,12 @@ Pro 3 CO es un sistema completo de facturación electrónica diseñado específi
 <DocsCards>
   <DocsCard 
     header="Guía de Despliegue"
-    href="despliegue"
   >
     <p>Guías paso a paso para configurar e instalar el Sistema de Facturación Pro 3 CO.</p>
   </DocsCard>
 
 <DocsCard
 header="Aplicación para Facturación"
-href="app-facturacion"
 
 >
 
@@ -42,7 +40,6 @@ href="app-facturacion"
 
 <DocsCard
 header="Manuales Adicionales"
-href="manuales-adicionales"
 
 >
 
@@ -52,7 +49,6 @@ href="manuales-adicionales"
 
 <DocsCard
 header="API y Integraciones"
-href="api"
 
 >
 

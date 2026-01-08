@@ -27,7 +27,6 @@ Comienza ahora explorando las secciones principales del sistema o siguiendo nues
 <DocsCards>
   <DocsCard 
     header="Panel Administrador"
-    href="panel-administrador"
     icon={<LayoutDashboard size={32} />}
   >
     <p>Gestiona múltiples compañías desde un único panel centralizado. Crea empresas, visualiza el estado de todas tus cuentas y accede directamente a cada sistema.</p>
@@ -35,7 +34,7 @@ Comienza ahora explorando las secciones principales del sistema o siguiendo nues
 
 <DocsCard
 header="Gestión de Planes"
-href="gestion-planes"
+
 icon={<NotebookPen size={32} />}
 
 >
@@ -46,7 +45,7 @@ icon={<NotebookPen size={32} />}
 
 <DocsCard
 header="Configuración de Empresa"
-href="configuracion-empresa"
+
 icon={<Building2 size={32} />}
 
 >
@@ -57,7 +56,7 @@ icon={<Building2 size={32} />}
 
 <DocsCard
 header="Control y Seguridad"
-href="control-seguridad"
+
 icon={<ShieldCheck size={32} />}
 
 >

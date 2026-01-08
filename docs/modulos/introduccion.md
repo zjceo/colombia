@@ -27,7 +27,6 @@ Explora las funcionalidades principales del sistema y comienza a optimizar la ge
 <DocsCards>
   <DocsCard 
     header="Dashboard y Ventas"
-    href="dashboard-ventas"
     icon={<LayoutDashboard size={32} />}
   >
     <p>Visualiza el resumen de tus ventas, genera facturas electrónicas, boletas y notas. Gestiona comprobantes con integración directa a DIAN.</p>
@@ -35,7 +34,7 @@ Explora las funcionalidades principales del sistema y comienza a optimizar la ge
 
 <DocsCard
 header="Punto de Venta (POS)"
-href="punto-venta"
+
 icon={<Store size={32} />}
 
 >
@@ -46,7 +45,7 @@ icon={<Store size={32} />}
 
 <DocsCard
 header="Inventario y Productos"
-href="inventario"
+
 icon={<Package size={32} />}
 
 >
@@ -57,7 +56,7 @@ icon={<Package size={32} />}
 
 <DocsCard
 header="Reportes y Contabilidad"
-href="reportes-contabilidad"
+
 icon={<FileText size={32} />}
 
 >
@@ -68,7 +67,7 @@ icon={<FileText size={32} />}
 
 <DocsCard
 header="Tienda Virtual"
-href="tienda-virtual"
+
 icon={<ShoppingCart size={32} />}
 
 >
@@ -79,7 +78,7 @@ icon={<ShoppingCart size={32} />}
 
 <DocsCard
 header="Finanzas y Nómina"
-href="finanzas-nomina"
+
 icon={<Landmark size={32} />}
 
 >
