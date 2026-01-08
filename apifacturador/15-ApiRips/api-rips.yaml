@@ -1,0 +1,195 @@
+openapi: 3.0.0
+info:
+  title: API RIPS
+  version: 1.0.0
+  description: |
+    Servicios que conectan con apirips-docker (API externa).
+    
+    ### Requisitos
+    - URL de apirips-docker (API externa que debe ser desplegada si no posee una URL)
+    - credenciales de usuario de sector salud
+    - Nit de empresa
+
+    ### Manuales
+    - Habilitacion: [https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/DE/OT/manual-usuario-cliente-servidor-fev-rips.pdf](https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/DE/OT/manual-usuario-cliente-servidor-fev-rips.pdf)
+    - Producción: [https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/DE/OT/manual-consumo-api-docker-fev-rips.pdf](https://www.minsalud.gov.co/sites/rid/Lists/BibliotecaDigital/RIDE/DE/OT/manual-consumo-api-docker-fev-rips.pdf)
+servers:
+  - url: '{{url_apirips}}'
+    description: Servidor API RIPS
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    LoginRequest:
+      type: object
+      properties:
+        persona:
+          type: object
+          properties:
+            identificacion:
+              type: object
+              properties:
+                tipo:
+                  type: string
+                  example: "CC"
+                numero:
+                  type: string
+                  example: "16602426"
+        clave:
+          type: string
+          example: "Cabl20000"
+        nit:
+          type: string
+          example: "901355357"
+    LoginResponse:
+      type: object
+      properties:
+        token:
+          type: string
+        login:
+          type: boolean
+        registrado:
+          type: boolean
+        errors:
+          type: array
+          items:
+            type: string
+          nullable: true
+    RipsRequest:
+      type: object
+      properties:
+        rips:
+          type: object
+          description: Objeto complejo que contiene la información de RIPS
+          properties:
+            numDocumentoIdObligado:
+              type: string
+              example: "901355357"
+            numFactura:
+              type: string
+              nullable: true
+              example: "SETP990000103"
+            tipoNota:
+              type: string
+              nullable: true
+              example: "RS"
+            numNota:
+              type: string
+              nullable: true
+              example: "1"
+            usuarios:
+              type: array
+              items:
+                type: object
+                # Definición simplificada del usuario, expandir según sea necesario
+        xmlFevFile:
+          type: string
+          nullable: true
+          description: "Base64 string del archivo XML de la factura (AttachedDocument). Null para RIPS sin factura."
+    RipsResponse:
+      type: object
+      properties:
+        ResultState:
+          type: boolean
+        ProcesoId:
+          type: integer
+        NumFactura:
+          type: string
+        CodigoUnicoValidacion:
+          type: string
+        ResultadosValidacion:
+          type: array
+          items:
+            type: object
+paths:
+  /BasicHealth:
+    get:
+      summary: Versión del API
+      description: Muestra los datos de la version actual del apirips-docker
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "ApplicationName: FVE.WebAPILocal\nVersion: 5.4.1.0\n..."
+  /api/auth/LoginSISPRO:
+    post:
+      summary: Login SISPRO
+      description: Obtiene token de acceso
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Token generado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+  /api/PaquetesFevRips/CargarRipsSinFactura:
+    post:
+      summary: Cargar RIPS sin Factura
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RipsRequest'
+      responses:
+        '200':
+          description: Respuesta de carga
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RipsResponse'
+  /api/PaquetesFevRips/CargarFevRips:
+    post:
+      summary: Cargar RIPS con Factura
+      description: Carga RIPS asociados a una factura electrónica
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RipsRequest'
+      responses:
+        '200':
+          description: Respuesta de carga
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RipsResponse'
+  /api/ConsultasFevRips/RecuperarCUV:
+    post:
+      summary: Recuperar CUV
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                codigoUnicoValidacion:
+                  type: string
+                  example: "712cf437a..."
+      responses:
+        '200':
+          description: Información del CUV
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RipsResponse'

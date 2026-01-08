@@ -1,0 +1,86 @@
+openapi: 3.0.0
+info:
+  title: 16 - WhatsApp
+  version: 1.0.0
+  description: |
+    Endpoints para la configuración y uso del servicio de WhatsApp.
+
+    ### Configuración
+    Para obtener su `url_whatsapp` y generar su token comuniquese al WhatsApp de [FacturaLatam](https://wa.me/51920129273).
+
+    ### Envío de Documentos
+    Para que los documentos generados puedan ser enviados desde el numero de WhatsApp configurado, al crear una factura (`POST /ubl2.1/invoice`) agregue el campo `"send_whatsapp": true` e ingrese en `customer` el número al que se le quiere enviar.
+servers:
+  - url: '{{url_base}}'
+    description: Servidor Principal
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    WhatsAppConfig:
+      type: object
+      properties:
+        url_whatsapp:
+          type: string
+          example: "https://tu-url-whatsapp.com"
+          description: Ingresar la url base
+        token_whatsapp:
+          type: string
+          example: "tu-token-whatsapp"
+          description: Token proporcionado al conectar su WhatsApp
+    SendMessageRequest:
+      type: object
+      properties:
+        number:
+          type: string
+          example: "123456789"
+          description: Numero al que quiere enviar el mensaje
+        message:
+          type: string
+          example: "Mensaje de prueba"
+paths:
+  /whatsapp-config:
+    put:
+      summary: Configurar WhatsApp
+      description: Configura la URL y el token para el servicio de WhatsApp.
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WhatsAppConfig'
+      responses:
+        '200':
+          description: Configuración exitosa
+    get:
+      summary: Consultar URL-WhatsApp
+      description: Puedes consultar tu url_whatsapp si es que ya tiene una configurada.
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Datos de configuración
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WhatsAppConfig'
+  /whatsapp-config/send-message:
+    post:
+      summary: Enviar Mensaje
+      description: Envia un mensaje de texto simple a un número específico.
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SendMessageRequest'
+      responses:
+        '200':
+          description: Mensaje enviado

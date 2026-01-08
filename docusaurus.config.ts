@@ -295,6 +295,42 @@ const config: Config = {
               groupPathsBy: "tag",
             },
           },
+          regenerar_pdfs: {
+            specPath: "apifacturador/13-RegenerarPDFs/regenerar_pdfs.yaml",
+            outputDir: "docs/devs/api/13-regenerar-pdfs",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          servicios_app: {
+            specPath: "apifacturador/14-ServiciosAPP/servicios_app.yaml",
+            outputDir: "docs/devs/api/14-servicios-app",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          api_rips: {
+            specPath: "apifacturador/15-ApiRips/api-rips.yaml",
+            outputDir: "docs/devs/api/15-api-rips",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          whatsapp: {
+            specPath: "apifacturador/16-WhatsApp/whatsapp.yaml",
+            outputDir: "docs/devs/api/16-whatsapp",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          extractor_v2: {
+            specPath: "apifacturador/17-ExtractorV2/extractor-v2.yaml",
+            outputDir: "docs/devs/api/17-extractor-v2",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+
 
 
 

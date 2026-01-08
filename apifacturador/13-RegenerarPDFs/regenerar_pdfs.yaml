@@ -1,0 +1,196 @@
+openapi: 3.0.1
+info:
+  title: Regenerar PDFs y Plantillas
+  version: 1.0.0
+servers:
+  - url: https://{url_base}/api/ubl2.1
+    description: Servidor de Producción / Staging
+    variables:
+      url_base:
+        default: buho.fastura.uio.la
+        description: URL base del API (sin protocolo ni /api/ubl2.1)
+paths:
+  /regeneratepdf:
+    post:
+      tags:
+        - Regenerar PDF
+      summary: Regenerar Documento Con JSON
+      description: |
+        Regenera la representación gráfica (PDF) de un documento enviando la estructura de datos completa en el cuerpo de la petición.
+        
+        Útil cuando se necesita actualizar datos visuales que no afectan el XML legal, o para reimprimir.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                cufe: "c4075c096de4eb5f6ab17697936fb1687e468bb73f015bfe62701af753c..."
+                number: 990000667
+                type_document_id: 1
+                date: "2022-10-26"
+                time: "04:08:12"
+                resolution_number: "18760000001"
+                prefix: "SETP"
+                notes: "ESTA ES UNA NOTA DE PRUEBA..."
+                disable_confirmation_text: true
+                establishment_name: "TORRE SOFTWARE"
+                establishment_address: "BRR LIMONAR MZ 6 CS 3 ET 1 PISO 2"
+                establishment_phone: "3226563672"
+                establishment_municipality: 600
+                atacheddocument_name_prefix: "FES-SETP990000244-"
+                establishment_email: "alternate_email@alternate.com"
+                sendmail: true
+                sendmailtome: true
+                seze: "2021-2017"
+                foot_note: "PRUEBA DE TEXTO LIBRE..."
+                customer:
+                  identification_number: 800135582
+                  dv: 7
+                  name: "FUNDACION ALEJANDRO LONDOÑO"
+                  phone: "3105193539"
+                  address: "CLL 4 NRO 33-90"
+                  email: "gerencia@torresoftware.com"
+                  merchant_registration: "0000000-00"
+                  type_document_identification_id: 6
+                  type_organization_id: 1
+                  type_liability_id: 117
+                  municipality_id: 822
+                  type_regime_id: 1
+                payment_form:
+                  payment_form_id: 2
+                  payment_method_id: 30
+                  payment_due_date: "2022-11-26"
+                  duration_measure: "30"
+                allowance_charges:
+                  - discount_id: 1
+                    charge_indicator: false
+                    allowance_charge_reason: "DESCUENTO GENERAL"
+                    amount: "50000.00"
+                    base_amount: "1000000.00"
+                legal_monetary_totals:
+                  line_extension_amount: "840336.134"
+                  tax_exclusive_amount: "840336.134"
+                  tax_inclusive_amount: "1000000.00"
+                  allowance_total_amount: "50000.00"
+                  payable_amount: "950000.00"
+                tax_totals:
+                  - tax_id: 1
+                    tax_amount: "159663.865"
+                    percent: "19"
+                    taxable_amount: "840336.134"
+                invoice_lines:
+                  - unit_measure_id: 70
+                    invoiced_quantity: "1"
+                    line_extension_amount: "840336.134"
+                    free_of_charge_indicator: false
+                    tax_totals:
+                      - tax_id: 1
+                        tax_amount: "159663.865"
+                        taxable_amount: "840336.134"
+                        percent: "19.00"
+                    description: "COMISION POR SERVICIOS"
+                    notes: "ESTA ES UNA PRUEBA DE NOTA DE DETALLE DE LINEA."
+                    code: "COMISION"
+                    type_item_identification_id: 4
+                    price_amount: "1000000.00"
+                    base_quantity: "1"
+      responses:
+        '200':
+          description: PDF regenerado y enviado exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /regeneratepdf/{prefix}/{number}/{cufe}:
+    post:
+      tags:
+        - Regenerar PDF
+      summary: Regenerar Documento Con URL
+      description: |
+        Regenera el PDF de un documento ya existente utilizando sus parámetros clave (Prefijo, Número, CUFE) en la URL.
+        
+        Esto asume que el documento ya existe en la base de datos y se vuelve a generar con la información almacenada o por defecto.
+      parameters:
+        - in: path
+          name: prefix
+          schema:
+            type: string
+          required: true
+          description: Prefijo del documento
+          example: "SETP"
+        - in: path
+          name: number
+          schema:
+            type: string
+          required: true
+          description: Número del documento
+          example: "990000667"
+        - in: path
+          name: cufe
+          schema:
+            type: string
+          required: true
+          description: CUFE del documento
+          example: "c4075c096de4eb5f6ab17697936fb1687e468bb73f015bfe62701af753c..."
+      responses:
+        '200':
+          description: PDF regenerado exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /templates:
+    get:
+      tags:
+        - Plantillas
+      summary: Listar Plantillas PDF
+      description: Obtiene la lista de todas las plantillas PDF disponibles en el sistema con sus imágenes de vista previa.
+      responses:
+        '200':
+          description: Lista de plantillas obtenida exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  templates:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        image_url:
+                          type: string
+    put:
+      tags:
+        - Plantillas
+      summary: Actualizar Plantilla de Compañía
+      description: Actualiza la plantilla PDF que utilizará la compañía para sus documentos.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: ID de la plantilla a asignar
+                  example: "2"
+      responses:
+        '200':
+          description: Plantilla actualizada correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  success: true
+                  message: "Plantilla actualizada correctamente."

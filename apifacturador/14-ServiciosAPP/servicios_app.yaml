@@ -1,0 +1,538 @@
+openapi: 3.0.1
+info:
+  title: FacturaLatam ApiDianV2.1 - Servicios APP
+  description: |
+    Grupo de servicios diseñados para el consumo desde la aplicación móvil.
+    Incluye autenticación, gestión de documentos, clientes, productos y configuración.
+  version: "1.0.0"
+servers:
+  - url: https://{url_base}/api/ubl2.1
+    description: Servidor de Producción / Staging
+    variables:
+      url_base:
+        default: buho.fastura.uio.la
+        description: URL base del API (sin protocolo ni /api/ubl2.1)
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+  schemas:
+    Resolution:
+      type: object
+      properties:
+        id:
+          type: integer
+        type_document_id:
+          type: integer
+        prefix:
+          type: string
+        resolution:
+          type: string
+        resolution_date:
+          type: string
+          format: date
+        from:
+          type: integer
+        to:
+          type: integer
+        date_from:
+          type: string
+          format: date
+        date_to:
+          type: string
+          format: date
+        current_number:
+          type: integer
+        type_document:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            code:
+              type: string
+
+security:
+  - bearerAuth: []
+
+paths:
+  /login:
+    post:
+      tags:
+        - Auth
+      summary: Iniciar Sesión (APP)
+      description: Permite obtener el token de acceso para la aplicación móvil.
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - email
+                - password
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: demo@gmail.com
+                password:
+                  type: string
+                  format: password
+                  example: "12345678"
+      responses:
+        "200":
+          description: Login exitoso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      email:
+                        type: string
+                      api_token:
+                        type: string
+                        description: Token para usar en las siguientes peticiones
+                      company:
+                        type: object
+                        description: Datos de la empresa asociada
+                  code:
+                    type: integer
+                    example: 200
+        "401":
+          description: Credenciales inválidas o usuario sin empresa
+  
+  /documents:
+    get:
+      tags:
+        - Documentos
+      summary: Listar Documentos
+      description: >
+        Permite listar los documentos y filtrar por fecha (date='all', 'current_month', 'last_month', 'last_ninety')
+        o búsqueda (search). Soporta paginación.
+      parameters:
+        - name: date
+          in: query
+          schema:
+            type: string
+            enum: [all, current_month, last_month, last_ninety]
+          description: Filtro de fecha
+        - name: search
+          in: query
+          schema:
+            type: string
+          description: Término de búsqueda (número, prefijo, cliente, etc.)
+        - name: page
+          in: query
+          schema:
+            type: integer
+          description: Número de página
+      responses:
+        "200":
+          description: Lista de documentos recuperada exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          description: Detalle del documento (simplificado)
+
+  /download/{nit}/{filename}:
+    get:
+      tags:
+        - Documentos
+      summary: Descargar PDF
+      description: Permite descargar o previsualizar el PDF de un documento.
+      parameters:
+        - name: nit
+          in: path
+          required: true
+          schema:
+            type: string
+          description: NIT de la empresa
+        - name: filename
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Nombre del archivo PDF (ej. FES-SETP990060188.pdf)
+      responses:
+        "200":
+          description: Archivo PDF
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+
+  /customers:
+    get:
+      tags:
+        - Clientes
+      summary: Listar Clientes
+      description: >
+        Listar clientes con filtros de búsqueda y paginación.
+      parameters:
+        - name: search
+          in: query
+          schema:
+            type: string
+          description: Buscar por nombre, documento, correo, teléfono
+        - name: page
+          in: query
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Lista de clientes
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+                    properties:
+                      data:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            identification_number:
+                              type: integer
+                            name:
+                              type: string
+                            email:
+                              type: string
+
+  /customers/{identification_number}:
+    put:
+      tags:
+        - Clientes
+      summary: Actualizar Cliente
+      description: Actualiza los datos basicos de un cliente. El numero de identificación no es modificable.
+      parameters:
+        - name: identification_number
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Número de identificación del cliente a actualizar
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dv:
+                  type: string
+                name:
+                  type: string
+                phone:
+                  type: string
+                address:
+                  type: string
+                email:
+                  type: string
+      responses:
+        "200":
+          description: Cliente actualizado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+
+  /items:
+    get:
+      tags:
+        - Productos
+      summary: Listar Productos
+      parameters:
+        - name: search
+          in: query
+          schema:
+            type: string
+          description: Buscar por código interno o nombre
+      responses:
+        "200":
+          description: Lista de productos
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        sale_unit_price:
+                          type: string
+
+  /items/add:
+    post:
+      tags:
+        - Productos
+      summary: Registrar Producto
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - name
+                - item_type_id
+                - internal_id
+                - sale_unit_price
+              properties:
+                name:
+                  type: string
+                second_name:
+                  type: string
+                description:
+                  type: string
+                item_type_id:
+                  type: string
+                  example: "01"
+                internal_id:
+                  type: string
+                sale_unit_price:
+                  type: number
+                purchase_unit_price:
+                  type: number
+                active:
+                  type: boolean
+                companies_id:
+                  type: integer
+      responses:
+        "201":
+          description: Producto creado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+
+  /items/{id}:
+    put:
+      tags:
+        - Productos
+      summary: Actualizar Producto
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+          description: ID del producto
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                second_name:
+                  type: string
+                description:
+                  type: string
+                internal_id:
+                  type: string
+                sale_unit_price:
+                  type: string
+                percentage_of_profit:
+                  type: string
+                is_set:
+                  type: integer
+                has_perception:
+                  type: integer
+                percentage_perception:
+                  type: string
+                companies_id:
+                  type: integer
+                status:
+                  type: integer
+      responses:
+        "200":
+          description: Producto actualizado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+
+  /table/resolutions:
+    get:
+      tags:
+        - Configuración
+      summary: Listar Resoluciones (General)
+      description: |
+        Permite listar las resoluciones. Si no lista las resoluciones del entorno actual, 
+        debe consumir el servicio de configuración de resolución.
+      parameters:
+        - name: type_document_id
+          in: query
+          schema:
+            type: integer
+          description: "ID del tipo de documento (1: Factura, 4: Nota Crédito, 5: Nota Débito, 9: Nómina)"
+      responses:
+        "200":
+          description: Lista de resoluciones
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  resolutions:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Resolution'
+
+  /table/resolutions/{nit}:
+    get:
+      tags:
+        - Configuración
+      summary: Listar Resoluciones por NIT
+      parameters:
+        - name: nit
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Resoluciones de la empresa asociada al NIT
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  resolutions:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Resolution'
+
+  /table/resolutions/{nit}/{type_document_id}:
+    get:
+      tags:
+        - Configuración
+      summary: Listar Resoluciones por NIT y Tipo
+      parameters:
+        - name: nit
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: type_document_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Resoluciones filtradas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  resolutions:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Resolution'
+
+  /table/payment-methods:
+    get:
+      tags:
+        - Configuración
+      summary: Listar Métodos de Pago
+      responses:
+        "200":
+          description: Lista de métodos de pago
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payment_methods:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        code:
+                          type: string
+
+  /table/payment-forms:
+    get:
+      tags:
+        - Configuración
+      summary: Listar Formas de Pago
+      responses:
+        "200":
+          description: Lista de formas de pago
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  payment_forms:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        code:
+                          type: string
+
+

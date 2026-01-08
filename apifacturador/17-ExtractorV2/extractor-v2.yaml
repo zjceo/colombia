@@ -1,0 +1,114 @@
+openapi: 3.0.0
+info:
+  title: 17 - Extractor V2
+  version: 1.0.0
+  description: |
+    Extractor de documentos de la DIAN.
+    
+    > **Nota:** Su despliegue es separado del proyecto APIDIAN y generalmente corre en el puerto 3000.
+
+servers:
+  - url: 'http://localhost:3000'
+    description: Servidor Local Extractor
+  - url: 'http://extractorv2.oo:3000'
+    description: Servidor Producción (Ejemplo)
+
+components:
+  schemas:
+    ExtractorRequest:
+      type: object
+      properties:
+        tipo:
+          type: string
+          enum: [Received, Sent]
+          default: Received
+        fechaDesde:
+          type: string
+          format: date
+          example: "2025-08-01"
+        fechaHasta:
+          type: string
+          format: date
+          example: "2025-08-01"
+        url:
+          type: string
+          description: URL de autenticación (AuthToken) o URL base (Certificate)
+          example: "https://catalogo-vpfe.dian.gov.co/User/AuthToken?pk=..."
+    ExtractorResponse:
+      type: object
+      properties:
+        log:
+          type: array
+          items:
+            type: string
+          description: Registro de pasos ejecutados por el scraper
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              TipoDocumento:
+                type: string
+              Numero de Factura:
+                type: string
+              CUFE:
+                type: string
+              Fecha de Creación:
+                type: string
+              Total a Pagar:
+                type: number
+              # Se pueden añadir más campos según el ejemplo de respuesta
+              LineItems:
+                type: array
+                items:
+                  type: object
+    
+paths:
+  /api/scrape:
+    post:
+      summary: MODO 1 | Extracción con URL de acceso
+      description: |
+        Realiza la extracción utilizando una URL con token de autenticación (AuthToken).
+        Se recomienda para entornos donde no se tiene el certificado instalado.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExtractorRequest'
+      responses:
+        '200':
+          description: Extracción exitosa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExtractorResponse'
+
+  /api/certificate:
+    post:
+      summary: MODO 2 | Extracción con certificado
+      description: |
+        Realiza la extracción utilizando un certificado digital local.
+        
+        ### Requisitos
+        - Tener el certificado instalado en el equipo.
+        - Haber iniciado sesión anteriormente con el certificado en el navegador.
+        - Tener el documento del representante a la mano.
+        
+        ### Flujo
+        1. Completar los datos del body y enviar.
+        2. Se abrirá una ventana nueva del navegador (seleccionar certificado si se solicita).
+        3. Dejar que inicie sesión automáticamente.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExtractorRequest'
+      responses:
+        '200':
+          description: Extracción exitosa
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExtractorResponse'
