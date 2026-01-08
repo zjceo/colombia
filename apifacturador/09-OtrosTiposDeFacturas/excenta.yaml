@@ -1,0 +1,353 @@
+openapi: 3.0.1
+info:
+  title: Facturas Exentas
+  version: 1.0.0
+servers:
+  - url: http://localhost/apidian2021/public/api
+    description: Servidor Local
+paths:
+  /ubl2.1/invoice:
+    post:
+      tags:
+        - Facturas Exentas
+      summary: Enviar Factura Exenta
+      description: |
+        Endpoint para enviar facturas exentas de IVA, con IVA 0%, o mixtas.
+        
+        Aplica la misma documentacion que el PRIMER ENVIO DE FACTURA de la seccion 02 - PRIMEROS ENVIOS.
+        
+        Este ejemplo ilustra como se debe utilizar la API para enviar una factura excenta de IVA, es de aclarar que excenta de IVA, es diferente de excluida de IVA.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: true
+            examples:
+              Excenta:
+                summary: Factura Exenta
+                description: Envio de factura con articulos excentos de IVA.
+                value:
+                  number: 990000519
+                  type_document_id: 1
+                  date: "2022-04-25"
+                  time: "04:08:12"
+                  resolution_number: "18760000001"
+                  prefix: "SETP"
+                  sendmail: true
+                  customer:
+                    identification_number: 900166483
+                    dv: 1
+                    name: "INVERSIONES DAVAL SAS"
+                    phone: "3103891693"
+                    address: "CLL 4 NRO 33-90"
+                    email: "alexanderobandolondono@gmail.com"
+                    merchant_registration: "0000000-00"
+                    type_document_identification_id: 6
+                    type_organization_id: 1
+                    municipality_id: 822
+                    type_regime_id: 1
+                  payment_form:
+                    payment_form_id: 2
+                    payment_method_id: 30
+                    payment_due_date: "2022-05-25"
+                    duration_measure: "30"
+                  allowance_charges:
+                    - discount_id: 1
+                      charge_indicator: false
+                      allowance_charge_reason: "DESCUENTO GENERAL"
+                      amount: "0.00"
+                      base_amount: "1000000.00"
+                  legal_monetary_totals:
+                    line_extension_amount: "1000000.00"
+                    tax_exclusive_amount: "0.00"
+                    tax_inclusive_amount: "1000000.00"
+                    allowance_total_amount: "0.00"
+                    charge_total_amount: "0.00"
+                    payable_amount: "1000000.00"
+                  invoice_lines:
+                    - unit_measure_id: 70
+                      invoiced_quantity: "1"
+                      line_extension_amount: "1000000.00"
+                      free_of_charge_indicator: false
+                      allowance_charges:
+                        - charge_indicator: false
+                          allowance_charge_reason: "DESCUENTO GENERAL"
+                          amount: "0.00"
+                          base_amount: "1000000.00"
+                      description: "COMISION POR SERVICIOS"
+                      code: "COMISION"
+                      type_item_identification_id: 4
+                      price_amount: "1000000.00"
+                      base_quantity: "1"
+              ExcentaEIVA0:
+                summary: Exenta e IVA 0%
+                description: Envio de factura con articulos excentos e IVA 0%.
+                value:
+                  number: 990000373
+                  type_document_id: 1
+                  date: "2021-08-17"
+                  time: "04:08:12"
+                  resolution_number: "18760000001"
+                  prefix: "SETP"
+                  sendmail: true
+                  customer:
+                    identification_number: 900166483
+                    dv: 1
+                    name: "INVERSIONES DAVAL SAS"
+                    phone: 3103891693
+                    address: "CLL 4 NRO 33-90"
+                    email: "alexanderobandolondono@gmail.com"
+                    merchant_registration: "0000000-00"
+                    type_document_identification_id: 6
+                    type_organization_id: 1
+                    municipality_id: 822
+                    type_regime_id: 1
+                  payment_form:
+                    payment_form_id: 2
+                    payment_method_id: 30
+                    payment_due_date: "2021-09-17"
+                    duration_measure: "30"
+                  allowance_charges:
+                    - discount_id: 1
+                      charge_indicator: false
+                      allowance_charge_reason: "DESCUENTO GENERAL"
+                      amount: "0.00"
+                      base_amount: "1000000.00"
+                  legal_monetary_totals:
+                    line_extension_amount: "1002400.00"
+                    tax_exclusive_amount: "2400.00"
+                    tax_inclusive_amount: "1002400.00"
+                    allowance_total_amount: "0.00"
+                    charge_total_amount: "0.00"
+                    payable_amount: "1002400.00"
+                  tax_totals:
+                    - tax_id: 1
+                      tax_amount: "0.00"
+                      taxable_amount: "2400.00"
+                      percent: "0.00"
+                  invoice_lines:
+                    - unit_measure_id: 70
+                      invoiced_quantity: "1"
+                      line_extension_amount: "1000000.00"
+                      free_of_charge_indicator: false
+                      allowance_charges:
+                        - charge_indicator: false
+                          allowance_charge_reason: "DESCUENTO GENERAL"
+                          amount: "0.00"
+                          base_amount: "1000000.00"
+                      description: "COMISION POR SERVICIOS"
+                      code: "COMISION"
+                      type_item_identification_id: 4
+                      price_amount: "1000000.00"
+                      base_quantity: "1"
+                    - unit_measure_id: 70
+                      invoiced_quantity: "1"
+                      line_extension_amount: "2400.00"
+                      free_of_charge_indicator: false
+                      allowance_charges:
+                        - charge_indicator: false
+                          allowance_charge_reason: "DESCUENTO GENERAL"
+                          amount: "0.00"
+                          base_amount: "2400.00"
+                      tax_totals:
+                        - tax_id: 1
+                          tax_amount: "0.00"
+                          taxable_amount: "2400.00"
+                          percent: "0.00"
+                      description: "CURUBA"
+                      code: "CURUBA"
+                      type_item_identification_id: 4
+                      price_amount: "2400.00"
+                      base_quantity: "1"
+              ExcentaEIVA19:
+                summary: Exenta e IVA 19%
+                description: Envio de factura con articulos excentos e IVA 19%.
+                value:
+                  number: 990000375
+                  type_document_id: 1
+                  date: "2021-08-17"
+                  time: "04:08:12"
+                  resolution_number: "18760000001"
+                  prefix: "SETP"
+                  sendmail: true
+                  customer:
+                    identification_number: 900166483
+                    dv: 1
+                    name: "INVERSIONES DAVAL SAS"
+                    phone: 3103891693
+                    address: "CLL 4 NRO 33-90"
+                    email: "alexanderobandolondono@gmail.com"
+                    merchant_registration: "0000000-00"
+                    type_document_identification_id: 6
+                    type_organization_id: 1
+                    municipality_id: 822
+                    type_regime_id: 1
+                  payment_form:
+                    payment_form_id: 2
+                    payment_method_id: 30
+                    payment_due_date: "2021-09-17"
+                    duration_measure: "30"
+                  allowance_charges:
+                    - discount_id: 1
+                      charge_indicator: false
+                      allowance_charge_reason: "DESCUENTO GENERAL"
+                      amount: "0.00"
+                      base_amount: "1000000.00"
+                  legal_monetary_totals:
+                    line_extension_amount: "1002400.00"
+                    tax_exclusive_amount: "2400.00"
+                    tax_inclusive_amount: "1002856.00"
+                    allowance_total_amount: "0.00"
+                    charge_total_amount: "0.00"
+                    payable_amount: "1002856.00"
+                  tax_totals:
+                    - tax_id: 1
+                      tax_amount: "456.00"
+                      taxable_amount: "2400.00"
+                      percent: "19.00"
+                  invoice_lines:
+                    - unit_measure_id: 70
+                      invoiced_quantity: "1"
+                      line_extension_amount: "1000000.00"
+                      free_of_charge_indicator: false
+                      allowance_charges:
+                        - charge_indicator: false
+                          allowance_charge_reason: "DESCUENTO GENERAL"
+                          amount: "0.00"
+                          base_amount: "1000000.00"
+                      description: "COMISION POR SERVICIOS"
+                      code: "COMISION"
+                      type_item_identification_id: 4
+                      price_amount: "1000000.00"
+                      base_quantity: "1"
+                    - unit_measure_id: 70
+                      invoiced_quantity: "1"
+                      line_extension_amount: "2400.00"
+                      free_of_charge_indicator: false
+                      allowance_charges:
+                        - charge_indicator: false
+                          allowance_charge_reason: "DESCUENTO GENERAL"
+                          amount: "0.00"
+                          base_amount: "2400.00"
+                      tax_totals:
+                        - tax_id: 1
+                          tax_amount: "456.00"
+                          taxable_amount: "2400.00"
+                          percent: "19.00"
+                      description: "CURUBA"
+                      code: "CURUBA"
+                      type_item_identification_id: 4
+                      price_amount: "2856.00"
+                      base_quantity: "1"
+              ExcentaEIVA19y0:
+                summary: Exenta, IVA 19% y IVA 0%
+                description: Envio de factura con articulos excentos, IVA 19% e IVA 0%.
+                value:
+                  number: 990000376
+                  type_document_id: 1
+                  date: "2021-08-17"
+                  time: "04:08:12"
+                  resolution_number: "18760000001"
+                  prefix: "SETP"
+                  sendmail: true
+                  customer:
+                    identification_number: 900166483
+                    dv: 1
+                    name: "INVERSIONES DAVAL SAS"
+                    phone: 3103891693
+                    address: "CLL 4 NRO 33-90"
+                    email: "alexanderobandolondono@gmail.com"
+                    merchant_registration: "0000000-00"
+                    type_document_identification_id: 6
+                    type_organization_id: 1
+                    municipality_id: 822
+                    type_regime_id: 1
+                  payment_form:
+                    payment_form_id: 2
+                    payment_method_id: 30
+                    payment_due_date: "2021-09-17"
+                    duration_measure: "30"
+                  allowance_charges:
+                    - discount_id: 1
+                      charge_indicator: false
+                      allowance_charge_reason: "DESCUENTO GENERAL"
+                      amount: "0.00"
+                      base_amount: "1000000.00"
+                  legal_monetary_totals:
+                    line_extension_amount: "1005800.00"
+                    tax_exclusive_amount: "5800.00"
+                    tax_inclusive_amount: "1006256.00"
+                    allowance_total_amount: "0.00"
+                    charge_total_amount: "0.00"
+                    payable_amount: "1006256.00"
+                  tax_totals:
+                    - tax_id: 1
+                      tax_amount: "456.00"
+                      taxable_amount: "2400.00"
+                      percent: "19.00"
+                    - tax_id: 1
+                      tax_amount: "0.00"
+                      taxable_amount: "3400.00"
+                      percent: "0.00"
+                  invoice_lines:
+                    - unit_measure_id: 70
+                      invoiced_quantity: "1"
+                      line_extension_amount: "1000000.00"
+                      free_of_charge_indicator: false
+                      allowance_charges:
+                        - charge_indicator: false
+                          allowance_charge_reason: "DESCUENTO GENERAL"
+                          amount: "0.00"
+                          base_amount: "1000000.00"
+                      description: "COMISION POR SERVICIOS"
+                      code: "COMISION"
+                      type_item_identification_id: 4
+                      price_amount: "1000000.00"
+                      base_quantity: "1"
+                    - unit_measure_id: 70
+                      invoiced_quantity: "1"
+                      line_extension_amount: "2400.00"
+                      free_of_charge_indicator: false
+                      allowance_charges:
+                        - charge_indicator: false
+                          allowance_charge_reason: "DESCUENTO GENERAL"
+                          amount: "0.00"
+                          base_amount: "2400.00"
+                      tax_totals:
+                        - tax_id: 1
+                          tax_amount: "456.00"
+                          taxable_amount: "2400.00"
+                          percent: "19.00"
+                      description: "MANZANA"
+                      code: "MANZANA"
+                      type_item_identification_id: 4
+                      price_amount: "2856.00"
+                      base_quantity: "1"
+                    - unit_measure_id: 70
+                      invoiced_quantity: "1"
+                      line_extension_amount: "3400.00"
+                      free_of_charge_indicator: false
+                      allowance_charges:
+                        - charge_indicator: false
+                          allowance_charge_reason: "DESCUENTO GENERAL"
+                          amount: "0.00"
+                          base_amount: "3400.00"
+                      tax_totals:
+                        - tax_id: 1
+                          tax_amount: "0.00"
+                          taxable_amount: "3400.00"
+                          percent: "0.00"
+                      description: "CURUBA"
+                      code: "CURUBA"
+                      type_item_identification_id: 4
+                      price_amount: "3400.00"
+                      base_quantity: "1"
+      responses:
+        '200':
+          description: Factura procesada correctamente
+          content:
+            application/json:
+              schema:
+                type: object

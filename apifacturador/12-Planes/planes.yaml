@@ -1,0 +1,235 @@
+openapi: 3.0.1
+info:
+  title: Gestión de Planes
+  version: 1.0.0
+servers:
+  - url: https://{url_base}/api/ubl2.1
+    description: Servidor de Producción / Staging
+    variables:
+      url_base:
+        default: buho.fastura.uio.la
+        description: URL base del API (sin protocolo ni /api/ubl2.1)
+paths:
+  /plan:
+    put:
+      tags:
+        - Planes
+      summary: Crear o Modificar Plan
+      description: |
+        Endpoint para crear un nuevo plan (si se envía todos los datos) o modificar uno existente.
+        
+        **Nota:** El endpoint sirve tanto para creación como para edición.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+                  description: ID del plan (para modificación) o nuevo ID para creación.
+                  example: "2"
+                name:
+                  type: string
+                  description: Nombre del plan
+                  example: "PLAN DE PRUEBA 2"
+                qty_docs_invoice:
+                  type: integer
+                  description: Cantidad de facturas permitidas
+                  example: 15
+                qty_docs_payroll:
+                  type: integer
+                  description: Cantidad de documentos de nómina permitidos
+                  example: 5
+                qty_docs_radian:
+                  type: integer
+                  description: Cantidad de documentos radian permitidos
+                  example: 10
+                qty_docs_ds:
+                  type: integer
+                  description: Cantidad de documentos soporte permitidos
+                  example: 5
+                period:
+                  type: integer
+                  description: Periodo de validez en meses
+                  example: 1
+                state:
+                  type: integer
+                  description: Estado del plan (1 = Activo)
+                  example: 1
+                observation:
+                  type: string
+                  description: Observaciones del plan
+                  example: "NINGUNA"
+      responses:
+        '200':
+          description: Plan creado o modificado exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /plan/query:
+    get:
+      tags:
+        - Planes
+      summary: Consultar Todos los Planes
+      description: Obtiene una lista de todos los planes configurados en el sistema.
+      responses:
+        '200':
+          description: Lista de planes recuperada exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /plan/query/{id}:
+    get:
+      tags:
+        - Planes
+      summary: Consultar Plan por ID
+      description: Obtiene la información detallada de un plan específico.
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID del plan a consultar
+          example: "1"
+      responses:
+        '200':
+          description: Información del plan recuperada exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /plan/infoplanuser:
+    get:
+      tags:
+        - Planes
+      summary: Información del Plan del Usuario
+      description: Obtiene la información del plan actual asignado al usuario autenticado.
+      responses:
+        '200':
+          description: Información del plan del usuario recuperada exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /plan/queryusersbyplan/{id}:
+    get:
+      tags:
+        - Planes
+      summary: Consultar Usuarios por Plan
+      description: Obtiene la lista de usuarios (compañías) que tienen asignado un plan específico.
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: ID del plan
+          example: "1"
+      responses:
+        '200':
+          description: Lista de usuarios recuperada exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /config/{nit}/{dv}:
+    post:
+      tags:
+        - Configuración Compañía
+      summary: Asignar/Modificar/Renovar Plan a Compañía
+      description: |
+        Endpoint para asignar un plan a una compañía, modificar sus datos o renovar su suscripción.
+        
+        **Nota:** Este endpoint es multifuncional (Configuración + Asignación de Plan).
+        Devuelve un `API_TOKEN` nuevo si la operación es exitosa, el cual debe usarse para futuras peticiones.
+      parameters:
+        - in: path
+          name: nit
+          schema:
+            type: string
+          required: true
+          description: NIT de la empresa
+          example: "89008003"
+        - in: path
+          name: dv
+          schema:
+            type: string
+          required: true
+          description: Dígito de verificación
+          example: "2"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type_document_identification_id:
+                  type: integer
+                  description: ID del tipo de documento de identidad
+                  example: 3
+                type_organization_id:
+                  type: integer
+                  description: ID del tipo de organización
+                  example: 2
+                type_regime_id:
+                  type: integer
+                  description: ID del tipo de régimen
+                  example: 2
+                type_liability_id:
+                  type: integer
+                  description: ID del tipo de responsabilidad
+                  example: 14
+                type_plan_id:
+                  type: integer
+                  description: ID del plan a asignar
+                  example: 1
+                renew_plan:
+                  type: boolean
+                  description: Indica si es una renovación de plan
+                  example: true
+                business_name:
+                  type: string
+                  description: Razón social
+                  example: "ALEXANDER OBANDO LONDONO"
+                merchant_registration:
+                  type: string
+                  description: Registro mercantil
+                  example: "0000000-00"
+                municipality_id:
+                  type: integer
+                  description: ID del municipio
+                  example: 820
+                address:
+                  type: string
+                  description: Dirección
+                  example: "CRA 21A NRO 11-25"
+                phone:
+                  type: integer
+                  description: Teléfono
+                  example: 3103891693
+                email:
+                  type: string
+                  description: Correo electrónico
+                  example: "alexander_obando@hotmail.com"
+                state:
+                  type: boolean
+                  description: Estado de la compañía
+                  example: true
+      responses:
+        '200':
+          description: Configuración realizada exitosamente. Devuelve API Token.
+          content:
+            application/json:
+              schema:
+                type: object

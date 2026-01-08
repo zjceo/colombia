@@ -1,0 +1,83 @@
+openapi: 3.0.0
+info:
+  title: 08. Paso a Producción
+  version: 1.0.0
+  description: |
+    Endpoints necesarios para finalizar la habilitación y pasar la empresa a producción.
+servers:
+  - url: https://{url_base}/api/ubl2.1
+    variables:
+      url_base:
+        default: buho.fastura.uio.la
+        description: URL base del API
+paths:
+  /config/environment:
+    put:
+      summary: Cambiar Ambiente de Operación
+      description: |
+        Permite cambiar el ambiente de operación (Habilitación -> Producción) para la empresa especificada.
+        Se utiliza cuando se ha finalizado el proceso de habilitación.
+      operationId: put-config-environment
+      tags:
+        - Producción
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                factura_ventas:
+                  type: integer
+                  description: "ID del ambiente para Factura de Ventas (1: Pruebas, 2: Producción)"
+                  example: 2
+                nomina:
+                  type: integer
+                  description: "ID del ambiente para Nómina"
+                  example: 2
+                pos:
+                  type: integer
+                  description: "ID del ambiente para POS"
+                  example: 2
+                documentos_soporte:
+                  type: integer
+                  description: "ID del ambiente para Documentos Soporte"
+                  example: 2
+                eventos_radian:
+                  type: integer
+                  description: "ID del ambiente para Eventos Radian"
+                  example: 2
+      responses:
+        '200':
+          description: Ambiente actualizado exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+  /numbering-range:
+    post:
+      summary: Consultar Rangos de Numeración
+      description: |
+        Consulta los rangos de numeración asociados al software desde el portal de la DIAN.
+        En su respuesta muestra la información necesaria para registrar una resolución, incluida la clave técnica.
+      operationId: post-numbering-range
+      tags:
+        - Producción
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                IDSoftware:
+                  type: string
+                  description: "Identificador del Software"
+                  example: "82bf0c5e-0117-434d-9471-8a5ee58ae682"
+      responses:
+        '200':
+          description: Rangos de numeración obtenidos exitosamente
+          content:
+            application/json:
+              schema:
+                type: object

@@ -211,6 +211,95 @@ const config: Config = {
               groupPathsBy: "tag",
             },
           },
+          pruebas: {
+            specPath: "apifacturador/07-Pruebas/pruebas.yaml",
+            outputDir: "docs/devs/api/07-pruebas",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          produccion: {
+            specPath: "apifacturador/08-PasoAProduccion/produccion.yaml",
+            outputDir: "docs/devs/api/08-paso-a-produccion",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          sector_salud: {
+            specPath: "apifacturador/09-OtrosTiposDeFacturas/salud.yaml",
+            outputDir: "docs/devs/api/09-otros-tipos-de-facturas/salud",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          sector_excenta: {
+            specPath: "apifacturador/09-OtrosTiposDeFacturas/excenta.yaml",
+            outputDir: "docs/devs/api/09-otros-tipos-de-facturas/excenta",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          sector_mandato: {
+            specPath: "apifacturador/09-OtrosTiposDeFacturas/mandato.yaml",
+            outputDir: "docs/devs/api/09-otros-tipos-de-facturas/mandato",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          sector_aiu: {
+            specPath: "apifacturador/09-OtrosTiposDeFacturas/aiu.yaml",
+            outputDir: "docs/devs/api/09-otros-tipos-de-facturas/aiu",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          sector_contingencia: {
+            specPath: "apifacturador/09-OtrosTiposDeFacturas/contingencia.yaml",
+            outputDir: "docs/devs/api/09-otros-tipos-de-facturas/contingencia",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          sector_exportacion: {
+            specPath: "apifacturador/09-OtrosTiposDeFacturas/exportacion.yaml",
+            outputDir: "docs/devs/api/09-otros-tipos-de-facturas/exportacion",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          sector_transporte: {
+            specPath: "apifacturador/09-OtrosTiposDeFacturas/transporte.yaml",
+            outputDir: "docs/devs/api/09-otros-tipos-de-facturas/transporte",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          generador_eventos: {
+            specPath: "apifacturador/10-GeneradorDeEventos/eventos.yaml",
+            outputDir: "docs/devs/api/10-generador-de-eventos",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          batch_sends: {
+            specPath: "apifacturador/11-BatchSends/batch_sends.yaml",
+            outputDir: "docs/devs/api/11-batch-sends",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+          planes: {
+            specPath: "apifacturador/12-Planes/planes.yaml",
+            outputDir: "docs/devs/api/12-planes",
+            sidebarOptions: {
+              groupPathsBy: "tag",
+            },
+          },
+
+
+
+
+
 
         }
       },

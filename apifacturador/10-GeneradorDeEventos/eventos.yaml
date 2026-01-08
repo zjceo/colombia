@@ -1,0 +1,119 @@
+openapi: 3.0.1
+info:
+  title: Generador de Eventos
+  version: 1.0.0
+servers:
+  - url: https://{url_base}/api/ubl2.1
+    description: Servidor de Producción / Staging
+    variables:
+      url_base:
+        default: buho.fastura.uio.la
+        description: URL base del API (sin protocolo ni /api/ubl2.1)
+paths:
+  /send-event:
+    post:
+      tags:
+        - Eventos
+      summary: Enviar Evento (Documento Adjunto)
+      description: |
+        Endpoint para registrar un evento (Aceptación, Rechazo, Recepción de Bienes, Acuse de Recibo) mediante el envío del XML firmado (AttachedDocument) en Base64.
+        
+        **Nota:** Si se perdió el token de autorización, se puede consultar en la tabla `users` de la base de datos, campo `API_TOKEN`.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                event_id:
+                  type: integer
+                  description: ID del evento (1=Acuse de Recibo, 2=Recepción de Bienes, 3=Aceptación, 4=Reclamo/Rechazo)
+                  example: 1
+                allow_cash_documents:
+                  type: boolean
+                  description: Permitir documentos de contado
+                  example: false
+                sendmail:
+                  type: boolean
+                  description: Enviar correo al adquiriente
+                  example: false
+                base64_attacheddocument_name:
+                  type: string
+                  description: Nombre del archivo XML adjunto
+                  example: "ad09001495660102400018741.xml"
+                base64_attacheddocument:
+                  type: string
+                  description: XML del AttachedDocument codificado en Base64
+                  example: "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4..."
+                type_rejection_id:
+                  type: integer
+                  nullable: true
+                  description: ID del motivo de rechazo (solo si event_id = 4)
+                resend_consecutive:
+                  type: boolean
+                  description: Reenviar consecutivo
+                  example: false
+      responses:
+        '200':
+          description: Evento registrado exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+
+  /send-event-data:
+    post:
+      tags:
+        - Eventos
+      summary: Enviar Evento (Datos CUFE)
+      description: |
+        Endpoint para registrar un evento referenciando el CUFE del documento. Esta opción es más sencilla ya que la API se encarga de construir y firmar el XML del evento.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                event_id:
+                  type: string
+                  description: ID del evento (1=Acuse de Recibo, 2=Recepción de Bienes, 3=Aceptación, 4=Reclamo/Rechazo)
+                  example: "1"
+                document_reference:
+                  type: object
+                  properties:
+                    cufe:
+                      type: string
+                      description: CUFE del documento al cual se le asocia el evento
+                      example: "a7369298cca540ae26efb140a8b23cf7776857294f8718392d3437695749246dbd062246964468b5b319b8d66ced4b8a"
+                issuer_party:
+                  type: object
+                  properties:
+                    identification_number:
+                      type: string
+                      description: Número de identificación de quien emite el evento
+                      example: "89000001"
+                    first_name:
+                      type: string
+                      description: Primer nombre
+                      example: "PEPITO"
+                    last_name:
+                      type: string
+                      description: Apellido
+                      example: "PEREZ"
+                    organization_department:
+                      type: string
+                      description: Departamento/Área
+                      example: "CONTABILIDAD"
+                    job_title:
+                      type: string
+                      description: Cargo
+                      example: "AUXILIAR CONTABLE"
+      responses:
+        '200':
+          description: Evento registrado exitosamente
+          content:
+            application/json:
+              schema:
+                type: object

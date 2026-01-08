@@ -1,0 +1,302 @@
+openapi: 3.0.0
+info:
+  title: 07. Pruebas y Casos Especiales
+  version: 1.0.0
+  description: |
+    Endpoints para pruebas específicas y casos de uso complejos como Facturación AIU, Consultas por ZIP Key y Notas Crédito ICL.
+servers:
+  - url: https://{url_base}/api/ubl2.1
+    variables:
+      url_base:
+        default: buho.fastura.uio.la
+        description: URL base del API
+paths:
+  /invoice-aiu:
+    post:
+      summary: Envio de Factura con AIU
+      description: |
+        Envío de una factura bajo el modelo AIU (Administración, Imprevistos, Utilidad).
+        Este tipo de factura es común en el sector de la construcción y servicios.
+        Solo se cobra impuesto sobre la utilidad.
+      operationId: post-invoice-aiu
+      tags:
+        - Casos Especiales
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                number: 990000378
+                dv: 2
+                type_document_id: 1
+                date: "2021-08-17"
+                time: "09:44:45"
+                notes: "SIN OBSERVACIONES"
+                noteAIU: "PRUEBA DE CONTRATO AIU"
+                resolution_number: "18760000001"
+                prefix: "SETP"
+                customer:
+                  identification_number: 89008003
+                  name: "ALEXANDER OBANDO LONDONO"
+                  phone: 3103891693
+                  address: "BRR LIMONAR MZ 6 CS 3 ET 1"
+                  email: "alexander_obando@hotmail.com"
+                  merchant_registration: "0000-00"
+                  type_document_identification_id: 3
+                  type_organization_id: 2
+                  municipality_id: 149
+                  type_regime_id: 2
+                sendmail: true
+                foot_note: "Generado por SKALA Platform | NIT 901.450.277 - 1 | Cel: 300 2031148 - www.skala.one"
+                tax_totals:
+                  - tax_id: 1
+                    percent: "19.00"
+                    tax_amount: "91187.27"
+                    taxable_amount: "479933.00"
+                  - tax_id: 1
+                    percent: "0.00"
+                    tax_amount: "0.00"
+                    taxable_amount: "10174570.59"
+                payment_form:
+                  payment_form_id: 2
+                  duration_measure: 13
+                  payment_due_date: "2021-09-15"
+                  payment_method_id: 75
+                sendmailtome: true
+                invoice_lines:
+                  - code: "1"
+                    tax_totals:
+                      - tax_id: 1
+                        percent: "0.00"
+                        tax_amount: "0.00"
+                        taxable_amount: "9598650.59"
+                    description: "Instalaciones Generales Con AIU"
+                    price_amount: "8199.98"
+                    base_quantity: "1170.57"
+                    unit_measure_id: 70
+                    allowance_charges:
+                      - amount: "0.00"
+                        base_amount: "9598650.59"
+                        charge_indicator: false
+                        allowance_charge_reason: "DESCUENTO GENERAL"
+                    invoiced_quantity: "1170.57"
+                    line_extension_amount: "9598650.59"
+                    free_of_charge_indicator: false
+                    type_item_identification_id: 4
+                  - code: "2"
+                    tax_totals:
+                      - tax_id: 1
+                        percent: "0.00"
+                        tax_amount: "0.00"
+                        taxable_amount: "287960.00"
+                    description: "Administración"
+                    price_amount: "287960.00"
+                    base_quantity: "1.00"
+                    unit_measure_id: 70
+                    allowance_charges:
+                      - amount: "0.00"
+                        base_amount: "287960.00"
+                        charge_indicator: false
+                        allowance_charge_reason: "DESCUENTO GENERAL"
+                    invoiced_quantity: "1.00"
+                    line_extension_amount: "287960.00"
+                    free_of_charge_indicator: false
+                    type_item_identification_id: 4
+                  - code: "3"
+                    tax_totals:
+                      - tax_id: 1
+                        percent: "0.00"
+                        tax_amount: "0.00"
+                        taxable_amount: "287960.00"
+                    description: "Imprevisto"
+                    price_amount: "287960.00"
+                    base_quantity: "1.00"
+                    unit_measure_id: 70
+                    allowance_charges:
+                      - amount: "0.00"
+                        base_amount: "287960.00"
+                        charge_indicator: false
+                        allowance_charge_reason: "DESCUENTO GENERAL"
+                    invoiced_quantity: "1.00"
+                    line_extension_amount: "287960.00"
+                    free_of_charge_indicator: false
+                    type_item_identification_id: 4
+                  - code: "4"
+                    tax_totals:
+                      - tax_id: 1
+                        percent: "19.00"
+                        tax_amount: "91187.27"
+                        taxable_amount: "479933.00"
+                    description: "Utilidad"
+                    price_amount: "571120.27"
+                    base_quantity: "1.00"
+                    unit_measure_id: 70
+                    allowance_charges:
+                      - amount: "0.00"
+                        base_amount: "479933.00"
+                        charge_indicator: false
+                        allowance_charge_reason: "DESCUENTO GENERAL"
+                    invoiced_quantity: "1.00"
+                    line_extension_amount: "479933.00"
+                    free_of_charge_indicator: false
+                    type_item_identification_id: 4
+                allowance_charges:
+                  - amount: "0.00"
+                    base_amount: "10654503.59"
+                    discount_id: 10
+                    charge_indicator: false
+                    allowance_charge_reason: "DESCUENTO GENERAL"
+                establishment_name: "COSTA VERTICAL SOLUTION S.A.S"
+                legal_monetary_totals:
+                  payable_amount: "10745690.86"
+                  charge_total_amount: "0.00"
+                  tax_exclusive_amount: "10654503.59"
+                  tax_inclusive_amount: "10745690.86"
+                  line_extension_amount: "10654503.59"
+                  allowance_total_amount: "0.00"
+      responses:
+        '200':
+          description: Factura creada exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+  /status/zip/{zip_key}:
+    post:
+      summary: Consulta de Estado por ZIP Key
+      description: |
+        Consulta el estado de un documento enviado asíncronamente utilizando la `zip_key`.
+        Retorna si el documento fue validado o rechazado por la DIAN.
+      operationId: post-status-zip
+      tags:
+        - Consultas
+      parameters:
+        - name: zip_key
+          in: path
+          required: true
+          description: La clave del ZIP retornada en la respuesta asíncrona.
+          schema:
+            type: string
+            example: "e0f6f102-2769-4b98-a566-2a16518f23ed"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                sendmail: false
+                sendmailtome: false
+                atacheddocument_name_prefix: "NIS-A1-"
+      responses:
+        '200':
+          description: Estado del documento obtenido exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+  /credit-note:
+    post:
+      summary: Nota Crédito ICL
+      description: |
+        Envío de una Nota de Crédito. Ejemplo específico para el caso ICL.
+      operationId: post-credit-note-icl
+      tags:
+        - Notas
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                billing_reference:
+                  number: "SETP990001109"
+                  uuid: "858813ba65240e31fc5f808ff51465f605a0c143d6c50a324b6c89978db8fcd93660f6b5eeb4fb61229d627b40334bb4"
+                  issue_date: "2024-06-28"
+                discrepancyresponsecode: 2
+                discrepancyresponsedescription: null
+                notes: "Devolución Contado Automatico  a documento SETP990001109"
+                prefix: "NC"
+                number: 95
+                type_document_id: 4
+                date: "2024-06-28"
+                time: "06:00:13"
+                establishment_name: "TORRE SOFTWARE"
+                establishment_address: "BRR LIMONAR MZ 6 CS 3 ET 1 PISO 2"
+                establishment_phone: "3226563672"
+                establishment_municipality: 600
+                sendmail: false
+                sendmailtome: false
+                head_note: "PRUEBA DE TEXTO LIBRE..."
+                foot_note: "PRUEBA DE TEXTO LIBRE..."
+                customer:
+                  identification_number: 900166483
+                  dv: 1
+                  name: "INVERSIONES DAVAL SAS"
+                  phone: "3103891693"
+                  address: "CLL 4 NRO 33-90"
+                  email: "alexanderobandolondono@gmail.com"
+                  merchant_registration: "0000000-00"
+                  type_document_identification_id: 6
+                  type_organization_id: 1
+                  municipality_id: 822
+                  type_regime_id: 1
+                legal_monetary_totals:
+                  line_extension_amount: "17820.00"
+                  tax_exclusive_amount: "17820.00"
+                  tax_inclusive_amount: "33245.00"
+                  allowance_total_amount: null
+                  charge_total_amount: null
+                  payable_amount: "33245.00"
+                type_operation_id: null
+                tax_totals:
+                  - tax_id: 1
+                    tax_amount: "891.00"
+                    percent: "5.00"
+                    taxable_amount: "17820.00"
+                    unit_measure_id: null
+                    per_unit_amount: null
+                    base_unit_measure: null
+                  - tax_id: 19
+                    tax_amount: "14534.00"
+                    percent: "0"
+                    taxable_amount: "0"
+                    unit_measure_id: "70"
+                    per_unit_amount: null
+                    base_unit_measure: null
+                credit_note_lines:
+                  - tax_totals:
+                      - tax_id: 1
+                        tax_amount: "891.0000"
+                        percent: "5.00"
+                        taxable_amount: "17820.00"
+                        unit_measure_id: null
+                        per_unit_amount: null
+                        base_unit_measure: null
+                      - tax_id: 19
+                        tax_amount: "14534.00"
+                        percent: "0"
+                        taxable_amount: "0"
+                        unit_measure_id: "70"
+                        per_unit_amount: "1.00"
+                        base_unit_measure: "14534"
+                    unit_measure_id: 1076
+                    invoiced_quantity: "1.00"
+                    line_extension_amount: "17820.00"
+                    free_of_charge_indicator: false
+                    description: "LDM AGUARDIENTE CAÑO CRISTALES 750 CC BOTELLA  "
+                    notes: ""
+                    code: "LDM001005"
+                    type_item_identification_id: 4
+                    price_amount: "17820.00"
+                    base_quantity: "1"
+      responses:
+        '200':
+          description: Nota crédito enviada exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
