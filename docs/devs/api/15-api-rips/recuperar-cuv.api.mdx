@@ -1,0 +1,71 @@
+---
+id: recuperar-cuv
+title: "Recuperar CUV"
+description: "Recuperar CUV"
+sidebar_label: "Recuperar CUV"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVdtuGzcQ/ZXF+CUGVrtOWiDAvvmKukgTQ5LTB1kIRuRImniXpEmubGGxX9VP6I8VQ60d2UnTPjSoHiSKnOvhmcMOAqnWc9xCNevghNCTP27jGqrZvJ/n4OmupRBPrN5C1aW/7ElDFX1LOShrIpkoR+hczQojW1N+DtbIXlBralBWcesIKrCLz6Qi5OC8deQjU5BTZTWv7LVhZT9izRoV7wIMbiF6NivIgR6wcbVsvX39Ri1//uktFkUBffpItcFZE3ZB3xwdyY+moDy7mCLCpVla36DiP/8wmaY6O73+CP9ZH2MKbR0nESPtGS+srQkN9Dlceaso2Eu9d8wm0oq8HL9vmwtUsfX4dfN9Dqf/DqY+HwpBbcM3DdF73EIOHKkJX7eVsIwcE9BjdmE84AoDzs8xHZNqHXn0A5gNxbXVUIGzIWGEwico0XF5ak2qLFzQRiKXT84730B+Qz4kNra+hgq6rvX1J3Ts2YW+h5fZJ+Q3rK3Pjq8us/Hl1QSEt4+0nsjN7S5nn9xPHa9jdJI2mcldJSPIh8WFkCVCBb/+PgXpXBgx/jIT5498/FsOvyBqDmyWNhUw4PtUdg7S+c7pdXFUHH27VcU2ZHctZcoaUhGNLLIBn5G26pZ89kqi0kMkb/CwuDE35uDgIJPCOXC04caMsuvxu0zT9zxTGk0LygL5TFNwNa1QYxY4MzZzNhBlrUEJdSghlSdNRjHWFCR2G1r0bGUZSEXrs4B1q8X0PUfZpsZ5CvhY4W9oWnEWi19wwTXHhGOVzeSmQlWW9/f3RcMmBSpWdlMoWwaOFErPunzHIYbyhBc120gKz3jFEetyfHl2Xp6dlx+mZZNyjIbaRqpmMpFGYeDRaEmbkSBSOL2cv/pf0iYwr7zVrUpK9QPaVzKIjR2h4+Hqf3Dj/5Dw8CYJpEhGg0mrDKaJfKkuz0biaY4jPcTS1cgpSlKObhCeGaBjEPV8Lj2QwzPxmeewFsGqZtB1Cwx07eu+l+27lrw8kPMcNugZFzK4s3mfw5pQk09qdUtbqCSJPCSjqZQl5nWbBPflo9Lnjx7HSpGL37Wd72nq1YfJVORpeJAbq8XH4z3k6bsCyMEmeJLqpb0OajSrFldiu4spYobPtfCF9qWuHh8Ms92rsOt2FlN7SyZJ8q6VKP+hn/d9/xfAa+t4
+sidebar_class_name: "post api-method"
+info_path: devs/api/15-api-rips/api-rips
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Recuperar CUV"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/ConsultasFevRips/RecuperarCUV"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Recuperar CUV
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"codigoUnicoValidacion":{"type":"string","example":"712cf437a..."}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Información del CUV","content":{"application/json":{"schema":{"type":"object","properties":{"ResultState":{"type":"boolean"},"ProcesoId":{"type":"integer"},"NumFactura":{"type":"string"},"CodigoUnicoValidacion":{"type":"string"},"ResultadosValidacion":{"type":"array","items":{"type":"object"}}},"title":"RipsResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

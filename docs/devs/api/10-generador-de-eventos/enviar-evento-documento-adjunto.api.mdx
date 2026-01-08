@@ -1,0 +1,74 @@
+---
+id: enviar-evento-documento-adjunto
+title: "Enviar Evento (Documento Adjunto)"
+description: "Endpoint para registrar un evento (Aceptación, Rechazo, Recepción de Bienes, Acuse de Recibo) mediante el envío del XML firmado (AttachedDocument) en Base64."
+sidebar_label: "Enviar Evento (Documento Adjunto)"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVt1O4zgUfhXLVxRl0pTtskskLsqCRmgZpirM7mgAlZP4tDXj2BnbKT9VH2mv5hF4sdVxkqWUn0Fzvblp4tg+J99fveAepo6nZ/xgjtobxy8iLtDlVpZeGs1TfqBFaaT2rAQLzOJUOm/BskozDGvYxiDH0kMu77/riI0wn8GdCTdYhkEmkO1J1OgiNsgrhzQwwlxmpsMKFBK0R4aKoZ7f/2OYQMU+fzhiE2kLEFTAe8hnKPZNXhWofYehZnvgcLsfn+tzvbl5bDykm5vsRDKHrEQr5P132tKbrxgagMobK+/aNmlWhQJZbrSrlAdLeypgHjIF7LJyaN0lLVTAMqh7FuCNi1gORWnY5WB4OD79+OfB8WV8rnnELX6r0Pk9I255ugiP0qLgqbcVRjw32qP29ArKUskcCOHulSOYF9zlMyyA7vxtiTzlJrvC3POIl9aUaL1ER28D6GMpVmZK7XGKlq9Td7gfoGxp6u2ugR+xrd3nWfpl9xGnfZqmoDDdht0OjzjeQFEq5GlvGXFQylyPc3CzsWhIcisdZsYoBP2kwyHaQnppWbvIOFZz4kGY1SITUA6XEXeoRQFSvWHzAz2XYFlurEXDQDEQxIhE7fG5rbMgqDE0YmtbGmsocKWc81bq6ZNqx6bILAbAweYzOTdBwyCuKu0ffQoHkewkSa+/8+v2dtJLtvpJkvR+/63fi28KxV/u5MdNUEXqYN0wLDdCTmRObvrPOo96Gu7v9LO/r6ei+Os231Lz7CqRH07614dyT2XF8fzLe1V9uUuk+Dwqjk6ncnjXj+OYmqWOxhZJrNLol5SpK6Ugo1K1G55VamE84SaQ2VpnbMMZZZiTrJU922X9DpW1SFIYk30xr7yc4xskMUJsRdEue0Zl4QoVSpoWhLyVJPSzprDaWW0oErg30hsHRaOxn/R800CBfmYET3lpXAgC8DOe8i59+LsACCdD2DlayvAFr6ziKZ95X7q0211UVo1JSssulLJbZWor7j2B5ATtXApjCfWhNaLK6zToshMP01pkc7CSyAtItLvWcEygUp4Qr2YmnoDzlYW4kiZW8KTUp9FRG6WKDYaHbMNJzUprvMmJZi3ZSqcdguEi4gTW6CFaD1quVqOw91ICBUJXU6MZeN3rP3DoKwb9WR89a6PkeZW3eSX1xATtSB8s/B41kggDle3/ecRJHTX+vTiJE/IO6amAIMHmg5usbAS90eaGYYM6vzrrZC4etP3/EeHNR4TG5h5vfLdUIDWxEVy7aNx9xlfcfRHxGVk/PeOLBVX4ZNVyScPfKrS3PD27eDAnPS0jPkMQaEMcfMVbnvI/ap7enVJtmq6qIPH1PFpG7YpBTmy9OvdiJZ2GH09OyRPNuacwgtZYuKYzEVzzlPOIm6CbECBhbMEV6GkFU5pb70nXv2ZFrvc=
+sidebar_class_name: "post api-method"
+info_path: devs/api/10-generador-de-eventos/generador-de-eventos
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Enviar Evento (Documento Adjunto)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/send-event"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Endpoint para registrar un evento (Aceptación, Rechazo, Recepción de Bienes, Acuse de Recibo) mediante el envío del XML firmado (AttachedDocument) en Base64.
+
+**Nota:** Si se perdió el token de autorización, se puede consultar en la tabla `users` de la base de datos, campo `API_TOKEN`.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"event_id":{"type":"integer","description":"ID del evento (1=Acuse de Recibo, 2=Recepción de Bienes, 3=Aceptación, 4=Reclamo/Rechazo)","example":1},"allow_cash_documents":{"type":"boolean","description":"Permitir documentos de contado","example":false},"sendmail":{"type":"boolean","description":"Enviar correo al adquiriente","example":false},"base64_attacheddocument_name":{"type":"string","description":"Nombre del archivo XML adjunto","example":"ad09001495660102400018741.xml"},"base64_attacheddocument":{"type":"string","description":"XML del AttachedDocument codificado en Base64","example":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4..."},"type_rejection_id":{"type":"integer","nullable":true,"description":"ID del motivo de rechazo (solo si event_id = 4)"},"resend_consecutive":{"type":"boolean","description":"Reenviar consecutivo","example":false}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Evento registrado exitosamente","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

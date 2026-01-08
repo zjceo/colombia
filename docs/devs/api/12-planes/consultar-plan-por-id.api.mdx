@@ -1,0 +1,71 @@
+---
+id: consultar-plan-por-id
+title: "Consultar Plan por ID"
+description: "Obtiene la información detallada de un plan específico."
+sidebar_label: "Consultar Plan por ID"
+hide_title: true
+hide_table_of_contents: true
+api: eJylU8FO3DAQ/RVrTiBZycIxN1QqhFSpCMoJrarZeHZj6tjGHiNWUT6pp34CP1ZNEgos7am5JB5n3sy892YAxl2G5g6uHHrKsNZgKLfJRrbBQwNfN2zJk3KorN+G1GNrn395ZYjROTSoDKniVXToFeVI7fPPrW1DBRoiJuyJKUmFAazgReQONHjsCRqwBjTktqMeoRmA91GimZP1Oxg1JHooNpGBhlOhw94uz5UhN5dG1Qafi2NMoIGesI9OsE5gXAtOjsFnylLldLWS1wHW++EW1ERtiZRkTHqyHDL25JlAQxs8k2cBwhidbVGA6vssaMPHmcLmnlqGUR4NPXEXDDSwI56I4g4aqKVm/VAo7evBmlG4ofT4wl9JDhromGNu6nooyX3fYKaxxmjrsnGn1QkcUnRD6dGakESlqxRMaecJa3XDuBOWNTxisrhxMzkvqDNDWyyOoYFN6UK1xcwlYVVsqBx+KHV7/UVJ5sTe2dWlOsrWq5gChza4oLxVbzo9FirWGsRUE02WJ70uKPOigVo8qUEomIucVKtqJc6IIXOPE9eLlz696D/lqRiSujw/7HJ4Fe6/rL2oyvTEopr10tMk0LCoeQeSBxomPUFDY42sVxcyy+0wCFm3yY2jhOe/mrv1qx6T6MZm+TbQbNHlwxV4O87R9bIsx+rfi/HXvpcg+v3kBlfkBBp+0H7e0XE9augIDaWpqfnirG0p8puUD4sgAv+x+sXnbzCOvwFKpIju
+sidebar_class_name: "get api-method"
+info_path: devs/api/12-planes/gestion-de-planes
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Consultar Plan por ID"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/plan/query/{id}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Obtiene la información detallada de un plan específico.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"id","schema":{"type":"string"},"required":true,"description":"ID del plan a consultar","example":"1"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Información del plan recuperada exitosamente","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

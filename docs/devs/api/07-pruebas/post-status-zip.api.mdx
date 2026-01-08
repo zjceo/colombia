@@ -1,0 +1,73 @@
+---
+id: post-status-zip
+title: "Consulta de Estado por ZIP Key"
+description: "Consulta el estado de un documento enviado asíncronamente utilizando la `zip_key`."
+sidebar_label: "Consulta de Estado por ZIP Key"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVU1vGzcQ/SvEnFqAWn20UZK9qaoLCDVcw4kvdQRntJy16FIkQ3IdS4v9QT3k1J/gP1bM7uqjdttDgALdi1ZDcvTe45unGhTFImiftLOQw9zZWJmEgoygmFA5oUhUVihXVBuyyQmyD5rrGJ++2CI4i1wnUSVt9A6tcsKg+LjT/vY32n7MPtgrSi5YFFFz22OnsiLxgEYrbudEoGKNO373LnCPHxezi+yDBQnOU0CGuFCQg3cxDWLCVMXBTnuQkPAuQn5zgB9hKcFjwA0lCrxUA+OEHHpcIEEzYY9pDRICfap0IAV5ChXJZ6qcoygMPpBQZMSvi0sROkYKBVlGGij6ivU6USUDCbFY0wYhryFtPf96TEHbO5BAj7jxhks0KqfleDQZTF5P3w6+X719M8BX0+lgguPpq/GbcvIdKWiaZQeSYvrBqS23fI65cDaRTbyE3htdtIoN7yNzqF9icat7KtIplhoiWbVBbSAv0USSh0JyrF5fxITFmtT+Jm9Z2lsfqNSPkMPF4t1gNh5Aww+jjt7ZSJH7T0Yj/virvGd7o52aw60SWa2coEedXOxMBl/NsgezobR2ew+B7K4/h2HnpuFO+2HdO6Th+6PwsPdPFQzksE7Jx3w4rKtgblcYqRmi18NqZSbZGCQ8YNC4Mh3b/Z6OcomVSZDDqlq7rMSYqoBZpV1mEJ477vrqXPDJVpTZ5YLxLyUwy6ujC87+o4vj2ShdK6JOrUlHrzNxGSpaYRRbMcfoojiLngqNzFUCy9RBH2ejbPSC0JlV3mmbouCxFL7vRdzj6Uupi7Zx0TbmxIlOFI7J3bvIb078hAUrVuinP6yYLa6lOEx7Gxg8lz/TVmzFhePaPDz9rnRyYjE/5xRpZHvpG2x90qfBIe8Uid6GJ72es6iP7vu/JmXv+kSPaegN6pZ3a926N/sNdGYHCV145vtIXEpY81jkN1DX7L7rYJqGy58qClvIb5ZHg7czoXTkd3Uw2D/K9c1Vn1bfiq9O07/l1hfRbtvpMxV/AwlM6Jj2zbKRsCZUFFrg3eq8gzd4zz2Op1/kSiP3J2ZFQT79697lScpc/vLuPUhY9Ym9cYrPBPzMfzn4uUPqWrnawGhrNRi0dxXe8d6uJz9/AtECrmM=
+sidebar_class_name: "post api-method"
+info_path: devs/api/07-pruebas/07-pruebas-y-casos-especiales
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Consulta de Estado por ZIP Key"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/status/zip/{zip_key}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Consulta el estado de un documento enviado asíncronamente utilizando la `zip_key`.
+Retorna si el documento fue validado o rechazado por la DIAN.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"zip_key","in":"path","required":true,"description":"La clave del ZIP retornada en la respuesta asíncrona.","schema":{"type":"string","example":"e0f6f102-2769-4b98-a566-2a16518f23ed"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","example":{"sendmail":false,"sendmailtome":false,"atacheddocument_name_prefix":"NIS-A1-"}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Estado del documento obtenido exitosamente","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

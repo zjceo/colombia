@@ -1,0 +1,74 @@
+---
+id: regenerar-documento-con-url
+title: "Regenerar Documento Con URL"
+description: "Regenera el PDF de un documento ya existente utilizando sus parámetros clave (Prefijo, Número, CUFE) en la URL."
+sidebar_label: "Regenerar Documento Con URL"
+hide_title: true
+hide_table_of_contents: true
+api: eJzlVMtu40YQ/JVBn2yAICk/qBVvi7UNBFgkgr0+2ULQJJvWOMMZeh6CFYIfs9+QW67+saApSvbK9h68x/DCx7Cnq6tqqgOPdw7yG7ikO9Jk0Yr52QUsIqjIlVa2XhoN+W5ZkOIfREUiaFGZMjSkvRFrFPQonSftSQQvlfwbdWWEC060aJ++N+StcaJUuCJxMLdUy3sTid+f/m3Imkh8ub44PxSkhUJxffk1vtW3+tx5I9CFhsRDIG79RsOxpkBHjKpCb5xYC0diFUitSKDYTlaa4Vepa2MbLOXTP1qgarAkjRUKI1pjRUU1ld7EtxoiaNFiQ54sc9SBZCpa9EuIQGND/MaTPEIErlxSg5B34Nctrzhvpb6DPgJLD0FaqiD3NtA+tSMXono5H0RAj9i0ine6Ov82hz56s78OTUH2V/qPEvyk/2yWpmmaZdP3QJShpl+BwOL/pH95kk5Py3SWVXRCxWmdYTGZZrPp7Diri0n2aUon2aeimB7X6eS0qCk7mqYTrKenx2Ucx9AvuL9rjXbkGN1RmvJtT4azC2FHl1eGzeWNQwbDo5VGs7e5DNtWyRK5LLl3XNu9ntwU91R66PmKoCG/NBXTZpwfbOWXkEOy7eepreqk23ipT7qNqH3SMbE9M0t2tTVhsApyWHrfujxJumDVn2z+PsFWJqFQR/EE9gm+IruS1eBuMbemCuXG/Ym48njHGkWwQiuxUBuKtrtueKoxKA85FGFp4hqdDxbjIE2s8FWr68uv28OoxOf5b+LASS1aa7wpjTJCS/EC6SFTtIiAz+RAn/SD5D/EEZ/nuULtpVLoGCpZt+k2idM4ZYMxsw0OYoymfN7ibJcaX4zmdNkH3T3r+39NutG3nh590iqUmkkdrNaNdr2BH+wKEeS78Mt3MZQPWbCIYMlWz2+g6xjwtVV9z58fAtk15DeLZ8MNrq6k4+cK8hqV20+IlwIdXI5Zcijei843hxk/ol4PZleB3yCCv2j9nOMccB+C8l6KfgDKyOWHobyZph/AMSjZL/oIloQV2UGnzdLnsqTWvyh6FYp8qHexN//j6hv0/X84COVL
+sidebar_class_name: "post api-method"
+info_path: devs/api/13-regenerar-pdfs/regenerar-pdfs-y-plantillas
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Regenerar Documento Con URL"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/regeneratepdf/{prefix}/{number}/{cufe}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Regenera el PDF de un documento ya existente utilizando sus parámetros clave (Prefijo, Número, CUFE) en la URL.
+
+Esto asume que el documento ya existe en la base de datos y se vuelve a generar con la información almacenada o por defecto.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"prefix","schema":{"type":"string"},"required":true,"description":"Prefijo del documento","example":"SETP"},{"in":"path","name":"number","schema":{"type":"string"},"required":true,"description":"Número del documento","example":"990000667"},{"in":"path","name":"cufe","schema":{"type":"string"},"required":true,"description":"CUFE del documento","example":"c4075c096de4eb5f6ab17697936fb1687e468bb73f015bfe62701af753c..."}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"PDF regenerado exitosamente","content":{"application/json":{"schema":{"type":"object"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,5 +1,5 @@
 {
-  "label": "08. Paso a Producción",
+  "label": "Paso a Producción",
   "position": 8,
   "description": "Endpoints para finalizar habilitación y pasar a producción"
 }

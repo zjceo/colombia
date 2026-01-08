@@ -1,0 +1,71 @@
+---
+id: login-sispro
+title: "Login SISPRO"
+description: "Obtiene token de acceso"
+sidebar_label: "Login SISPRO"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVt1OKzcQfpXVcHOQNtnAKVTdOzhQlYoWlHDUixBVE++QzMFrG9sbiFZ5qj5CX6wabwjhNIVe9Kh7E8f+PD/fzHy7LVQUlGcX2Roo4WoamQxl0d6TySrKUCkKFnLw9NBQiKe2WkLZpr/sqYIy+oZyUNZEMlGO0DnNCsVi8SWI2RaCmlONsopLR1CCnX4hFSEH560jH5mCnDrywZp/AeSKTOQ7Vqi4c/E2PrKzW6gQPZsZ5EBPWDstW58+wSoH09Tk30EeHB8PDr87PIaVPDkojQt6xzhO9eFgMBgkHxzfRv8wOPh4dPTx6HsQ85Fj2r20MzbDrgzQefYUnDWhS/FwMJCf1wW9SYWckSGPldTxPypUapC/Z7HKQUuYWydTazWhgRTujENMgew8J++tD1tn6D0uIQeOVIed3kyjNU6FH+nDHXR1BD2XqqY4txWU4GxISWGcQwkFOi6wifMi3RpdjK6HV5BDIL8giWjcQuM1lNC2jde/o2PPLqxWkH/F94j8givrs5Pri2x4cT2C1UTsqMZzXI6E3Y7AU0JP/qQR/5u85jE6cZtgwk0CQb5e/Gh9jRFK+Pm3m9QaUrXhy2CeP3fQq0HaMSppGKTjXxp+u6s3Lb3Vt+u23e7NHNjcdaVcc75JOgfhraPkoD/oD3YTpdiG7KGhTFlDKqKRRbZmt1dZdU8++yBW6SmSN7jfvzW3Zm9vL5O0OXC04db0ss/Dy6RW/3wzualoSlkgn1UUnKYZVpgFzozNnA1EWWNQTO2LSeWpIqMYNQWx3YQGPVtZBlLR+iygbiqB/spRtql2ngI+R/gLmkYuC+InnLLmmCpQZmOpcyiL4vHxsV+zSYb6M7voK1sEjhQKz1VxySGG4pSnmm0khWc844i6GF6cnRdn58XVTVEnH711bD2lmUykXlh3Ye+OFj1hpO+qu8mH/8VtIvPa26pRiv/841ukr6wJTW176Hhd+m+c+DsO92+TnInG1JgmzmC90aRsIy+vJqJ9keY3XsNroYj0FAunkZOjJE3tWszGgI4hB5EzyGFb0CY5zEX3yjG07RQDffZ6tZLth4b8EsrxJIcFeu4UdTxZ5TAnrMgnBbynpUhCF2XvRiIRuG6SVH/9MlnlzzdOlCIX38ROtqT5+mp0I5K3/tKobSV3PD7KVwg+QgmQg02sJSVNey1oNLMGZ4LtbMrzFw6TDsw=
+sidebar_class_name: "post api-method"
+info_path: devs/api/15-api-rips/api-rips
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Login SISPRO"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/api/auth/LoginSISPRO"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Obtiene token de acceso
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"persona":{"type":"object","properties":{"identificacion":{"type":"object","properties":{"tipo":{"type":"string","example":"CC"},"numero":{"type":"string","example":"16602426"}}}}},"clave":{"type":"string","example":"Cabl20000"},"nit":{"type":"string","example":"901355357"}},"title":"LoginRequest"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Token generado","content":{"application/json":{"schema":{"type":"object","properties":{"token":{"type":"string"},"login":{"type":"boolean"},"registrado":{"type":"boolean"},"errors":{"type":"array","items":{"type":"string"},"nullable":true}},"title":"LoginResponse"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

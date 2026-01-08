@@ -1,0 +1,71 @@
+---
+id: iniciar-sesion-app
+title: "Iniciar Sesión (APP)"
+description: "Permite obtener el token de acceso para la aplicación móvil."
+sidebar_label: "Iniciar Sesión (APP)"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVV1uGzcQvgoxTwmwkWQ3bYp9qto0hQsDFWIneXCMYESOV0y4HIY/sgVBh+kRihzBFyuGK9ly5AYFsi/7NxzOfD/DNWTsErQXMC15AZcNGEo62pAte2hhRrG3mRTPM3mKipzK/Im8MqRQa0qsAkZUDhUGZzVqe/vFq/72y9K6ETSQSJdo8wrai8sGIn0ulPKvbFbQruurjWSgzbFQA5p9Jp/lF4aaTsoYf0xSyxqSXlCP8pRXgaAFnn8knaHZS3QB1KN10EDAlK45GmkqRA4Us6Ukq4eI+zQpR+s7aOCKY48Z2rscdIN9cBJjqOdfOvk80tzDZi//txLdBe3nOjr+4fmPP734GTb1kvJTYJ+G6o4nE7k95OGUO+sV3djMieE7kHqIhMH8P6Lsfo/WZ+ooCgIeezrsftP8F8CbBjDYD1VAj6H2sOXzqrOqrpIwKvLKYVLJdsWSz5RUoGy1ZU9JUmvuA/rVY+08TPwSMycRsENFfYiUUGFibdEgVD40G3qk5T0OjyeTHXnPJ0eHfP0WyZDXFh0lZf3y9m9nDSbFqqSC0bJKwuewO0ianvKCjUiGU6UA8wJaGDthvhopLimKVddQooMWFjmH1I7H6xLdhzkm2owx2HGZu+PR0UHXZxSX1nCUxmeRTdGDVcfqLGM3ELDEaHHuBtZ3WYfmrrA4EfS8LHh0hSmXiKNieeTwYKs3r0+VrFSGnJrOTtQTaTZEzqzZsfJW7VX6VDC/vJ8UZ6LdoYQ5YaRYJ9M9G9K24FHDpKIaBM324dXOen++O6/Aiide38+d33cU3s2Br729b+09rzZg/RXXQmyuPn6FWmA4xYy9mgb70qJ/ezw6Us9URVtbTmo6mx0A9EcsgYWIdBdmbKLbf9BwGiRPTmn2qfQSlwaxPjJh3/sTr11ZkcIiA2H3v1EdpVwjDSnDuvTkM6dGaTe4pxFCTNHihZXsdWW7EofVo/eiOJHbUO/RaDKa1JnHKfdYzTuYH0681RajOqNUd3sync2eft3w+n5eff+JspVBpps8Dg6tl8KqI9Zb01zAYJrLBhZipvYC1msR5JvoNhv5/LlQ3B5JO83L26aBBaGhWF32iVbi5KHyZ+eyrYS7ItsfTN1Ns1sx1ZpC/mbs5Z7fZ3+dnYt6t2diX2cPRLyWcw2voQVogCuS1RT12xoc+q5gJ7FDTrn+BbCmulc=
+sidebar_class_name: "post api-method"
+info_path: devs/api/14-servicios-app/facturalatam-apidianv-2-1-servicios-app
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Iniciar Sesión (APP)"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/login"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Permite obtener el token de acceso para la aplicación móvil.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["email","password"],"properties":{"email":{"type":"string","format":"email","example":"demo@gmail.com"},"password":{"type":"string","format":"password","example":"12345678"}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Login exitoso","content":{"application/json":{"schema":{"type":"object","properties":{"data":{"type":"object","properties":{"id":{"type":"integer"},"name":{"type":"string"},"email":{"type":"string"},"api_token":{"type":"string","description":"Token para usar en las siguientes peticiones"},"company":{"type":"object","description":"Datos de la empresa asociada"}}},"code":{"type":"integer","example":200}}}}}},"401":{"description":"Credenciales inválidas o usuario sin empresa"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,71 @@
+---
+id: descargar-pdf
+title: "Descargar PDF"
+description: "Permite descargar o previsualizar el PDF de un documento."
+sidebar_label: "Descargar PDF"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVNtuGzcQ/RVinmyA2ZX9UCT7JsB24CIohMhpHxyhGJEjLVsuyfCiVl3sRwX5BP9YMbuS7NhIgabVi7jkXM/MOT1k3CZo7uHKq9KRyz7BSoKmpKIJ2XgHDSwodiaT4FuMW4zCixBpZ1JBa/7CKMiKxdWN0CSKE/oYqgIJASN2lClylh4cdgQNOJNBguHgAXMLEiJ9KiaShibHQhKSaqlDaHrI+8AuKUfjtjA8L+6n2zvOa1FQFyIlhEGe8myMpfH4fyXz3ToyEFZgVK3Z+bHvM/qtEjfXy1fL67vFmzez2Q+zi9evq6A35zCsOF8K3iVKnOJyNuO/rwPPH6OBBOVdJpfZDEOwRiGb1UFv+Opb1UrY+NhhhgbWxmHcw8A/CR3l1mtoYEt5HEluoYFa+z+c9ajr3pk81P0RrAEkJIq748xKtNBAm3NITV33Jdpf15hoqDGYuqztZXUBz4FaUtwZ7SOPZhG9LkqZhy9O1GKZcTtVu8NocG0nVI5RJ2g2WOzYR2l9tcGUS8SqGF9ZfJHqw/t3gj3HqcwXt+IsGSdC9Nkrb71wRjyp9JxBWXGDqkST92OHa8JIcV4Yl/vV0+clYz1V+NToBD2jAocF4u/JCOThcHMcyI+/3AGPwriNH91Ntmx/g4p7e4cZOzEP5sqg+/myuhCvxAihMj6J+WLxouu3sQTP6KaTmTaJHj6j9kkw65iUyrtUOrZLE0dw3KZpFt3Dl52x1Ud365QtexJYeOuO71JsKeXRUtMjqZMUyhpymZJklHVR2Sex51wbsy1x8q4+Oh4xxTTVe1HNqhkTKviUO3QMwoGkVydZmbb/q0b7RzL8Jx06zCvTn7kOFo3jWsbN7g+EuIcjIUBCMylUcxKQlYTWp8xmfc/r9iHaYeDrT4Uir9HqcaPHpdIm8VlDs0Gb6B/6Ont/0KNz8VLNvlH64RLdfmSSLfwFEn6n/UFfWQa/r4Z/L3LfVeQJ22E1SGgJNcURuel5rhSF/MTxuRQyT0/S9vaaCfY3MUNVyg==
+sidebar_class_name: "get api-method"
+info_path: devs/api/14-servicios-app/facturalatam-apidianv-2-1-servicios-app
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Descargar PDF"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/download/{nit}/{filename}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Permite descargar o previsualizar el PDF de un documento.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"nit","in":"path","required":true,"schema":{"type":"string"},"description":"NIT de la empresa"},{"name":"filename","in":"path","required":true,"schema":{"type":"string"},"description":"Nombre del archivo PDF (ej. FES-SETP990060188.pdf)"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Archivo PDF","content":{"application/pdf":{"schema":{"type":"string","format":"binary"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

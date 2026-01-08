@@ -1,0 +1,71 @@
+---
+id: listar-productos
+title: "Listar Productos"
+description: "Listar Productos"
+sidebar_label: "Listar Productos"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVMFuG0cM/ZUBTymwXdk+7k1B4iCFD0KdtAdHMKhZSpp0dmZKzggRBH1U4U/wjwWctdRNZKDVZYXdR/Lx8ZEHyLgR6B5gwbEvNkeBZQMJGQfKxPrpAAEHgg6EkO0WGnABOvi7EO+hAbFbGhC6A+R9qrDMLmzg2EBPYtml7KIGvC1ikU2KbOzzU+820biQiUM00YQ4rJjguGyASVIMQqI5b66u9PFjpjsnGU1PJp1JN2BjyBSyojEl7ywqevZVNORwSTOuvpLN0EDimIizGwtKsZZEJsBVjJ4w1IYwT1MgM6oELtMg/53a9ROMtr4h1qyjvK/oJ+jpsQSXHxM7+xrm/PtZ7CoRm8VEoIHyNvbQwYYqN8xb6GA2km9AiHengRf20ME25yTdbHYo7B9XKHScYXKzsvI37TX8XPGeeOf6yDqXsax1z0/BzMx9xo2ybWCH7HDlRzlOWcf5rrH4rGqXbWzXKLkwtsXF1uNFqc+/3xmNND15M198NG/EBTVDjjb6aIIzE6a/qExLbdAWdnlfO1wRMvG8qAYPy+nnezXKyHAKOkuvqpxsX+1RQdC8/LmNPKA28tufn0Dn4sI61nCXveJv0Wpvd5hxMPPk3jkMf9y01+ZXUyW0LoqZLxYXXX/gkqKqK2dY74Se/8E+itGVNeSNjUHKoDjpyXg0WHdhnMXw/LRzvv0SPgbry54MFt2Z0/fGbEhyRfZk+mjLQCFHaYz1jkImaf5dObPXWmu3KTxGt1+CjphYRr7X7VV7pTZOUfKAdQtfLskr7vyh17PYmb7lWfLo6vpVWx5enPvwsnbLBrZRsr44HNQVn9kfj/p6vFA67d6J2q6Hbo1e6KLa+Xb8ryPVvM7uL9pPj+QOfVFQvWkn41ezNbAl7IkrtTFqbi2lPIm6OGGa5bzBH96rt74DzhwDPQ==
+sidebar_class_name: "get api-method"
+info_path: devs/api/14-servicios-app/facturalatam-apidianv-2-1-servicios-app
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Listar Productos"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/items"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Listar Productos
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"search","in":"query","schema":{"type":"string"},"description":"Buscar por código interno o nombre"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Lista de productos","content":{"application/json":{"schema":{"type":"object","properties":{"success":{"type":"boolean"},"data":{"type":"array","items":{"type":"object","properties":{"id":{"type":"integer"},"name":{"type":"string"},"sale_unit_price":{"type":"string"}}}}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
