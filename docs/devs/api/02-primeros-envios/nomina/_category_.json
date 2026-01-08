@@ -1,0 +1,8 @@
+{
+  "label": "Nómina",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Envío de nómina electrónica."
+  }
+}

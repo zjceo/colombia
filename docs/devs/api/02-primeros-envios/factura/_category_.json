@@ -1,0 +1,8 @@
+{
+  "label": "Factura Electrónica",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Envío de facturas electrónicas."
+  }
+}

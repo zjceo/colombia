@@ -1,0 +1,8 @@
+{
+  "label": "Configuración Empresa",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "description": "Endpoints para configurar datos de la empresa."
+  }
+}

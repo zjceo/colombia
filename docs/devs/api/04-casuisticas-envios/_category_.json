@@ -1,0 +1,8 @@
+{
+  "label": "Casuísticas de Envíos",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Ejemplos complejos y casos de uso específicos para facturación."
+  }
+}

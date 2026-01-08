@@ -1,0 +1,8 @@
+{
+  "label": "Nota Crédito",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Envío de notas de crédito."
+  }
+}

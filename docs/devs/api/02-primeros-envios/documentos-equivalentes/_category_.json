@@ -1,0 +1,8 @@
+{
+  "label": "Doc. Equivalentes",
+  "position": 8,
+  "link": {
+    "type": "generated-index",
+    "description": "Envío de documentos equivalentes."
+  }
+}
