@@ -1,0 +1,9 @@
+{
+  "label": "Mantenimiento",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "slug": "mantenimiento",
+    "description": "Manual de Desarrolladores"
+  }
+}

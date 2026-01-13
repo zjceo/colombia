@@ -1,0 +1,9 @@
+{
+  "label": "Panel Admin",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "slug": "panel-admin",
+    "description": "Manual de las opcion del panel administrador del Facturador"
+  }
+}

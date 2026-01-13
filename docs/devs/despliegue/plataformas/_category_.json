@@ -1,0 +1,9 @@
+{
+  "label": "Plataformas",
+  "position": 1,
+  "link": {
+    "type": "generated-index",
+    "slug": "plataformas",
+    "description": "Manual de Desarrolladores"
+  }
+}
